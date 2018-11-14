@@ -73,6 +73,7 @@
 		DB6B36E2219180A100970207 /* ED_TimeSelectControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B36E1219180A100970207 /* ED_TimeSelectControl.m */; };
 		DB6B36E52191832600970207 /* ico_change@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E32191832500970207 /* ico_change@2x.png */; };
 		DB6B36E62191832600970207 /* ico_change@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E42191832500970207 /* ico_change@3x.png */; };
+		DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */; };
 		DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +197,8 @@
 		DB6B36E1219180A100970207 /* ED_TimeSelectControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TimeSelectControl.m; sourceTree = "<group>"; };
 		DB6B36E32191832500970207 /* ico_change@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_change@2x.png"; sourceTree = "<group>"; };
 		DB6B36E42191832500970207 /* ico_change@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_change@3x.png"; sourceTree = "<group>"; };
+		DB7008A4219556BC0075BFEC /* ED_BaseRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BaseRefreshView.h; sourceTree = "<group>"; };
+		DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BaseRefreshView.m; sourceTree = "<group>"; };
 		DB74F284219039DE00AEAFE7 /* ED_Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Color.h; sourceTree = "<group>"; };
 		DB74F28521903A3C00AEAFE7 /* ED_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Frame.h; sourceTree = "<group>"; };
 		DB74F28721903F5500AEAFE7 /* ED_BasicTabelViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BasicTabelViewCell.h; sourceTree = "<group>"; };
@@ -311,6 +314,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB7008A3219556590075BFEC /* Refresh */,
 				DB6B36DF2191807B00970207 /* ED_TimeSelectControl */,
 				DB74F283219039CB00AEAFE7 /* Header */,
 				DB74F2822190318E00AEAFE7 /* Base */,
@@ -576,6 +580,15 @@
 			path = ED_TimeSelectControl;
 			sourceTree = "<group>";
 		};
+		DB7008A3219556590075BFEC /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				DB7008A4219556BC0075BFEC /* ED_BaseRefreshView.h */,
+				DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		DB74F2822190318E00AEAFE7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +782,7 @@
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
+				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
 				DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */,

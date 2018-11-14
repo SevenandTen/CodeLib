@@ -13,8 +13,11 @@
 #import "ED_BasicTabelViewCell.h"
 #import "UIView+Instance.h"
 #import "ED_TimeSelectControl.h"
+#import "ED_BaseRefreshView.h"
 
 @interface ViewController ()<UITableViewDelegate ,UITableViewDataSource>
+
+@property (nonatomic , strong) ED_BaseRefreshView *refreshView;
 
 @end
 
@@ -23,28 +26,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.myNavigationItem.title = @"不知道";
-
+    [self.view addSubview:self.refreshView];
+    self.refreshView.frame = CGRectMake(10, 100, 100, 100);
+    
+    self.refreshView.backgroundColor = [UIColor redColor];
+  
+   
+    
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSString *string = @"20090228";
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyyMMdd";
-    
-    [ED_TimeSelectControl showTimeSelectWithDate:[formatter dateFromString:string] hasDay:NO complete:^(BOOL hasDay, NSDate *date) {
-        if (hasDay) {
-            NSLog(@"%@",[formatter stringFromDate:date]);
-        }else {
-            formatter.dateFormat = @"yyyyMM";
-            NSLog(@"%@",[formatter stringFromDate:date]);
-        }
-        
-    }];
+    [self.refreshView removeFromSuperview];
 }
 
 
+#pragma mark - Getter
 
+- (ED_BaseRefreshView *)refreshView {
+    if (!_refreshView) {
+        _refreshView = [[ED_BaseRefreshView alloc] init];
+    }
+    return _refreshView;
+}
 
 @end

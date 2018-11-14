@@ -23,6 +23,8 @@
 
 - (void)startLocation;
 
+- (void)startLocationWithResult:(void(^)(BOOL isSuccess , NSError *error))resulut;
+
 @end
 
 

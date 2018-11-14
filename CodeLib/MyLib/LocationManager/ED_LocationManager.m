@@ -13,6 +13,8 @@
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 
+@property (nonatomic , copy) void(^result)(BOOL isSuccess , NSError *error);
+
 
 @end
 
@@ -30,9 +32,15 @@
 #pragma mark - Public
 
 - (void)startLocation {
+    self.result = nil;
     [self.locationManager startUpdatingLocation];
 }
 
+
+- (void)startLocationWithResult:(void (^)(BOOL, NSError *))resulut {
+    self.result = resulut;
+    [self.locationManager startUpdatingLocation];
+}
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -48,9 +56,11 @@
         [clGeoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
             if (placemarks.count != 0) {
                 CLPlacemark * placeMark = placemarks.firstObject;
-                NSDictionary *dic = placeMark.addressDictionary;
-                self.cityName = [dic objectForKey:@"City"];
-            
+                self.cityName = placeMark.locality;
+                if (self.result) {
+                    self.result(YES, nil);
+                    self.result = nil;
+                }
             }
         }];
     }
@@ -60,6 +70,10 @@
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error {
     NSLog(@"%@",error.domain);
+    if (self.result) {
+        self.result(NO, error);
+        self.result = nil;
+    }
 }
 
 
