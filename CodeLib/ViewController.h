@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ED_BasicViewController.h"
 
-@interface ViewController : ED_BasicViewController
+@interface ViewController : UIViewController
 
 
 @end

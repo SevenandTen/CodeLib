@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */; };
 		DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824C21884C0E00CCD4EA /* AppDelegate.m */; };
 		DB64825021884C0E00CCD4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824F21884C0E00CCD4EA /* ViewController.m */; };
 		DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB64825121884C0E00CCD4EA /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		DB64831021884D7600CCD4EA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64830F21884D7600CCD4EA /* libsqlite3.0.tbd */; };
 		DB64831221884D7F00CCD4EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64831121884D7F00CCD4EA /* SystemConfiguration.framework */; };
 		DB64831421884D8E00CCD4EA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64831321884D8E00CCD4EA /* OpenGLES.framework */; };
+		DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */; };
 		DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB695D2C21896E26001B3515 /* ED_BasicViewController.m */; };
 		DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */; };
 		DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DC2191714D00970207 /* normal_back_btn@3x.png */; };
@@ -95,6 +97,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB1B598621A50540008AB295 /* ED_RefreshNormalFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RefreshNormalFooter.h; sourceTree = "<group>"; };
+		DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalFooter.m; sourceTree = "<group>"; };
 		DB64824821884C0E00CCD4EA /* CodeLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB64824B21884C0E00CCD4EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB64824C21884C0E00CCD4EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -189,6 +193,10 @@
 		DB64830F21884D7600CCD4EA /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		DB64831121884D7F00CCD4EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DB64831321884D8E00CCD4EA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DB67782221A3B5B200B0ED68 /* ED_RefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RefreshNormalHeader.h; sourceTree = "<group>"; };
+		DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalHeader.m; sourceTree = "<group>"; };
+		DB67782521A400CF00B0ED68 /* ED_Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Define.h; sourceTree = "<group>"; };
+		DB67782621A4013C00B0ED68 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DB695D2C21896E26001B3515 /* ED_BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_BasicViewController.m; sourceTree = "<group>"; };
 		DB695D2D21896E26001B3515 /* ED_BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_BasicViewController.h; sourceTree = "<group>"; };
 		DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_back_btn@2x.png"; sourceTree = "<group>"; };
@@ -307,6 +315,7 @@
 				DB64825621884C0F00CCD4EA /* LaunchScreen.storyboard */,
 				DB64825921884C0F00CCD4EA /* Info.plist */,
 				DB64825A21884C0F00CCD4EA /* main.m */,
+				DB67782621A4013C00B0ED68 /* PrefixHeader.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -585,6 +594,10 @@
 			children = (
 				DB7008A4219556BC0075BFEC /* ED_BaseRefreshView.h */,
 				DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */,
+				DB67782221A3B5B200B0ED68 /* ED_RefreshNormalHeader.h */,
+				DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */,
+				DB1B598621A50540008AB295 /* ED_RefreshNormalFooter.h */,
+				DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */,
 			);
 			path = Refresh;
 			sourceTree = "<group>";
@@ -604,6 +617,7 @@
 			children = (
 				DB74F284219039DE00AEAFE7 /* ED_Color.h */,
 				DB74F28521903A3C00AEAFE7 /* ED_Frame.h */,
+				DB67782521A400CF00B0ED68 /* ED_Define.h */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -785,11 +799,13 @@
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
+				DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */,
 				DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */,
 				DB6482E621884C5B00CCD4EA /* UIView+PlaceHolder.m in Sources */,
 				DB6482EB21884C5B00CCD4EA /* UITableView+RegisterCell.m in Sources */,
 				DB6482F321884C5B00CCD4EA /* ED_LocationManager.m in Sources */,
 				DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */,
+				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
 				DB6482EA21884C5B00CCD4EA /* UIViewController+Animation.m in Sources */,
 				DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */,
 				DB6B36E2219180A100970207 /* ED_TimeSelectControl.m in Sources */,
@@ -969,7 +985,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CodeLib/MyLib/ShareAndPay/Third/AlipaySDK",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CodeLib/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CodeLib/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -994,7 +1012,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CodeLib/MyLib/ShareAndPay/Third/AlipaySDK",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CodeLib/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CodeLib/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
