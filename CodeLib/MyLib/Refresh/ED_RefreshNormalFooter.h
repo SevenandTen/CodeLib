@@ -14,6 +14,8 @@
 
 @property (nonatomic , assign) CGFloat footerHeight;
 
+@property (nonatomic , assign) BOOL isFromLast;
+
 @end
 
 

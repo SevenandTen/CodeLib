@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */; };
+		DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */; };
 		DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824C21884C0E00CCD4EA /* AppDelegate.m */; };
 		DB64825021884C0E00CCD4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824F21884C0E00CCD4EA /* ViewController.m */; };
 		DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB64825121884C0E00CCD4EA /* Main.storyboard */; };
@@ -99,6 +100,8 @@
 /* Begin PBXFileReference section */
 		DB1B598621A50540008AB295 /* ED_RefreshNormalFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RefreshNormalFooter.h; sourceTree = "<group>"; };
 		DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalFooter.m; sourceTree = "<group>"; };
+		DB1B598A21A5284C008AB295 /* ED_GradedColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_GradedColorView.h; sourceTree = "<group>"; };
+		DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_GradedColorView.m; sourceTree = "<group>"; };
 		DB64824821884C0E00CCD4EA /* CodeLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB64824B21884C0E00CCD4EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB64824C21884C0E00CCD4EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -255,6 +258,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB1B598921A5282C008AB295 /* GradedColorView */ = {
+			isa = PBXGroup;
+			children = (
+				DB1B598A21A5284C008AB295 /* ED_GradedColorView.h */,
+				DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */,
+			);
+			path = GradedColorView;
+			sourceTree = "<group>";
+		};
 		DB64823F21884C0E00CCD4EA = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +335,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB1B598921A5282C008AB295 /* GradedColorView */,
 				DB7008A3219556590075BFEC /* Refresh */,
 				DB6B36DF2191807B00970207 /* ED_TimeSelectControl */,
 				DB74F283219039CB00AEAFE7 /* Header */,
@@ -796,6 +809,7 @@
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
+				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,

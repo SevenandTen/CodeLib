@@ -16,12 +16,20 @@
 #import "ED_BaseRefreshView.h"
 #import "ED_RefreshNormalHeader.h"
 #import <objc/runtime.h>
+#import "ED_GradedColorView.h"
+#import "ED_RefreshNormalFooter.h"
 
 @interface ViewController ()<UITableViewDelegate ,UITableViewDataSource,ED_BaseRefreshViewDelegate>
 
 @property (nonatomic , strong) ED_RefreshNormalHeader *header;
 
+@property (nonatomic , strong) ED_RefreshNormalFooter *footer;
+
 @property (nonatomic , strong) UITableView *tableView;
+
+@property (nonatomic , strong) ED_GradedColorView *gradedView;
+
+@property (nonatomic , weak) UIScrollView *scrollView;
 
 @end
 
@@ -31,11 +39,21 @@
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
-//    [self.tableView setContentInset:UIEdgeInsetsMake(100, 0, 0, 0)];
+
     [self.tableView addSubview:self.header];
     
+    [self.tableView addSubview:self.footer];
+    
+
+    
+    
    
+    
+    
+    
+    
 }
+
 
 
 - (void)refreshViewBeginRefreshHeader:(ED_BaseRefreshView *)refreshView {
@@ -44,11 +62,15 @@
     });
 }
 
-//- (void)refreshViewBeginRefreshFooter:(ED_BaseRefreshView *)refreshView;
+- (void)refreshViewBeginRefreshFooter:(ED_BaseRefreshView *)refreshView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [refreshView endRefreshing];
+    });
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -58,7 +80,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
     label.text = [NSString stringWithFormat:@"%ld", section];
-    
+
     return label;
 }
 
@@ -67,19 +89,13 @@
     return 10;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell defaultIdentifier]];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self.tableView setContentInset:UIEdgeInsetsMake(10, 0, 0, 0)];
-//}
-//
-//
+
 
 
 
@@ -104,6 +120,15 @@
     return _header;
 }
 
+
+- (ED_RefreshNormalFooter *)footer {
+    if (!_footer) {
+        _footer = [[ED_RefreshNormalFooter alloc] init];
+        _footer.isFromLast = YES;
+        _footer.delegate = self;
+    }
+    return _footer;
+}
 
 
 

@@ -68,7 +68,6 @@ typedef NS_ENUM(NSInteger ,ED_RefreshStatus) {
 - (void)endRefreshing;
 
 
-
 - (void)placeSubView;
 
 - (void)scrollViewDidChangedContentSize:(NSDictionary *)change;

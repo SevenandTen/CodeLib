@@ -71,11 +71,24 @@
     }else if (self.status == ED_RefreshStatusWillStartRefresh) {
         self.status = ED_RefreshStatusRefreshing;
         [self updateContentUI];
+        CGFloat insetTop = self.originContentInset.top;
+        if (@available(iOS 11.0, *)) {
+            insetTop = insetTop - (self.scrollView.adjustedContentInset.top - self.scrollView.contentInset.top);
+        }
+        [UIView animateWithDuration:0.5 animations:^{
+            
+            [self.scrollView setContentInset:UIEdgeInsetsMake(insetTop + self.headerHeight, self.scrollView.contentInset.left, self.scrollView.contentInset.bottom, self.scrollView.contentInset.right)];
+            [self.scrollView setContentOffset:CGPointMake(0,happenY2) animated:NO];
+        } completion:^(BOOL finished) {
+            if (self.complete) {
+                self.complete();
+            }else {
+                [self.delegate refreshViewBeginRefreshHeader:self];
+            }
+        }];
     }
 
 }
-
-
 
 - (void)updateContentUI {
     if (self.status == ED_RefreshStatusDefuat) {
@@ -85,40 +98,12 @@
         self.titleLabel.text = @"松开立即刷新";
         
     }
-    
     if (self.status == ED_RefreshStatusRefreshing) {
         self.titleLabel.text = @"正在刷新";
-        CGFloat insetTop = self.originContentInset.top;
-        if (@available(iOS 11.0, *)) {
-            insetTop = insetTop - (self.scrollView.adjustedContentInset.top - self.scrollView.contentInset.top);
-        }
         
-        [UIView animateWithDuration:0.5 animations:^{
-            
-            [self.scrollView setContentInset:UIEdgeInsetsMake(insetTop + self.headerHeight, self.originContentInset.left, self.originContentInset.bottom, self.originContentInset.right)];
-            [self.scrollView setContentOffset:CGPointMake(0,- self.originContentInset.top - self.headerHeight) animated:NO];
-        } completion:^(BOOL finished) {
-            if (self.complete) {
-                self.complete();
-            }else {
-                 [self.delegate refreshViewBeginRefreshHeader:self];
-            }
-        }];
     }
     if (self.status == ED_RefreshStatusEndRefresh) {
         self.titleLabel.text = @"刷新完毕";
-        CGFloat insetTop  = self.originContentInset.top;
-        if (@available(iOS 11.0, *)) {
-            insetTop = insetTop - (self.scrollView.adjustedContentInset.top - self.scrollView.contentInset.top);
-        }
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.scrollView setContentInset:UIEdgeInsetsMake(insetTop, self.originContentInset.left, self.originContentInset.bottom, self.originContentInset.right)];
-            [self.scrollView setContentOffset:CGPointMake(0,- self.originContentInset.top ) animated:NO];
-        } completion:^(BOOL finished) {
-            self.status = ED_RefreshStatusDefuat;
-            [self updateContentUI];
-        }];
     }
 }
 
@@ -127,6 +112,18 @@
 - (void)endRefreshing {
     self.status = ED_RefreshStatusEndRefresh;
     [self updateContentUI];
+    CGFloat insetTop  = self.originContentInset.top;
+    if (@available(iOS 11.0, *)) {
+        insetTop = insetTop - (self.scrollView.adjustedContentInset.top - self.scrollView.contentInset.top);
+    }
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.scrollView setContentInset:UIEdgeInsetsMake(insetTop, self.scrollView.contentInset.left, self.scrollView.contentInset.bottom, self.scrollView.contentInset.right)];
+        [self.scrollView setContentOffset:CGPointMake(0,- self.originContentInset.top ) animated:NO];
+    } completion:^(BOOL finished) {
+        self.status = ED_RefreshStatusDefuat;
+        [self updateContentUI];
+    }];
 }
 
 
