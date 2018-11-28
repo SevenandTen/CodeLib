@@ -18,8 +18,11 @@
 #import <objc/runtime.h>
 #import "ED_GradedColorView.h"
 #import "ED_RefreshNormalFooter.h"
+#import "ED_NetListener.h"
+#import "HttpRequest.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface ViewController ()<UITableViewDelegate ,UITableViewDataSource,ED_BaseRefreshViewDelegate>
+@interface ViewController ()<UITableViewDelegate ,UITableViewDataSource,ED_BaseRefreshViewDelegate,CBCentralManagerDelegate>
 
 @property (nonatomic , strong) ED_RefreshNormalHeader *header;
 
@@ -31,20 +34,40 @@
 
 @property (nonatomic , weak) UIScrollView *scrollView;
 
+@property (nonatomic , strong) CBCentralManager *manager;
+
+@property (nonatomic , strong) NSMutableArray *dataSource;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
-    self.tableView.frame = self.view.bounds;
-
-    [self.tableView addSubview:self.header];
+//    [self.view addSubview:self.tableView];
+//    self.tableView.frame = self.view.bounds;
+//
+//    [self.tableView addSubview:self.header];
+//
+//    [self.tableView addSubview:self.footer];
     
-    [self.tableView addSubview:self.footer];
+//    ED_NetWorkEnvironment status = [ED_NetListener shareInstance].status;
+//    [[ED_NetListener shareInstance] startListening];
+//    if (status == ED_NetWorkDisable) {
+//        NSLog(@"网路不可用");
+//    }else if (status == ED_NetWorkWifi) {
+//        NSLog(@"wifi");
+//    }else {
+//        NSLog(@"4g");
+//    }
+//
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkChange) name:NetReachabilityChangedNotification object:nil];
     
-
+    [HttpRequest startRequestWithUrlString:@"http://192.168.11.48:8080/test1/param" httpMethod:HttpGet getParam:nil postParam:nil headerParam:nil customServiceType:0 httpDataType:HttpDataForm complete:^(id response, NSError *error) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"%@",[NSThread currentThread])
+        NSLog(@"%@",dic);
+    }];
     
     
    
@@ -54,50 +77,111 @@
     
 }
 
-
-
-- (void)refreshViewBeginRefreshHeader:(ED_BaseRefreshView *)refreshView {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [refreshView endRefreshing];
-    });
+- (void)netWorkChange {
+    ED_NetWorkEnvironment status = [ED_NetListener shareInstance].status;
+    if (status == ED_NetWorkDisable) {
+        NSLog(@"网路不可用");
+    }else if (status == ED_NetWorkWifi) {
+        NSLog(@"wifi");
+    }else {
+        NSLog(@"4g");
+    }
 }
 
-- (void)refreshViewBeginRefreshFooter:(ED_BaseRefreshView *)refreshView {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [refreshView endRefreshing];
-    });
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
+    switch (central.state) {
+        case CBCentralManagerStateUnknown:
+            NSLog(@">>>CBCentralManagerStateUnknown");
+            break;
+        case CBCentralManagerStateResetting:
+            NSLog(@">>>CBCentralManagerStateResetting");
+            break;
+        case CBCentralManagerStateUnsupported:
+            NSLog(@">>>CBCentralManagerStateUnsupported");
+            break;
+        case CBCentralManagerStateUnauthorized:
+            NSLog(@">>>CBCentralManagerStateUnauthorized");
+            break;
+        case CBCentralManagerStatePoweredOff:
+            NSLog(@">>>CBCentralManagerStatePoweredOff");
+            break;
+        case CBCentralManagerStatePoweredOn:
+        {
+            NSLog(@">>>CBCentralManagerStatePoweredOn");
+            // 开始扫描周围的外设。
+            /*
+             -- 两个参数为Nil表示默认扫描所有可见蓝牙设备。
+             -- 注意：第一个参数是用来扫描有指定服务的外设。然后有些外设的服务是相同的，比如都有FFF5服务，那么都会发现；而有些外设的服务是不可见的，就会扫描不到设备。
+             -- 成功扫描到外设后调用didDiscoverPeripheral
+             */
+            [self.manager scanForPeripheralsWithServices:nil options:nil];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#pragma mark 发现外设
+- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary*)advertisementData RSSI:(NSNumber *)RSSI{
+    NSLog(@"-------------------------------------");
+    NSLog(@"Find device:%@", peripheral.name );
+    NSLog(@"11111 :%@", advertisementData );
+    NSLog(@"22222 :%@", RSSI );
+    
+   
+    
 }
+    
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 50;
+//- (void)refreshViewBeginRefreshHeader:(ED_BaseRefreshView *)refreshView {
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [refreshView endRefreshing];
+//    });
+//}
+//
+//- (void)refreshViewBeginRefreshFooter:(ED_BaseRefreshView *)refreshView {
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [refreshView endRefreshing];
+//    });
+//}
+//
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 50;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+//    label.text = [NSString stringWithFormat:@"%ld", section];
+//
+//    return label;
+//}
+//
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return 10;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell defaultIdentifier]];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+//    return cell;
+//}
+//
+
+
+
+- (CBCentralManager *)manager {
+    if (!_manager) {
+        _manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    }
+    return _manager;
 }
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-    label.text = [NSString stringWithFormat:@"%ld", section];
-
-    return label;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell defaultIdentifier]];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
-    return cell;
-}
-
-
-
-
 
 
 - (UITableView *)tableView{

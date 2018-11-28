@@ -41,6 +41,17 @@ typedef NS_ENUM(NSInteger , HttpDataType) { //HTTP 协议传输的body方式
                              httpDataType:(HttpDataType)dataType
                                  delegate:(id<HttpRequestDelegate>)delegate;
 
+
++ (instancetype)startRequestWithUrlString:(NSString *)url
+                               httpMethod:(HttpMethod)method
+                                 getParam:(NSDictionary *)getParam
+                                postParam:(NSDictionary *)postParam
+                              headerParam:(NSDictionary *)headerParam
+                        customServiceType:(NSInteger)type
+                             httpDataType:(HttpDataType)dataType
+                                 complete:(void(^)(id response , NSError *error)) complete;
+
+
 //获取请求状态
 - (NSInteger)getCustomType;
 
@@ -65,6 +76,16 @@ typedef NS_ENUM(NSInteger , HttpDataType) { //HTTP 协议传输的body方式
                               fileType:(NSString *)fileType
                            headerParam:(NSDictionary *)headerParam
                               delegate:(id<HttpRequestDelegate>)delegate;
+
+
++ (instancetype)startUpLoadFileWithUrl:(NSString *)url
+                             fileArray:(NSArray<NSData *> *)file
+                     customServiceType:(NSInteger)type
+                               fileKey:(NSString *)fileKey
+                              fileName:(NSString *)fileName
+                              fileType:(NSString *)fileType
+                           headerParam:(NSDictionary *)headerParam
+                              complete:(void(^)(id response , NSError *error)) complete;
 
 // 重新开始网络请求
 - (void)restartConnect;

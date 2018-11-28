@@ -78,6 +78,14 @@
 		DB6B36E62191832600970207 /* ico_change@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E42191832500970207 /* ico_change@3x.png */; };
 		DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */; };
 		DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */; };
+		DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */; };
+		DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */; };
+		DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */; };
+		DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */; };
+		DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */; };
+		DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */; };
+		DB8C75A621ABD2D2005D0546 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C75A421ABD2D2005D0546 /* Reachability.m */; };
+		DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C75A821ABD342005D0546 /* ED_NetListener.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +222,23 @@
 		DB74F28521903A3C00AEAFE7 /* ED_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Frame.h; sourceTree = "<group>"; };
 		DB74F28721903F5500AEAFE7 /* ED_BasicTabelViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BasicTabelViewCell.h; sourceTree = "<group>"; };
 		DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BasicTabelViewCell.m; sourceTree = "<group>"; };
+		DB85AC9621AE6B8E006DDD7D /* ED_DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_DBManager.h; sourceTree = "<group>"; };
+		DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_DBManager.m; sourceTree = "<group>"; };
+		DB85AC9B21AE6BBE006DDD7D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		DB85AC9D21AE6BBE006DDD7D /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		DB85AC9E21AE6BBE006DDD7D /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		DB85ACA121AE6BBE006DDD7D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		DB85ACA221AE6BBE006DDD7D /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		DB85ACA321AE6BBE006DDD7D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DB8C75A421ABD2D2005D0546 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DB8C75A521ABD2D2005D0546 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DB8C75A721ABD342005D0546 /* ED_NetListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_NetListener.h; sourceTree = "<group>"; };
+		DB8C75A821ABD342005D0546 /* ED_NetListener.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_NetListener.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +360,8 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB85AC9521AE6B8E006DDD7D /* DBManager */,
+				DB8C75A121ABD2B8005D0546 /* NetListener */,
 				DB1B598921A5282C008AB295 /* GradedColorView */,
 				DB7008A3219556590075BFEC /* Refresh */,
 				DB6B36DF2191807B00970207 /* ED_TimeSelectControl */,
@@ -374,6 +401,8 @@
 		DB64828C21884C5B00CCD4EA /* ShareAndPay */ = {
 			isa = PBXGroup;
 			children = (
+				DB64828E21884C5B00CCD4EA /* ED_SharePayManager.h */,
+				DB64829621884C5B00CCD4EA /* ED_SharePayManager.m */,
 				DB64828D21884C5B00CCD4EA /* Third */,
 			);
 			path = ShareAndPay;
@@ -382,8 +411,6 @@
 		DB64828D21884C5B00CCD4EA /* Third */ = {
 			isa = PBXGroup;
 			children = (
-				DB64828E21884C5B00CCD4EA /* ED_SharePayManager.h */,
-				DB64829621884C5B00CCD4EA /* ED_SharePayManager.m */,
 				DB64828F21884C5B00CCD4EA /* WXSDK */,
 				DB64829321884C5B00CCD4EA /* AlipaySDK */,
 			);
@@ -644,6 +671,69 @@
 			path = MyBaseTableViewCell;
 			sourceTree = "<group>";
 		};
+		DB85AC9521AE6B8E006DDD7D /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				DB85AC9621AE6B8E006DDD7D /* ED_DBManager.h */,
+				DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */,
+				DB85AC9921AE6B9F006DDD7D /* Third */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		DB85AC9921AE6B9F006DDD7D /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				DB85AC9A21AE6BBE006DDD7D /* fmdb */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		DB85AC9A21AE6BBE006DDD7D /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				DB85AC9B21AE6BBE006DDD7D /* FMDatabase.h */,
+				DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */,
+				DB85AC9D21AE6BBE006DDD7D /* FMResultSet.h */,
+				DB85AC9E21AE6BBE006DDD7D /* FMDatabasePool.h */,
+				DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */,
+				DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */,
+				DB85ACA121AE6BBE006DDD7D /* FMDatabaseQueue.h */,
+				DB85ACA221AE6BBE006DDD7D /* FMDB.h */,
+				DB85ACA321AE6BBE006DDD7D /* FMDatabaseAdditions.h */,
+				DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */,
+				DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		DB8C75A121ABD2B8005D0546 /* NetListener */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C75A221ABD2B8005D0546 /* Third */,
+				DB8C75A721ABD342005D0546 /* ED_NetListener.h */,
+				DB8C75A821ABD342005D0546 /* ED_NetListener.m */,
+			);
+			path = NetListener;
+			sourceTree = "<group>";
+		};
+		DB8C75A221ABD2B8005D0546 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C75A321ABD2D2005D0546 /* Reachablity */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		DB8C75A321ABD2D2005D0546 /* Reachablity */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C75A421ABD2D2005D0546 /* Reachability.m */,
+				DB8C75A521ABD2D2005D0546 /* Reachability.h */,
+			);
+			path = Reachablity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -797,7 +887,9 @@
 				DB6482F421884C5B00CCD4EA /* NSDictionary+RemoveNull.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
 				DB6482E221884C5B00CCD4EA /* UILabel+CalculateShowSize.m in Sources */,
+				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
 				DB6482ED21884C5B00CCD4EA /* ED_PhoneCodeView.m in Sources */,
+				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
 				DB6482E121884C5B00CCD4EA /* UIImage+ModifyColor.m in Sources */,
 				DB6482E021884C5B00CCD4EA /* HttpRequest.m in Sources */,
@@ -809,14 +901,20 @@
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
+				DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */,
+				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
+				DB8C75A621ABD2D2005D0546 /* Reachability.m in Sources */,
 				DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */,
+				DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */,
+				DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */,
 				DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */,
 				DB6482E621884C5B00CCD4EA /* UIView+PlaceHolder.m in Sources */,
 				DB6482EB21884C5B00CCD4EA /* UITableView+RegisterCell.m in Sources */,
+				DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */,
 				DB6482F321884C5B00CCD4EA /* ED_LocationManager.m in Sources */,
 				DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */,
 				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
