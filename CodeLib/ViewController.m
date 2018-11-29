@@ -21,6 +21,7 @@
 #import "ED_NetListener.h"
 #import "HttpRequest.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "ED_AnimationView.h"
 
 @interface ViewController ()<UITableViewDelegate ,UITableViewDataSource,ED_BaseRefreshViewDelegate,CBCentralManagerDelegate>
 
@@ -37,6 +38,8 @@
 @property (nonatomic , strong) CBCentralManager *manager;
 
 @property (nonatomic , strong) NSMutableArray *dataSource;
+
+
 
 @end
 
@@ -63,19 +66,31 @@
 //
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkChange) name:NetReachabilityChangedNotification object:nil];
     
-    [HttpRequest startRequestWithUrlString:@"http://192.168.11.48:8080/test1/param" httpMethod:HttpGet getParam:nil postParam:nil headerParam:nil customServiceType:0 httpDataType:HttpDataForm complete:^(id response, NSError *error) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"%@",[NSThread currentThread])
-        NSLog(@"%@",dic);
-    }];
+//    [HttpRequest startRequestWithUrlString:@"http://192.168.11.48:8080/test1/param" httpMethod:HttpGet getParam:nil postParam:nil headerParam:nil customServiceType:0 httpDataType:HttpDataForm complete:^(id response, NSError *error) {
+//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+//        NSLog(@"%@",[NSThread currentThread])
+//        NSLog(@"%@",dic);
+//    }];
     
+//    ED_AnimationView *view = [[ED_AnimationView alloc] init];
+//    view.frame = CGRectMake(100, 100, 100, 100);
+//    [self.view addSubview:view];
     
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+  
+
    
     
     
     
     
 }
+
+
+
+
 
 - (void)netWorkChange {
     ED_NetWorkEnvironment status = [ED_NetListener shareInstance].status;

@@ -84,6 +84,7 @@
 		DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */; };
 		DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */; };
 		DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */; };
+		DB85ACAE21AE6DF0006DDD7D /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACAD21AE6DF0006DDD7D /* ED_AnimationView.m */; };
 		DB8C75A621ABD2D2005D0546 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C75A421ABD2D2005D0546 /* Reachability.m */; };
 		DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C75A821ABD342005D0546 /* ED_NetListener.m */; };
 /* End PBXBuildFile section */
@@ -235,6 +236,8 @@
 		DB85ACA321AE6BBE006DDD7D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DB85ACAC21AE6DF0006DDD7D /* ED_AnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_AnimationView.h; sourceTree = "<group>"; };
+		DB85ACAD21AE6DF0006DDD7D /* ED_AnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_AnimationView.m; sourceTree = "<group>"; };
 		DB8C75A421ABD2D2005D0546 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DB8C75A521ABD2D2005D0546 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DB8C75A721ABD342005D0546 /* ED_NetListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_NetListener.h; sourceTree = "<group>"; };
@@ -360,6 +363,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB85ACAB21AE6DD4006DDD7D /* ED_ToastAndLoading */,
 				DB85AC9521AE6B8E006DDD7D /* DBManager */,
 				DB8C75A121ABD2B8005D0546 /* NetListener */,
 				DB1B598921A5282C008AB295 /* GradedColorView */,
@@ -707,6 +711,15 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		DB85ACAB21AE6DD4006DDD7D /* ED_ToastAndLoading */ = {
+			isa = PBXGroup;
+			children = (
+				DB85ACAC21AE6DF0006DDD7D /* ED_AnimationView.h */,
+				DB85ACAD21AE6DF0006DDD7D /* ED_AnimationView.m */,
+			);
+			path = ED_ToastAndLoading;
+			sourceTree = "<group>";
+		};
 		DB8C75A121ABD2B8005D0546 /* NetListener */ = {
 			isa = PBXGroup;
 			children = (
@@ -895,6 +908,7 @@
 				DB6482E021884C5B00CCD4EA /* HttpRequest.m in Sources */,
 				DB6482F521884C5B00CCD4EA /* ED_BasicModel.m in Sources */,
 				DB6482E421884C5B00CCD4EA /* UIView+Instance.m in Sources */,
+				DB85ACAE21AE6DF0006DDD7D /* ED_AnimationView.m in Sources */,
 				DB6482E921884C5B00CCD4EA /* UIViewController+Instance.m in Sources */,
 				DB6482DF21884C5B00CCD4EA /* ED_SharePayManager.m in Sources */,
 				DB6482DA21884C5B00CCD4EA /* ED_AlertControl.m in Sources */,
