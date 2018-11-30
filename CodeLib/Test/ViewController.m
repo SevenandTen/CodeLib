@@ -22,6 +22,8 @@
 #import "HttpRequest.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "ED_AnimationView.h"
+#import "BViewController.h"
+
 
 @interface ViewController ()<UITableViewDelegate ,UITableViewDataSource,ED_BaseRefreshViewDelegate,CBCentralManagerDelegate>
 
@@ -41,45 +43,16 @@
 
 
 
+
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.view addSubview:self.tableView];
-//    self.tableView.frame = self.view.bounds;
-//
-//    [self.tableView addSubview:self.header];
-//
-//    [self.tableView addSubview:self.footer];
-    
-//    ED_NetWorkEnvironment status = [ED_NetListener shareInstance].status;
-//    [[ED_NetListener shareInstance] startListening];
-//    if (status == ED_NetWorkDisable) {
-//        NSLog(@"网路不可用");
-//    }else if (status == ED_NetWorkWifi) {
-//        NSLog(@"wifi");
-//    }else {
-//        NSLog(@"4g");
-//    }
-//
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkChange) name:NetReachabilityChangedNotification object:nil];
-    
-//    [HttpRequest startRequestWithUrlString:@"http://192.168.11.48:8080/test1/param" httpMethod:HttpGet getParam:nil postParam:nil headerParam:nil customServiceType:0 httpDataType:HttpDataForm complete:^(id response, NSError *error) {
-//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
-//        NSLog(@"%@",[NSThread currentThread])
-//        NSLog(@"%@",dic);
-//    }];
-    
-//    ED_AnimationView *view = [[ED_AnimationView alloc] init];
-//    view.frame = CGRectMake(100, 100, 100, 100);
-//    [self.view addSubview:view];
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view];
-  
+    self.view.backgroundColor = [UIColor yellowColor];
+
 
    
     
@@ -88,6 +61,21 @@
     
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    for (UIView *obj in [UIApplication sharedApplication].keyWindow.subviews) {
+        NSLog(@"------------------ %@",obj);
+        for (UIView *view in obj.subviews) {
+            NSLog(@"+++++%@",view);
+        }
+    }
+    
+    NSLog(@"///////////////////////////////////////////////////");
+    BViewController *vc = [[BViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+    
+}
 
 
 

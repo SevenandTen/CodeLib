@@ -54,6 +54,7 @@
     shapeLayer.lineDashPhase = 0.8;
     shapeLayer.path = bezierPath.CGPath;
     [self.backLayer setMask:shapeLayer];
+//    [self.layer addSublayer:shapeLayer];
     [self updateAnimation];
 }
 

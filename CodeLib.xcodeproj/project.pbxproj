@@ -77,6 +77,8 @@
 		DB6B36E52191832600970207 /* ico_change@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E32191832500970207 /* ico_change@2x.png */; };
 		DB6B36E62191832600970207 /* ico_change@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E42191832500970207 /* ico_change@3x.png */; };
 		DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */; };
+		DB71E91E21B1285B0040C7E6 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71E91D21B1285B0040C7E6 /* BViewController.m */; };
+		DB71E92121B128670040C7E6 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71E92021B128670040C7E6 /* CViewController.m */; };
 		DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */; };
 		DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */; };
 		DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */; };
@@ -219,6 +221,10 @@
 		DB6B36E42191832500970207 /* ico_change@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_change@3x.png"; sourceTree = "<group>"; };
 		DB7008A4219556BC0075BFEC /* ED_BaseRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BaseRefreshView.h; sourceTree = "<group>"; };
 		DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BaseRefreshView.m; sourceTree = "<group>"; };
+		DB71E91C21B1285B0040C7E6 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		DB71E91D21B1285B0040C7E6 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		DB71E91F21B128670040C7E6 /* CViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
+		DB71E92021B128670040C7E6 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
 		DB74F284219039DE00AEAFE7 /* ED_Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Color.h; sourceTree = "<group>"; };
 		DB74F28521903A3C00AEAFE7 /* ED_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Frame.h; sourceTree = "<group>"; };
 		DB74F28721903F5500AEAFE7 /* ED_BasicTabelViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BasicTabelViewCell.h; sourceTree = "<group>"; };
@@ -319,10 +325,9 @@
 		DB64824A21884C0E00CCD4EA /* CodeLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB71E91B21B1282A0040C7E6 /* Test */,
 				DB64827E21884C5B00CCD4EA /* MyLib */,
 				DB64827D21884C2800CCD4EA /* Supporting Files */,
-				DB64824E21884C0E00CCD4EA /* ViewController.h */,
-				DB64824F21884C0E00CCD4EA /* ViewController.m */,
 			);
 			path = CodeLib;
 			sourceTree = "<group>";
@@ -646,6 +651,19 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		DB71E91B21B1282A0040C7E6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DB64824E21884C0E00CCD4EA /* ViewController.h */,
+				DB64824F21884C0E00CCD4EA /* ViewController.m */,
+				DB71E91C21B1285B0040C7E6 /* BViewController.h */,
+				DB71E91D21B1285B0040C7E6 /* BViewController.m */,
+				DB71E91F21B128670040C7E6 /* CViewController.h */,
+				DB71E92021B128670040C7E6 /* CViewController.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		DB74F2822190318E00AEAFE7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -897,6 +915,7 @@
 				DB6482F121884C5B00CCD4EA /* UIImageView+SQWebCache.m in Sources */,
 				DB6482F021884C5B00CCD4EA /* NetFileRequest.m in Sources */,
 				DB6482EF21884C5B00CCD4EA /* NetImageWebCache.m in Sources */,
+				DB71E91E21B1285B0040C7E6 /* BViewController.m in Sources */,
 				DB6482F421884C5B00CCD4EA /* NSDictionary+RemoveNull.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
 				DB6482E221884C5B00CCD4EA /* UILabel+CalculateShowSize.m in Sources */,
@@ -911,6 +930,7 @@
 				DB85ACAE21AE6DF0006DDD7D /* ED_AnimationView.m in Sources */,
 				DB6482E921884C5B00CCD4EA /* UIViewController+Instance.m in Sources */,
 				DB6482DF21884C5B00CCD4EA /* ED_SharePayManager.m in Sources */,
+				DB71E92121B128670040C7E6 /* CViewController.m in Sources */,
 				DB6482DA21884C5B00CCD4EA /* ED_AlertControl.m in Sources */,
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
