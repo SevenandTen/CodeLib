@@ -10,6 +10,7 @@
 
 //
 #import "ViewController.h"
+#import "TestTabBarController.h"
 
 //
 
@@ -23,7 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[ViewController alloc ] init];
+//    self.window.rootViewController = [[ViewController alloc ] init];
+    self.window.rootViewController = [[TestTabBarController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }

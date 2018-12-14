@@ -27,4 +27,8 @@
 #endif
 
 
+//字体
+#define FontWithNumber(_hex) [UIFont systemFontOfSize:_hex]
+
+
 #endif /* ED_Define_h */

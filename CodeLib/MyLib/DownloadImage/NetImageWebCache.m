@@ -57,8 +57,6 @@
 - (void)setImageData:(NSData *)data ForKey:(NSString *)key {
     //1.缓存存入
     [self setObject:data forKey:key];
-
-//    }
     //文件写入
     dispatch_barrier_sync(_queue, ^{
         NSString *path = [self.createPath stringByAppendingPathComponent:[self md5:key]];

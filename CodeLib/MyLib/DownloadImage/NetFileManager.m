@@ -8,7 +8,7 @@
 
 #import "NetFileManager.h"
 #import "NetFileRequest.h"
-#import "UIImageView+SQWebCache.h"
+#import "UIView+SQWebCache.h"
 #import "NetImageWebCache.h"
 @interface NetFileManager()<NetFileRequestDelegate>
 
@@ -41,8 +41,8 @@
 }
 
 
-- (void)startLoadFileWithUrl:(NSString *)url withImageView:(UIImageView *)imageView {
-    BOOL flag = [self saveImageView:imageView withUrl:url];
+- (void)startLoadFileWithUrl:(NSString *)url withView:(UIView *)view {
+    BOOL flag = [self saveImageView:view withUrl:url];
     if (!flag) {
         NetFileRequest *requset = [NetFileRequest startRequestWithUrl:url delegate:self];
         [self.requestArray addObject:requset];
@@ -57,8 +57,8 @@
     [[NetImageWebCache shareInstance] setImageData:data ForKey:url];
     [self removeViewArrayForUrl:url];
     if (viewArray.count != 0) {
-        for (UIImageView *imageView in viewArray) {
-            [imageView  updateWebImage:[UIImage imageWithData:data]];
+        for (UIView *view in viewArray) {
+            [view  updateWebImage:[UIImage imageWithData:data]];
         }
     }
     
@@ -70,8 +70,8 @@
 totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrit url:(NSString *)url {
     NSArray *viewArray = [self selectImageViewsForKey:url];
     if (viewArray.count != 0) {
-        for (UIImageView *imageView in viewArray) {
-            [imageView  updateWebImageProgressWriteData:bytesWritten totalBytesWritten:totalBytesWritten totalBytesExpectedToWrite:totalBytesExpectedToWrit];
+        for (UIView *view in viewArray) {
+            [view  updateWebImageProgressWriteData:bytesWritten totalBytesWritten:totalBytesWritten totalBytesExpectedToWrite:totalBytesExpectedToWrit];
         }
     }
     
@@ -82,8 +82,8 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrit url:(NSString *)url 
     NSArray *viewArray = [self selectImageViewsForKey:url];
     [self removeViewArrayForUrl:url];
     if (viewArray.count != 0) {
-        for (UIImageView *imageView in viewArray) {
-            [imageView  updateWebImageWithError:error];;
+        for (UIView *view in viewArray) {
+            [view  updateWebImageWithError:error];;
         }
     }
     
@@ -94,16 +94,16 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrit url:(NSString *)url 
 
 #pragma mark - Private 
 
-- (BOOL)saveImageView:(UIImageView *)imageView withUrl:(NSString *)url {
+- (BOOL)saveImageView:(UIView *)view withUrl:(NSString *)url {
     __block BOOL flag = NO;
     dispatch_barrier_sync(_queue, ^{
         NSArray * viewArray = [self.requestDic objectForKey:url];
         if (viewArray.count == 0) {
-            [self.requestDic setObject:@[imageView] forKey:url];
+            [self.requestDic setObject:@[view] forKey:url];
             flag = NO;
         }else {
             NSMutableArray *array = [[NSMutableArray alloc] initWithArray:viewArray];
-            [array addObject:imageView];
+            [array addObject:view];
             [self.requestDic setObject:array forKey:url];
             flag = YES;
         }
@@ -111,12 +111,12 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrit url:(NSString *)url 
     return flag;
 }
 
-- (void)removeImageView:(UIImageView *)imageView forUrl:(NSString *)url {
+- (void)removeImageView:(UIView *)view forUrl:(NSString *)url {
      dispatch_barrier_sync(_queue, ^{
          NSArray * viewArray = [self.requestDic objectForKey:url];
          if (viewArray.count != 0) {
              NSMutableArray *array = [[NSMutableArray alloc] initWithArray:viewArray];
-             [array removeObject:imageView];
+             [array removeObject:view];
              [self.requestDic setObject:array forKey:url];
          }
     });

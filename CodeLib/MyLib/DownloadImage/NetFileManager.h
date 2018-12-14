@@ -13,9 +13,9 @@
 + (instancetype)shareInstance;
 
 
-- (void)startLoadFileWithUrl:(NSString *)url withImageView:(UIImageView *)imageView;
+- (void)startLoadFileWithUrl:(NSString *)url withView:(UIView *)view;
 
 
-- (void)removeImageView:(UIImageView *)imageView forUrl:(NSString *)url;
+- (void)removeImageView:(UIView *)view forUrl:(NSString *)url;
 
 @end

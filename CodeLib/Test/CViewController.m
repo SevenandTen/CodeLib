@@ -64,14 +64,20 @@
             NSLog(@"+++++%@",view);
         }
     }
-    NSArray *array = [UIApplication sharedApplication].keyWindow.subviews;
-    for (UIView *view in array) {
-        [view removeFromSuperview];
-    }
-    [aVc setValue:nil forKeyPath:@"_childModalViewController"];
+//    NSArray *array = [UIApplication sharedApplication].keyWindow.subviews;
+//    UIView *firstView = array.firstObject;
+//    UIView *lastView = array.lastObject;
+//    [firstView addSubview:bBc.view];
+//    [lastView removeFromSuperview];
+//    [bBc setValue:nil forKey:@"_childModalViewController"];
+//    for (UIView *view in array) {
+//        [view removeFromSuperview];
+//    }
+//    [aVc setValue:nil forKeyPath:@"_childModalViewController"];
+//
+//
+//    [[UIApplication sharedApplication].keyWindow addSubview:aVc.view];
     
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:aVc.view];
     
 }
 
