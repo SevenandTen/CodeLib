@@ -11,6 +11,7 @@
 #import "UIButton+SQWebCache.h"
 #import "HttpRequest.h"
 #import "ED_MonthView.h"
+#import "ED_ToastView.h"
 
 @interface Test1ViewController ()<ED_MonthViewDelegate>
 @property (nonatomic , strong) ED_MonthView *monthView;
@@ -25,31 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.monthView];
-    self.monthView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 100);
+  
     
 
 }
 
-
-- (void)monthView:(ED_MonthView *)view didScrollYears:(NSInteger)years isYearIncrease:(BOOL)isYearIncrease lastMonth:(NSInteger)lastMonth currentMonth:(NSInteger)currentMonth {
-    NSLog(@"last %ld",lastMonth);
-    NSLog(@"current %ld",currentMonth);
-    if (isYearIncrease) {
-        NSLog(@"+ %ld",years);
-    }else{
-        NSLog(@"-%ld",years);
-    }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//      [ED_ToastView toastOnView:nil style:ED_ToastLocationBottom title:@"保存图片成功" showTime:0.5 hideAfterTime:1 showAnmation:YES hideAnmation:NO];
+    
+    [ED_ToastView toastOnView:nil style:ED_ToastLoadingShortMessage title:@"请稍后..." showTime:0.5 showAnmation:YES];
 }
 
-- (ED_MonthView *)monthView {
-    if (!_monthView) {
-        _monthView = [[ED_MonthView alloc] init];
-        _monthView.delegate = self;
-        [_monthView setBeginMonth:12];
-    }
-    return _monthView;
-}
+
+
 
 
 

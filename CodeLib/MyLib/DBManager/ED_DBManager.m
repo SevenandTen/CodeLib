@@ -56,16 +56,16 @@
 
 - (void)saveObject:(id)object withKey:(NSString *)key {
     dispatch_barrier_sync(self.queue, ^{
-        [_database open];
-        [_database executeUpdate:@"DELETE FROM userMap WHERE key=?",key];
+        [self.database open];
+        [self.database executeUpdate:@"DELETE FROM userMap WHERE key=?",key];
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
-        BOOL reslut = [_database executeUpdate:@"INSERT INTO userMap(key,value) VALUES(?,?)",key,data];
+        BOOL reslut = [self.database executeUpdate:@"INSERT INTO userMap(key,value) VALUES(?,?)",key,data];
         if (reslut) {
             NSLog(@"save success");
         }else{
             NSLog(@"save fail");
         }
-        [_database close];
+        [self.database close];
     });
 }
 
@@ -73,14 +73,14 @@
     
     dispatch_barrier_async(self.queue, ^{
        
-        [_database open];
-        BOOL result = [_database executeUpdate:@"DELETE FROM userMap WHERE key=?",key];
+        [self.database open];
+        BOOL result = [self.database executeUpdate:@"DELETE FROM userMap WHERE key=?",key];
         if (result) {
             NSLog(@"remove success");
         }else{
             NSLog(@"remove faile");
         }
-        [_database close];
+        [self.database close];
         
     });
 }
@@ -90,13 +90,13 @@
     __block id object = nil;
     dispatch_sync(self.queue, ^{
         
-        [_database open];
+        [self.database open];
         NSData *data = nil;
-        FMResultSet *set = [_database executeQuery:@"SELECT * FROM userMap WHERE key=?",key];
+        FMResultSet *set = [self.database executeQuery:@"SELECT * FROM userMap WHERE key=?",key];
         while ([set next]) {
             data = [set dataForColumn:@"value"];
         }
-        [_database close];
+        [self.database close];
         object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     });
     

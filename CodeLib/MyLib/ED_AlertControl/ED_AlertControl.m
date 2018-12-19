@@ -253,6 +253,7 @@
     if (size.height > 24) {
         contentLabelHeight = size.height + 5;
         contentHeight = contentHeight + size.height;
+         self.contentLabel.textAlignment = NSTextAlignmentLeft;
     }
    
     
@@ -267,7 +268,7 @@
     [self.contentView addSubview:self.contentLabel];
     if (self.isHasImage) {
          [self.contentView addSubview:self.tipImageView];
-        CGFloat width = (contentLabelWidth - size.width)/2.0;
+        CGFloat width = (contentLabelWidth - size.width - 21)/2.0;
         self.tipImageView.frame = CGRectMake(width + 20, contentLabelY + 2, 21, 21);
         self.contentLabel.frame = CGRectMake(width + 45, contentLabelY, contentLabelWidth - 25 - width, contentLabelHeight);
         if (self.imageType) {

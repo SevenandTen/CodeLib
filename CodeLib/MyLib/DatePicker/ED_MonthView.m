@@ -112,7 +112,7 @@
         
     }else{
         NSInteger y = (self.currentIndex - row)/12; // 滑了几年
-        NSInteger m = (row - self.currentIndex)%12; // 零几个月;
+        NSInteger m = (self.currentIndex  - row )%12; // 零几个月;
         years = y;
         if (lastMonth - m  <= 0) {
             years = years + 1;

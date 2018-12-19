@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */; };
 		DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */; };
+		DB5DC31E21C8D5BA007B2B15 /* ED_ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */; };
 		DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824C21884C0E00CCD4EA /* AppDelegate.m */; };
 		DB64825021884C0E00CCD4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824F21884C0E00CCD4EA /* ViewController.m */; };
 		DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB64825121884C0E00CCD4EA /* Main.storyboard */; };
@@ -95,6 +96,8 @@
 		DB8DC62421B516D100A2B5C4 /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62321B516D100A2B5C4 /* Test1ViewController.m */; };
 		DB8DC62721B516E300A2B5C4 /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */; };
 		DB8DC62A21B516EF00A2B5C4 /* Test3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62921B516EF00A2B5C4 /* Test3ViewController.m */; };
+		DB9430E921C8F8BD00B6A04A /* ico_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9430E721C8F8BD00B6A04A /* ico_ok@3x.png */; };
+		DB9430EA21C8F8BD00B6A04A /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9430E821C8F8BD00B6A04A /* ico_ok@2x.png */; };
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
 /* End PBXBuildFile section */
@@ -121,6 +124,8 @@
 		DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalFooter.m; sourceTree = "<group>"; };
 		DB1B598A21A5284C008AB295 /* ED_GradedColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_GradedColorView.h; sourceTree = "<group>"; };
 		DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_GradedColorView.m; sourceTree = "<group>"; };
+		DB5DC31C21C8D5BA007B2B15 /* ED_ToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ToastView.h; sourceTree = "<group>"; };
+		DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ToastView.m; sourceTree = "<group>"; };
 		DB64824821884C0E00CCD4EA /* CodeLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB64824B21884C0E00CCD4EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB64824C21884C0E00CCD4EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -268,6 +273,8 @@
 		DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
 		DB8DC62821B516EF00A2B5C4 /* Test3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test3ViewController.h; sourceTree = "<group>"; };
 		DB8DC62921B516EF00A2B5C4 /* Test3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3ViewController.m; sourceTree = "<group>"; };
+		DB9430E721C8F8BD00B6A04A /* ico_ok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@3x.png"; sourceTree = "<group>"; };
+		DB9430E821C8F8BD00B6A04A /* ico_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@2x.png"; sourceTree = "<group>"; };
 		DB94C17921C0A7AE0051B2D1 /* ED_MonthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthView.h; sourceTree = "<group>"; };
 		DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthView.m; sourceTree = "<group>"; };
 		DB94C17C21C0AFC70051B2D1 /* ED_MonthItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthItemCell.h; sourceTree = "<group>"; };
@@ -771,6 +778,10 @@
 			children = (
 				DB85ACAC21AE6DF0006DDD7D /* ED_AnimationView.h */,
 				DB85ACAD21AE6DF0006DDD7D /* ED_AnimationView.m */,
+				DB5DC31C21C8D5BA007B2B15 /* ED_ToastView.h */,
+				DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */,
+				DB9430E821C8F8BD00B6A04A /* ico_ok@2x.png */,
+				DB9430E721C8F8BD00B6A04A /* ico_ok@3x.png */,
 			);
 			path = ED_ToastAndLoading;
 			sourceTree = "<group>";
@@ -922,6 +933,7 @@
 				DB6482D821884C5B00CCD4EA /* ico_tc_jg@3x.png in Resources */,
 				DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */,
 				DB6B36E52191832600970207 /* ico_change@2x.png in Resources */,
+				DB9430EA21C8F8BD00B6A04A /* ico_ok@2x.png in Resources */,
 				DB6482D221884C5B00CCD4EA /* ico_share_pyq@2x.png in Resources */,
 				DB6482D621884C5B00CCD4EA /* ico_share_qq@3x.png in Resources */,
 				DB64825821884C0F00CCD4EA /* LaunchScreen.storyboard in Resources */,
@@ -930,6 +942,7 @@
 				DB6B36E62191832600970207 /* ico_change@3x.png in Resources */,
 				DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */,
 				DB6482D921884C5B00CCD4EA /* ico_tc_ok@3x.png in Resources */,
+				DB9430E921C8F8BD00B6A04A /* ico_ok@3x.png in Resources */,
 				DB64825521884C0F00CCD4EA /* Assets.xcassets in Resources */,
 				DB6482D321884C5B00CCD4EA /* ico_tc_jg@2x.png in Resources */,
 				DB6482DB21884C5B00CCD4EA /* ico_tc_ok@2x.png in Resources */,
@@ -1001,6 +1014,7 @@
 				DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */,
 				DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */,
 				DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */,
+				DB5DC31E21C8D5BA007B2B15 /* ED_ToastView.m in Sources */,
 				DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */,
 				DB6482E621884C5B00CCD4EA /* UIView+PlaceHolder.m in Sources */,
 				DB6482EB21884C5B00CCD4EA /* UITableView+RegisterCell.m in Sources */,
