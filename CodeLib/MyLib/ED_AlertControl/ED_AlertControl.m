@@ -719,7 +719,7 @@
             btn.frame = CGRectMake(self.view.bounds.size.width/2.0 - 20, btnOriginY, 40, 40);
         }
         if (i == 2) {
-            btn.frame = CGRectMake(self.view.bounds.size.width - 60, btnOriginY, 40, 40);
+            btn.frame = CGRectMake(self.view.bounds.size.width - 85, btnOriginY, 40, 40);
         }
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, btnOriginY + 40 + 10, 70, 21)];

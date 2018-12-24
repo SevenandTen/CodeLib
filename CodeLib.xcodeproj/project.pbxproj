@@ -100,6 +100,7 @@
 		DB9430EA21C8F8BD00B6A04A /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9430E821C8F8BD00B6A04A /* ico_ok@2x.png */; };
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
+		DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +280,8 @@
 		DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthView.m; sourceTree = "<group>"; };
 		DB94C17C21C0AFC70051B2D1 /* ED_MonthItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthItemCell.h; sourceTree = "<group>"; };
 		DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthItemCell.m; sourceTree = "<group>"; };
+		DBA8831821D071EE00E0A29F /* ED_HighPrecisionControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_HighPrecisionControl.h; sourceTree = "<group>"; };
+		DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_HighPrecisionControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +419,8 @@
 				DB6482BD21884C5B00CCD4EA /* DownloadImage */,
 				DB6482C621884C5B00CCD4EA /* SearchRecordView */,
 				DB6482C921884C5B00CCD4EA /* LocationManager */,
+				DBA8831821D071EE00E0A29F /* ED_HighPrecisionControl.h */,
+				DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */,
 			);
 			path = MyLib;
 			sourceTree = "<group>";
@@ -548,8 +553,8 @@
 			isa = PBXGroup;
 			children = (
 				DB6482B021884C5B00CCD4EA /* UIViewController+Instance.h */,
-				DB6482B121884C5B00CCD4EA /* UIViewController+Animation.h */,
 				DB6482B221884C5B00CCD4EA /* UIViewController+Instance.m */,
+				DB6482B121884C5B00CCD4EA /* UIViewController+Animation.h */,
 				DB6482B321884C5B00CCD4EA /* UIViewController+Animation.m */,
 			);
 			path = UIViewController;
@@ -982,6 +987,7 @@
 				DB8DC62421B516D100A2B5C4 /* Test1ViewController.m in Sources */,
 				DB71E91E21B1285B0040C7E6 /* BViewController.m in Sources */,
 				DB6482F421884C5B00CCD4EA /* NSDictionary+RemoveNull.m in Sources */,
+				DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
 				DB6482E221884C5B00CCD4EA /* UILabel+CalculateShowSize.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,

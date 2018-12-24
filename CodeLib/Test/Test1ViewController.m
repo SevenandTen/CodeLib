@@ -12,9 +12,11 @@
 #import "HttpRequest.h"
 #import "ED_MonthView.h"
 #import "ED_ToastView.h"
+#import "ED_HighPrecisionControl.h"
 
 @interface Test1ViewController ()<ED_MonthViewDelegate>
 @property (nonatomic , strong) ED_MonthView *monthView;
+
 
 
 
@@ -32,9 +34,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//      [ED_ToastView toastOnView:nil style:ED_ToastLocationBottom title:@"保存图片成功" showTime:0.5 hideAfterTime:1 showAnmation:YES hideAnmation:NO];
-    
-    [ED_ToastView toastOnView:nil style:ED_ToastLoadingShortMessage title:@"请稍后..." showTime:0.5 showAnmation:YES];
+    NSLog(@"%@",[ED_HighPrecisionControl addReslutNumber_A:@(100.000001) with_B:@"200"]);
+    NSLog(@"%@",[ED_HighPrecisionControl divideReslutString_A:@"1000" with_B:@(0)]);
 }
 
 

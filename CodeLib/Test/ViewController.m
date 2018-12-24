@@ -23,6 +23,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "ED_AnimationView.h"
 #import "BViewController.h"
+#import "UIView+IBDesignable.h"
 
 
 @interface ViewController ()<UITableViewDelegate ,UITableViewDataSource,ED_BaseRefreshViewDelegate,CBCentralManagerDelegate>
@@ -51,7 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
+
+    
    
 
 

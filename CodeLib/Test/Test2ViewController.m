@@ -17,21 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@"1",@"2",@"3"]];
+    [self dealWithArray:array];
+    NSLog(@"%@",array);
+    
     // Do any additional setup after loading the view.
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    for (UIView *obj in [UIApplication sharedApplication].keyWindow.subviews) {
-        NSLog(@"------------------ %@",obj);
-        for (UIView *view in obj.subviews) {
-            NSLog(@"+++++%@",view);
-            for (UIView *subView in view.subviews) {
-                NSLog(@"/////////////%@",subView);
-            }
-        }
-    }
-    NSLog(@"%@",self.view);
+- (void)dealWithArray:(NSMutableArray *)array {
+    array = [[NSMutableArray alloc] initWithArray:@[@"4"]];
 }
+
+
 
 @end
