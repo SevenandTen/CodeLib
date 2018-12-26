@@ -28,16 +28,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.monthView];
+    self.monthView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 100);
   
     
 
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@",[ED_HighPrecisionControl addReslutNumber_A:@(100.000001) with_B:@"200"]);
-    NSLog(@"%@",[ED_HighPrecisionControl divideReslutString_A:@"1000" with_B:@(0)]);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    NSDate *date = [formatter dateFromString:@"2018-12-31"];
+    NSLog(@"%@",date);
+    NSString *neWTime = [formatter stringFromDate:date];
+    NSLog(@"%@",neWTime);
 }
 
+
+#pragma mark - getter
+
+- (ED_MonthView *)monthView {
+    if (!_monthView) {
+        _monthView = [[ED_MonthView alloc] init];
+        [_monthView setItemWidth:100];
+        [_monthView setBeginMonth:12];
+    }
+    return _monthView;
+}
 
 
 

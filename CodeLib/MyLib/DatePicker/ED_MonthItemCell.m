@@ -71,25 +71,54 @@
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat zeroPointX1 = offSetX + contentLeft;
     CGFloat zeroPointX2 =  zeroPointX1 + width;
-    if (maxX <zeroPointX1 || originX > zeroPointX2)  {
+    if (maxX < zeroPointX1 || originX > zeroPointX2)  {
         self.label2.hidden = YES;
+        CALayer *layer = [CALayer layer];
+        layer.frame = self.label1.bounds;
+        [self.label1.layer setMask:layer];
+        layer.backgroundColor = [UIColor redColor].CGColor;
+//        [self.label1 setNeedsDisplay];
         
     }else{
         self.label2.hidden = NO;
         if (originX  >= zeroPointX1) {
             CGFloat itemWidth =  maxX -zeroPointX2 ;
-            self.label1.layer.contentsGravity = kCAGravityRight ;
-            self.label2.layer.contentsGravity = kCAGravityLeft;
+//            self.label1.layer.contentsGravity = kCAGravityRight ;
+//            self.label2.layer.contentsGravity = kCAGravityLeft;
+            CALayer *layer1 = [CALayer layer];
+            layer1.frame = CGRectMake((1 - itemWidth/width)*self.label1.bounds.size.width, 0, itemWidth/width * self.label1.bounds.size.width, self.label1.bounds.size.height);
+//            self.label1.layer.contentsRect = CGRectMake(1 - itemWidth/width, 0, itemWidth/width, 1);
+            layer1.backgroundColor = [UIColor blueColor].CGColor;
+            [self.label1.layer setMask:layer1];
+//
             
-            self.label1.layer.contentsRect = CGRectMake(1 - itemWidth/width, 0, itemWidth/width, 1);
-            self.label2.layer.contentsRect = CGRectMake(0, 0, 1- itemWidth/width, 1);
+            CALayer *layer2 = [CALayer layer];
+             layer2.backgroundColor = [UIColor redColor].CGColor;
+            layer2.frame = CGRectMake(0, 0, (1- itemWidth/width) *self.label2.bounds.size.width, self.label2.bounds.size.height);
+            
+            [self.label2.layer setMask:layer2];
+
+//            self.label2.layer.contentsRect = CGRectMake(0, 0, 1- itemWidth/width, 1);
             
         }else{
-            self.label1.layer.contentsGravity =  kCAGravityLeft;
-            self.label2.layer.contentsGravity = kCAGravityRight;
+//            self.label1.layer.contentsGravity =  kCAGravityLeft;
+//            self.label2.layer.contentsGravity = kCAGravityRight;
             CGFloat itemWidth = zeroPointX1 - originX;
-            self.label1.layer.contentsRect = CGRectMake(0, 0, itemWidth/width, 1);
-            self.label2.layer.contentsRect = CGRectMake(itemWidth/width, 0, 1- itemWidth/width, 1);
+//            self.label1.layer.contentsRect = CGRectMake(0, 0, itemWidth/width, 1);
+            CALayer *layer1 = [CALayer layer];
+            layer1.frame = CGRectMake(0, 0, itemWidth/width * self.label1.bounds.size.width, self.label1.bounds.size.height);
+       
+            layer1.backgroundColor = [UIColor redColor].CGColor;
+            [self.label1.layer setMask:layer1];
+
+            
+            CALayer *layer2 = [CALayer layer];
+            layer2.backgroundColor = [UIColor redColor].CGColor;
+            layer2.frame = CGRectMake(itemWidth/width * self.label2.bounds.size.width, 0, (1- itemWidth/width) *self.label2.bounds.size.width, self.label2.bounds.size.height);
+            
+            [self.label2.layer setMask:layer2];
+ 
+//            self.label2.layer.contentsRect = CGRectMake(itemWidth/width, 0, 1- itemWidth/width, 1);
         }
     }
 
