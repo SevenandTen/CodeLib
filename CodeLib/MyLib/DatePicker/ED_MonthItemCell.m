@@ -51,6 +51,9 @@
         NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew |NSKeyValueObservingOptionOld;
         [self.collectView addObserver:self forKeyPath:@"contentOffset" options:options context:nil];
     
+    }else{
+        [self.superview removeObserver:self forKeyPath:@"contentOffset"];
+        self.collectView = nil;
     }
     
 }

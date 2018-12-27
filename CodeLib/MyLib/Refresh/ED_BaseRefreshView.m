@@ -89,12 +89,12 @@ NSString *const ED_RefreshKeyPathAdjustedContentInset = @"adjustedContentInset";
 
 
 - (void)removeObserver {
-    [self.scrollView removeObserver:self forKeyPath:ED_RefreshKeyPathContentSize];
-    [self.scrollView removeObserver:self forKeyPath:ED_RefreshKeyPathContentOffset];
+    [self.superview removeObserver:self forKeyPath:ED_RefreshKeyPathContentSize];
+    [self.superview removeObserver:self forKeyPath:ED_RefreshKeyPathContentOffset];
     [self.pan removeObserver:self forKeyPath:ED_RefreshKeyPathPanState];
-    [self.scrollView removeObserver:self forKeyPath:ED_RefreshKeyPathContentInset];
+    [self.superview removeObserver:self forKeyPath:ED_RefreshKeyPathContentInset];
     if (@available(iOS 11.0,*)) {
-        [self.scrollView removeObserver:self forKeyPath:ED_RefreshKeyPathAdjustedContentInset];
+        [self.superview removeObserver:self forKeyPath:ED_RefreshKeyPathAdjustedContentInset];
     }
     self.pan = nil;
 }

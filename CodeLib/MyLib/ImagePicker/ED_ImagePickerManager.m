@@ -7,6 +7,8 @@
 //
 
 #import "ED_ImagePickerManager.h"
+#import <Photos/Photos.h>
+
 
 @interface ED_ImagePickerManager ()
 
@@ -21,6 +23,18 @@
         manager = [[ED_ImagePickerManager alloc] init];
     });
     return manager;
+}
+
+
+- (void)startLoadImage {
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        if (status == PHAuthorizationStatusAuthorized) {
+            
+            
+        }
+        
+    }];
+    
 }
 
 @end

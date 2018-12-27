@@ -14,6 +14,9 @@
 
 + (instancetype)shareInstance;
 
+
+- (void)startLoadImage;
+
 @end
 
 
