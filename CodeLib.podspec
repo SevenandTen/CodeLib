@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 
 
   s.source_files  =  "CodeLib/MyLib" ,"CodeLib/MyLib/**/*.{h,m}","CodeLib/MyLib/**/**/.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  # s.exclude_files = ""
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -57,20 +57,16 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "icon.png"
+  s.resource  = "CodeLib/MyLib/**/*.png","CodeLib/MyLib/**/**/*.png"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
+
 
   # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+   s.frameworks = "UIKit"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
