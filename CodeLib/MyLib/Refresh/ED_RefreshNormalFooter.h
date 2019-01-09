@@ -14,6 +14,8 @@
 
 @property (nonatomic , assign) CGFloat footerHeight;
 
+
+//是否算入额外的 inset
 @property (nonatomic , assign) BOOL isFromLast;
 
 @end

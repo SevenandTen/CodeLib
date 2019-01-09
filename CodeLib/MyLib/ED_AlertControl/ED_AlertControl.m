@@ -249,14 +249,23 @@
     CGFloat contentLabelY = self.titleString.length != 0 ? 75 : 49;
     CGFloat contentLabelWidth = contentWidth - 40;
     CGFloat contentLabelHeight = 24;
-    CGSize size = [self calculateSizeWithAttributeText:self.contentString font:[UIFont systemFontOfSize:17] width:contentLabelWidth];
-    if (size.height > 24) {
-        contentLabelHeight = size.height + 5;
-        contentHeight = contentHeight + size.height;
-         self.contentLabel.textAlignment = NSTextAlignmentLeft;
-    }
-   
     
+    NSMutableParagraphStyle * paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle1 setLineSpacing:8];
+    
+    
+    
+    CGSize size = [self calculateSizeWithAttributeText:self.contentString font:[UIFont systemFontOfSize:17] width:contentLabelWidth];
+    if (size.height > 30) {
+        contentLabelHeight = size.height + 5;
+        contentHeight = contentHeight + size.height - 20;
+        paragraphStyle1.alignment = NSTextAlignmentJustified;
+//        self.contentLabel.textAlignment = NSTextAlignmentLeft;
+    }else{
+        paragraphStyle1.alignment = NSTextAlignmentCenter;
+    }
+    NSAttributedString * contentString = [[NSAttributedString alloc] initWithString:self.contentString attributes:@{NSParagraphStyleAttributeName : paragraphStyle1}];
+   
     self.contentView.frame = CGRectMake(28, (self.view.bounds.size.height - contentHeight)/2.0, contentWidth, contentHeight);
     
     if (self.titleString.length != 0) {
@@ -269,25 +278,32 @@
     if (self.isHasImage) {
          [self.contentView addSubview:self.tipImageView];
         CGFloat width = (contentLabelWidth - size.width - 21)/2.0;
-        self.tipImageView.frame = CGRectMake(width + 20, contentLabelY + 2, 21, 21);
+        self.tipImageView.frame = CGRectMake(width + 20, contentLabelY  - 2, 21, 21);
         self.contentLabel.frame = CGRectMake(width + 45, contentLabelY, contentLabelWidth - 25 - width, contentLabelHeight);
         if (self.imageType) {
             self.tipImageView.image = [UIImage imageNamed:@"ico_tc_ok"];
         }else{
             self.tipImageView.image = [UIImage imageNamed:@"ico_tc_jg"];
         }
-        self.contentLabel.textAlignment = NSTextAlignmentLeft;
-        self.contentLabel.text = self.contentString;
+
+        
         if (width <= 1) {
             self.tipImageView.frame = CGRectMake(width + 20, contentLabelY , 21, 21);
-            self.contentLabel.text = [NSString stringWithFormat:@"       %@",self.contentString];
+            contentString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"       %@",self.contentString] attributes:@{NSParagraphStyleAttributeName : paragraphStyle1}];
+            self.contentLabel.attributedText = contentString;
             CGSize sizex = [self calculateSizeWithAttributeText:self.contentLabel.text font:[UIFont systemFontOfSize:17] width:contentLabelWidth];
             self.contentLabel.frame = CGRectMake(20, contentLabelY, contentLabelWidth , sizex.height );
+        }else{
+            paragraphStyle1.alignment = NSTextAlignmentLeft;
+            contentString = [[NSAttributedString alloc] initWithString:self.contentString attributes:@{NSParagraphStyleAttributeName : paragraphStyle1}];
+            
+            self.contentLabel.attributedText = contentString;
         }
 
+        
     }else{
         self.contentLabel.frame = CGRectMake(20, contentLabelY, contentLabelWidth, contentLabelHeight);
-        self.contentLabel.text = self.contentString;
+        self.contentLabel.attributedText = contentString;
     }
     
 }
@@ -328,14 +344,19 @@
     CAKeyframeAnimation *popAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     popAnimation.duration = 0.25;
     popAnimation.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.01f, 0.01f, 1.0f)],
-                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.1f, 1.1f, 1.0f)],
-                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.9f, 0.9f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.01f, 1.01f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.99f, 0.99f, 1.0f)],
                             [NSValue valueWithCATransform3D:CATransform3DIdentity]];
-    popAnimation.keyTimes = @[@0.0f, @0.5f, @0.75f, @1.0f];
-    popAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
-                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
-                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    popAnimation.keyTimes = @[@0.0f, @0.75f, @8.0f, @1.0f];
+    popAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
+                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
+                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [view.layer addAnimation:popAnimation forKey:nil];
+    
+    
+    
+
+
     
 }
 
@@ -354,12 +375,15 @@
 - (CGSize)calculateSizeWithAttributeText:(NSString *)text font:(UIFont *)font width:(CGFloat)width {
     if (text.length == 0) {
         return CGSizeZero;
-    }
+    } NSMutableParagraphStyle * paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle1 setLineSpacing:8];
+    NSAttributedString * contentString = [[NSAttributedString alloc] initWithString:text attributes:@{NSParagraphStyleAttributeName : paragraphStyle1}];
+    
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.numberOfLines = 0;
     label.preferredMaxLayoutWidth = width;
     label.font = font;
-    label.attributedText = [[NSAttributedString alloc] initWithString:text];;
+    label.attributedText =contentString;;
     CGSize intrinsicContentSize = [label intrinsicContentSize];
     
     return CGSizeMake(ceilf(MIN(intrinsicContentSize.width, width)) , ceilf(intrinsicContentSize.height));
@@ -440,7 +464,8 @@
         _contentLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
         _contentLabel.textAlignment = NSTextAlignmentCenter;
         _contentLabel.numberOfLines = 0;
-        _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    
     }
     return _contentLabel;
 }
@@ -760,11 +785,8 @@
 
 
 - (void)didClickShareBtn:(UIButton *)btn {
-    [UIView animateWithDuration:0.5 animations:^{
-        self.contentView.frame = CGRectMake(0, self.view.bounds.size.height , self.contentView.frame.size.width, self.contentView.frame.size.height);
-    } completion:^(BOOL finished) {
-        [self dismssWithIndex:btn.tag - 1000 string:nil isSure:YES];
-    }];
+    [self dismssWithIndex:btn.tag - 1000 string:nil isSure:YES];
+
 }
 
 - (void)viewSafeAreaInsetsDidChange {

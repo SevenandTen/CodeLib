@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */; };
 		DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */; };
+		DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23828021DC9CCB0031178A /* ED_MoneyControl.m */; };
+		DB42091121D62A9F0092058C /* XXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB42090F21D62A9F0092058C /* XXViewController.m */; };
+		DB42091221D62A9F0092058C /* XXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB42091021D62A9F0092058C /* XXViewController.xib */; };
 		DB5DC31E21C8D5BA007B2B15 /* ED_ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */; };
 		DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824C21884C0E00CCD4EA /* AppDelegate.m */; };
 		DB64825021884C0E00CCD4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824F21884C0E00CCD4EA /* ViewController.m */; };
@@ -18,17 +21,6 @@
 		DB64825B21884C0F00CCD4EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64825A21884C0F00CCD4EA /* main.m */; };
 		DB64826521884C0F00CCD4EA /* CodeLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64826421884C0F00CCD4EA /* CodeLibTests.m */; };
 		DB64827021884C0F00CCD4EA /* CodeLibUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64826F21884C0F00CCD4EA /* CodeLibUITests.m */; };
-		DB6482D121884C5B00CCD4EA /* ico_share_pyq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828021884C5B00CCD4EA /* ico_share_pyq@3x.png */; };
-		DB6482D221884C5B00CCD4EA /* ico_share_pyq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828121884C5B00CCD4EA /* ico_share_pyq@2x.png */; };
-		DB6482D321884C5B00CCD4EA /* ico_tc_jg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828321884C5B00CCD4EA /* ico_tc_jg@2x.png */; };
-		DB6482D421884C5B00CCD4EA /* ico_share_qq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828421884C5B00CCD4EA /* ico_share_qq@2x.png */; };
-		DB6482D521884C5B00CCD4EA /* ico_share_weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828521884C5B00CCD4EA /* ico_share_weixin@2x.png */; };
-		DB6482D621884C5B00CCD4EA /* ico_share_qq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828621884C5B00CCD4EA /* ico_share_qq@3x.png */; };
-		DB6482D721884C5B00CCD4EA /* ico_share_weixin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828721884C5B00CCD4EA /* ico_share_weixin@3x.png */; };
-		DB6482D821884C5B00CCD4EA /* ico_tc_jg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828821884C5B00CCD4EA /* ico_tc_jg@3x.png */; };
-		DB6482D921884C5B00CCD4EA /* ico_tc_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828921884C5B00CCD4EA /* ico_tc_ok@3x.png */; };
-		DB6482DA21884C5B00CCD4EA /* ED_AlertControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64828A21884C5B00CCD4EA /* ED_AlertControl.m */; };
-		DB6482DB21884C5B00CCD4EA /* ico_tc_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB64828B21884C5B00CCD4EA /* ico_tc_ok@2x.png */; };
 		DB6482DC21884C5B00CCD4EA /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64829221884C5B00CCD4EA /* libWeChatSDK.a */; };
 		DB6482DD21884C5B00CCD4EA /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB64829421884C5B00CCD4EA /* AlipaySDK.bundle */; };
 		DB6482DE21884C5B00CCD4EA /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64829521884C5B00CCD4EA /* AlipaySDK.framework */; };
@@ -101,6 +93,17 @@
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
 		DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */; };
+		DBAA8FA321E58BBF005E7707 /* ico_share_pyq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */; };
+		DBAA8FA421E58BBF005E7707 /* ico_share_pyq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9821E58BBF005E7707 /* ico_share_pyq@2x.png */; };
+		DBAA8FA521E58BBF005E7707 /* ico_tc_jg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9A21E58BBF005E7707 /* ico_tc_jg@2x.png */; };
+		DBAA8FA621E58BBF005E7707 /* ico_share_qq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9B21E58BBF005E7707 /* ico_share_qq@2x.png */; };
+		DBAA8FA721E58BBF005E7707 /* ico_share_weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9C21E58BBF005E7707 /* ico_share_weixin@2x.png */; };
+		DBAA8FA821E58BBF005E7707 /* ico_share_qq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9D21E58BBF005E7707 /* ico_share_qq@3x.png */; };
+		DBAA8FA921E58BBF005E7707 /* ico_share_weixin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9E21E58BBF005E7707 /* ico_share_weixin@3x.png */; };
+		DBAA8FAA21E58BBF005E7707 /* ico_tc_jg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9F21E58BBF005E7707 /* ico_tc_jg@3x.png */; };
+		DBAA8FAB21E58BBF005E7707 /* ico_tc_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8FA021E58BBF005E7707 /* ico_tc_ok@3x.png */; };
+		DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */; };
+		DBAA8FAD21E58BBF005E7707 /* ico_tc_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */; };
 		DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +129,11 @@
 		DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalFooter.m; sourceTree = "<group>"; };
 		DB1B598A21A5284C008AB295 /* ED_GradedColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_GradedColorView.h; sourceTree = "<group>"; };
 		DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_GradedColorView.m; sourceTree = "<group>"; };
+		DB23827F21DC9CCB0031178A /* ED_MoneyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_MoneyControl.h; sourceTree = "<group>"; };
+		DB23828021DC9CCB0031178A /* ED_MoneyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_MoneyControl.m; sourceTree = "<group>"; };
+		DB42090E21D62A9F0092058C /* XXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXViewController.h; sourceTree = "<group>"; };
+		DB42090F21D62A9F0092058C /* XXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXViewController.m; sourceTree = "<group>"; };
+		DB42091021D62A9F0092058C /* XXViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XXViewController.xib; sourceTree = "<group>"; };
 		DB5DC31C21C8D5BA007B2B15 /* ED_ToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ToastView.h; sourceTree = "<group>"; };
 		DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ToastView.m; sourceTree = "<group>"; };
 		DB64824821884C0E00CCD4EA /* CodeLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,18 +152,6 @@
 		DB64826B21884C0F00CCD4EA /* CodeLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB64826F21884C0F00CCD4EA /* CodeLibUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeLibUITests.m; sourceTree = "<group>"; };
 		DB64827121884C0F00CCD4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB64828021884C5B00CCD4EA /* ico_share_pyq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_pyq@3x.png"; sourceTree = "<group>"; };
-		DB64828121884C5B00CCD4EA /* ico_share_pyq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_pyq@2x.png"; sourceTree = "<group>"; };
-		DB64828221884C5B00CCD4EA /* ED_AlertControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AlertControl.h; sourceTree = "<group>"; };
-		DB64828321884C5B00CCD4EA /* ico_tc_jg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_jg@2x.png"; sourceTree = "<group>"; };
-		DB64828421884C5B00CCD4EA /* ico_share_qq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_qq@2x.png"; sourceTree = "<group>"; };
-		DB64828521884C5B00CCD4EA /* ico_share_weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_weixin@2x.png"; sourceTree = "<group>"; };
-		DB64828621884C5B00CCD4EA /* ico_share_qq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_qq@3x.png"; sourceTree = "<group>"; };
-		DB64828721884C5B00CCD4EA /* ico_share_weixin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_weixin@3x.png"; sourceTree = "<group>"; };
-		DB64828821884C5B00CCD4EA /* ico_tc_jg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_jg@3x.png"; sourceTree = "<group>"; };
-		DB64828921884C5B00CCD4EA /* ico_tc_ok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@3x.png"; sourceTree = "<group>"; };
-		DB64828A21884C5B00CCD4EA /* ED_AlertControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_AlertControl.m; sourceTree = "<group>"; };
-		DB64828B21884C5B00CCD4EA /* ico_tc_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@2x.png"; sourceTree = "<group>"; };
 		DB64828E21884C5B00CCD4EA /* ED_SharePayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_SharePayManager.h; sourceTree = "<group>"; };
 		DB64829021884C5B00CCD4EA /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		DB64829121884C5B00CCD4EA /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -283,6 +279,18 @@
 		DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthItemCell.m; sourceTree = "<group>"; };
 		DBA8831821D071EE00E0A29F /* ED_HighPrecisionControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_HighPrecisionControl.h; sourceTree = "<group>"; };
 		DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_HighPrecisionControl.m; sourceTree = "<group>"; };
+		DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_pyq@3x.png"; sourceTree = "<group>"; };
+		DBAA8F9821E58BBF005E7707 /* ico_share_pyq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_pyq@2x.png"; sourceTree = "<group>"; };
+		DBAA8F9921E58BBF005E7707 /* ED_AlertControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AlertControl.h; sourceTree = "<group>"; };
+		DBAA8F9A21E58BBF005E7707 /* ico_tc_jg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_jg@2x.png"; sourceTree = "<group>"; };
+		DBAA8F9B21E58BBF005E7707 /* ico_share_qq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_qq@2x.png"; sourceTree = "<group>"; };
+		DBAA8F9C21E58BBF005E7707 /* ico_share_weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_weixin@2x.png"; sourceTree = "<group>"; };
+		DBAA8F9D21E58BBF005E7707 /* ico_share_qq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_qq@3x.png"; sourceTree = "<group>"; };
+		DBAA8F9E21E58BBF005E7707 /* ico_share_weixin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_weixin@3x.png"; sourceTree = "<group>"; };
+		DBAA8F9F21E58BBF005E7707 /* ico_tc_jg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_jg@3x.png"; sourceTree = "<group>"; };
+		DBAA8FA021E58BBF005E7707 /* ico_tc_ok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@3x.png"; sourceTree = "<group>"; };
+		DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_AlertControl.m; sourceTree = "<group>"; };
+		DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@2x.png"; sourceTree = "<group>"; };
 		DBDCC17421D351A3001367FE /* ED_ImagePickerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerManager.h; sourceTree = "<group>"; };
 		DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ImagePickerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +344,15 @@
 				DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */,
 			);
 			path = GradedColorView;
+			sourceTree = "<group>";
+		};
+		DB23827E21DC9CCB0031178A /* MoneyControl */ = {
+			isa = PBXGroup;
+			children = (
+				DB23827F21DC9CCB0031178A /* ED_MoneyControl.h */,
+				DB23828021DC9CCB0031178A /* ED_MoneyControl.m */,
+			);
+			path = MoneyControl;
 			sourceTree = "<group>";
 		};
 		DB64823F21884C0E00CCD4EA = {
@@ -405,6 +422,8 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DBAA8F9621E58BBF005E7707 /* ED_AlertControl */,
+				DB23827E21DC9CCB0031178A /* MoneyControl */,
 				DBDCC17321D35167001367FE /* ImagePicker */,
 				DBA8831B21D082C500E0A29F /* ED_HighPrecisionControl */,
 				DB94C17821C0A6600051B2D1 /* DatePicker */,
@@ -416,7 +435,6 @@
 				DB6B36DF2191807B00970207 /* ED_TimeSelectControl */,
 				DB74F283219039CB00AEAFE7 /* Header */,
 				DB74F2822190318E00AEAFE7 /* Base */,
-				DB64827F21884C5B00CCD4EA /* ED_AlertControl */,
 				DB64828C21884C5B00CCD4EA /* ShareAndPay */,
 				DB64829721884C5B00CCD4EA /* NetWork */,
 				DB64829A21884C5B00CCD4EA /* Categeroy */,
@@ -426,25 +444,6 @@
 				DB6482C921884C5B00CCD4EA /* LocationManager */,
 			);
 			path = MyLib;
-			sourceTree = "<group>";
-		};
-		DB64827F21884C5B00CCD4EA /* ED_AlertControl */ = {
-			isa = PBXGroup;
-			children = (
-				DB64828021884C5B00CCD4EA /* ico_share_pyq@3x.png */,
-				DB64828121884C5B00CCD4EA /* ico_share_pyq@2x.png */,
-				DB64828321884C5B00CCD4EA /* ico_tc_jg@2x.png */,
-				DB64828421884C5B00CCD4EA /* ico_share_qq@2x.png */,
-				DB64828521884C5B00CCD4EA /* ico_share_weixin@2x.png */,
-				DB64828621884C5B00CCD4EA /* ico_share_qq@3x.png */,
-				DB64828721884C5B00CCD4EA /* ico_share_weixin@3x.png */,
-				DB64828821884C5B00CCD4EA /* ico_tc_jg@3x.png */,
-				DB64828921884C5B00CCD4EA /* ico_tc_ok@3x.png */,
-				DB64828B21884C5B00CCD4EA /* ico_tc_ok@2x.png */,
-				DB64828221884C5B00CCD4EA /* ED_AlertControl.h */,
-				DB64828A21884C5B00CCD4EA /* ED_AlertControl.m */,
-			);
-			path = ED_AlertControl;
 			sourceTree = "<group>";
 		};
 		DB64828C21884C5B00CCD4EA /* ShareAndPay */ = {
@@ -712,6 +711,9 @@
 				DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */,
 				DB8DC62221B516D100A2B5C4 /* Test1ViewController.h */,
 				DB8DC62321B516D100A2B5C4 /* Test1ViewController.m */,
+				DB42090E21D62A9F0092058C /* XXViewController.h */,
+				DB42090F21D62A9F0092058C /* XXViewController.m */,
+				DB42091021D62A9F0092058C /* XXViewController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -841,6 +843,25 @@
 			path = ED_HighPrecisionControl;
 			sourceTree = "<group>";
 		};
+		DBAA8F9621E58BBF005E7707 /* ED_AlertControl */ = {
+			isa = PBXGroup;
+			children = (
+				DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */,
+				DBAA8F9821E58BBF005E7707 /* ico_share_pyq@2x.png */,
+				DBAA8F9921E58BBF005E7707 /* ED_AlertControl.h */,
+				DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */,
+				DBAA8F9A21E58BBF005E7707 /* ico_tc_jg@2x.png */,
+				DBAA8F9B21E58BBF005E7707 /* ico_share_qq@2x.png */,
+				DBAA8F9C21E58BBF005E7707 /* ico_share_weixin@2x.png */,
+				DBAA8F9D21E58BBF005E7707 /* ico_share_qq@3x.png */,
+				DBAA8F9E21E58BBF005E7707 /* ico_share_weixin@3x.png */,
+				DBAA8F9F21E58BBF005E7707 /* ico_tc_jg@3x.png */,
+				DBAA8FA021E58BBF005E7707 /* ico_tc_ok@3x.png */,
+				DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */,
+			);
+			path = ED_AlertControl;
+			sourceTree = "<group>";
+		};
 		DBDCC17321D35167001367FE /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -953,26 +974,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB6482D121884C5B00CCD4EA /* ico_share_pyq@3x.png in Resources */,
-				DB6482D421884C5B00CCD4EA /* ico_share_qq@2x.png in Resources */,
+				DBAA8FA621E58BBF005E7707 /* ico_share_qq@2x.png in Resources */,
+				DBAA8FA421E58BBF005E7707 /* ico_share_pyq@2x.png in Resources */,
+				DB42091221D62A9F0092058C /* XXViewController.xib in Resources */,
+				DBAA8FA821E58BBF005E7707 /* ico_share_qq@3x.png in Resources */,
 				DB6482DD21884C5B00CCD4EA /* AlipaySDK.bundle in Resources */,
-				DB6482D821884C5B00CCD4EA /* ico_tc_jg@3x.png in Resources */,
+				DBAA8FA721E58BBF005E7707 /* ico_share_weixin@2x.png in Resources */,
 				DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */,
 				DB6B36E52191832600970207 /* ico_change@2x.png in Resources */,
+				DBAA8FA321E58BBF005E7707 /* ico_share_pyq@3x.png in Resources */,
+				DBAA8FA521E58BBF005E7707 /* ico_tc_jg@2x.png in Resources */,
 				DB9430EA21C8F8BD00B6A04A /* ico_ok@2x.png in Resources */,
-				DB6482D221884C5B00CCD4EA /* ico_share_pyq@2x.png in Resources */,
-				DB6482D621884C5B00CCD4EA /* ico_share_qq@3x.png in Resources */,
 				DB64825821884C0F00CCD4EA /* LaunchScreen.storyboard in Resources */,
-				DB6482D721884C5B00CCD4EA /* ico_share_weixin@3x.png in Resources */,
-				DB6482D521884C5B00CCD4EA /* ico_share_weixin@2x.png in Resources */,
+				DBAA8FAB21E58BBF005E7707 /* ico_tc_ok@3x.png in Resources */,
 				DB6B36E62191832600970207 /* ico_change@3x.png in Resources */,
 				DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */,
-				DB6482D921884C5B00CCD4EA /* ico_tc_ok@3x.png in Resources */,
 				DB9430E921C8F8BD00B6A04A /* ico_ok@3x.png in Resources */,
+				DBAA8FA921E58BBF005E7707 /* ico_share_weixin@3x.png in Resources */,
 				DB64825521884C0F00CCD4EA /* Assets.xcassets in Resources */,
-				DB6482D321884C5B00CCD4EA /* ico_tc_jg@2x.png in Resources */,
-				DB6482DB21884C5B00CCD4EA /* ico_tc_ok@2x.png in Resources */,
+				DBAA8FAA21E58BBF005E7707 /* ico_tc_jg@3x.png in Resources */,
 				DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */,
+				DBAA8FAD21E58BBF005E7707 /* ico_tc_ok@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1012,8 +1034,10 @@
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
 				DB6482E221884C5B00CCD4EA /* UILabel+CalculateShowSize.m in Sources */,
 				DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */,
+				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
 				DB6482ED21884C5B00CCD4EA /* ED_PhoneCodeView.m in Sources */,
+				DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */,
 				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
 				DB6482E121884C5B00CCD4EA /* UIImage+ModifyColor.m in Sources */,
@@ -1022,10 +1046,10 @@
 				DB6482E421884C5B00CCD4EA /* UIView+Instance.m in Sources */,
 				DB85ACAE21AE6DF0006DDD7D /* ED_AnimationView.m in Sources */,
 				DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */,
+				DB42091121D62A9F0092058C /* XXViewController.m in Sources */,
 				DB6482E921884C5B00CCD4EA /* UIViewController+Instance.m in Sources */,
 				DB6482DF21884C5B00CCD4EA /* ED_SharePayManager.m in Sources */,
 				DB71E92121B128670040C7E6 /* CViewController.m in Sources */,
-				DB6482DA21884C5B00CCD4EA /* ED_AlertControl.m in Sources */,
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,

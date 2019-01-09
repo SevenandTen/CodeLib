@@ -29,8 +29,15 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.monthView];
-    self.monthView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 100);
+//    [self.view addSubview:self.monthView];
+//    self.monthView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 100);
+    
+    for (int i = 0; i < 10000; i ++) {
+        for (int j = 0; j < 10000; j++) {
+            NSLog(@"%d",i);
+            break;
+        }
+    }
   
     
 

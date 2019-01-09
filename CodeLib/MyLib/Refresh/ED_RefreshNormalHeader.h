@@ -13,6 +13,8 @@
 
 @property (nonatomic , assign) CGFloat headerHeight;
 
+
+//是否从原点开始
 @property (nonatomic , assign) BOOL isFromOrigin;
 
 
