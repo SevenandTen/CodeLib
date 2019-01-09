@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/SevenandTen/CodeLib.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "CodeLib/MyLib/*.{h,m}"
+  s.source_files  =  "CodeLib/MyLib" ,"CodeLib/MyLib/**/*.{h,m}","CodeLib/MyLib/**/**/.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"

@@ -374,6 +374,7 @@
 		DB64824A21884C0E00CCD4EA /* CodeLib */ = {
 			isa = PBXGroup;
 			children = (
+				DBAA8FAE21E5D267005E7707 /* Other */,
 				DB71E91B21B1282A0040C7E6 /* Test */,
 				DB64827E21884C5B00CCD4EA /* MyLib */,
 				DB64827D21884C2800CCD4EA /* Supporting Files */,
@@ -423,14 +424,12 @@
 				DBA8831B21D082C500E0A29F /* ED_HighPrecisionControl */,
 				DB94C17821C0A6600051B2D1 /* DatePicker */,
 				DB85ACAB21AE6DD4006DDD7D /* ED_ToastAndLoading */,
-				DB85AC9521AE6B8E006DDD7D /* DBManager */,
 				DB8C75A121ABD2B8005D0546 /* NetListener */,
 				DB1B598921A5282C008AB295 /* GradedColorView */,
 				DB7008A3219556590075BFEC /* Refresh */,
 				DB6B36DF2191807B00970207 /* ED_TimeSelectControl */,
 				DB74F283219039CB00AEAFE7 /* Header */,
 				DB74F2822190318E00AEAFE7 /* Base */,
-				DB64828C21884C5B00CCD4EA /* ShareAndPay */,
 				DB64829721884C5B00CCD4EA /* NetWork */,
 				DB64829A21884C5B00CCD4EA /* Categeroy */,
 				DB6482BA21884C5B00CCD4EA /* PhoneCode */,
@@ -854,6 +853,15 @@
 			path = ED_AlertControl;
 			sourceTree = "<group>";
 		};
+		DBAA8FAE21E5D267005E7707 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DB64828C21884C5B00CCD4EA /* ShareAndPay */,
+				DB85AC9521AE6B8E006DDD7D /* DBManager */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		DBDCC17321D35167001367FE /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1241,7 +1249,7 @@
 				DEVELOPMENT_TEAM = 68USQN444E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CodeLib/MyLib/ShareAndPay/Third/AlipaySDK",
+					"$(PROJECT_DIR)/CodeLib/Other/ShareAndPay/Third/AlipaySDK",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CodeLib/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CodeLib/Supporting Files/Info.plist";
@@ -1252,7 +1260,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CodeLib/MyLib/ShareAndPay/Third/WXSDK",
+					"$(PROJECT_DIR)/CodeLib/Other/ShareAndPay/Third/WXSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqq.CodeLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1268,7 +1276,7 @@
 				DEVELOPMENT_TEAM = 68USQN444E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CodeLib/MyLib/ShareAndPay/Third/AlipaySDK",
+					"$(PROJECT_DIR)/CodeLib/Other/ShareAndPay/Third/AlipaySDK",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CodeLib/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CodeLib/Supporting Files/Info.plist";
@@ -1279,7 +1287,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CodeLib/MyLib/ShareAndPay/Third/WXSDK",
+					"$(PROJECT_DIR)/CodeLib/Other/ShareAndPay/Third/WXSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqq.CodeLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
