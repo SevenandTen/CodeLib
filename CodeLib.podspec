@@ -7,14 +7,13 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "A short description of CodeLib."
 
-  s.description  = <<-DESC
-                   DESC
+  s.description  = "My Private work code"
 
   s.homepage     = "http://EXAMPLE/CodeLib"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+ 
 
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
  
 
 
@@ -41,10 +40,10 @@ Pod::Spec.new do |s|
 
 
 
-  s.source       = { :git => "http://EXAMPLE/CodeLib.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/SevenandTen/CodeLib.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "CodeLib/MyLib/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
