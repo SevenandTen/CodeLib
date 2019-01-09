@@ -20,7 +20,7 @@
 
 
 - (void)changePlaceHolderColor:(UIColor *)color {
-    [self changePlaceHolderColor:color];
+    [self changePlaceHolder:nil color:color font:nil];
 }
 
 

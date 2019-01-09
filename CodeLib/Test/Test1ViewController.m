@@ -14,8 +14,10 @@
 #import "ED_ToastView.h"
 #import "ED_HighPrecisionControl.h"
 
-@interface Test1ViewController ()<ED_MonthViewDelegate>
+@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic , strong) ED_MonthView *monthView;
+
+@property (nonatomic , strong) UITableView *tableView;
 
 
 
@@ -28,42 +30,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+
     
-//    [self.view addSubview:self.monthView];
-//    self.monthView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 100);
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [self.view addSubview:imageView];
+    [imageView loadNetImageWithUrl:@"https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=f2db86688ccb39dbdec06156e01709a7/2f738bd4b31c87018e9450642a7f9e2f0708ff16.jpg" placeHolder:nil];
+ 
     
-    for (int i = 0; i < 10000; i ++) {
-        for (int j = 0; j < 10000; j++) {
-            NSLog(@"%d",i);
-            break;
-        }
-    }
   
     
 
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd";
-    NSDate *date = [formatter dateFromString:@"2018-12-31"];
-    NSLog(@"%@",date);
-    NSString *neWTime = [formatter stringFromDate:date];
-    NSLog(@"%@",neWTime);
-}
+
 
 
 #pragma mark - getter
 
-- (ED_MonthView *)monthView {
-    if (!_monthView) {
-        _monthView = [[ED_MonthView alloc] init];
-        [_monthView setItemWidth:100];
-        [_monthView setBeginMonth:12];
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        
     }
-    return _monthView;
+    return _tableView;
 }
-
 
 
 

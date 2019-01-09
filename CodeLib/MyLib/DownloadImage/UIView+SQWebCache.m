@@ -47,8 +47,13 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dealWithImage:image];
-        self.progress(1.0);
-        self.complete(image, nil);
+        if (self.progress) {
+             self.progress(1.0);
+        }
+        if (self.complete) {
+            self.complete(image, nil);
+        }
+        
     });
     
 }

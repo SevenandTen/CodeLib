@@ -16,17 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@"1",@"2",@"3"]];
-    [self dealWithArray:array];
-    NSLog(@"%@",array);
-    
-    // Do any additional setup after loading the view.
+
 }
 
-- (void)dealWithArray:(NSMutableArray *)array {
-    array = [[NSMutableArray alloc] initWithArray:@[@"4"]];
-}
+
 
 
 
