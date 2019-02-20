@@ -8,8 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
+@class ED_PageView;
+@protocol ED_PageViewHandleDelegate <NSObject>
 
-@protocol ED_PageViewDelegate <NSObject>
+
+@required
+
+// 零界点
+- (CGFloat)zeroPointWithPageView:(ED_PageView *)pageView;
+
+//---------------------------------------------------------------------
+- (UITableViewCell *)pageView:(ED_PageView *)pageView cellForRowAtIndexPath:(NSIndexPath *)indexPath viewTag:(NSInteger)tag;
+
+
+- (NSInteger)pageView:(ED_PageView *)pageView numOfSectionWithViewTag:(NSInteger)tag;
+
+
+- (NSInteger)pageView:(ED_PageView *)pageView numOfRowInSection:(NSInteger)section viewTag:(NSInteger)tag;
+
+- (void)pageView:(ED_PageView *)pageView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewTag:(NSInteger)tag ;
+
+//----------------------------------------------------------------------
+
+- (NSArray<NSString *> *)titleArrayWithPageView:(ED_PageView *)pageView;
+
 
 
 
@@ -19,8 +41,39 @@
 @interface ED_PageView : UIView
 
 
-@property (nonatomic , weak) id<ED_PageViewDelegate>delegate;
+@property (nonatomic , weak) id<ED_PageViewHandleDelegate>delegate;
+
+
+- (instancetype)initWithDelegate:(id<ED_PageViewHandleDelegate>)delegate;
+
+
+@property (nonatomic , assign) CGFloat titlHight;
+
+
+- (void)reloadAll;
+
+- (void)reloadWithTag:(NSInteger)tag;
+
+
+- (UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier viewTag:(NSInteger)tag;
+
 
 @end
+
+
+
+
+
+
+
+@interface ED_PageTitleCell : UICollectionViewCell
+
+- (void)refreshCellWithTitle:(NSString *)title isSelect:(BOOL)isSelect;
+
+
+
+
+@end
+
 
 

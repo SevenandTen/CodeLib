@@ -20,20 +20,11 @@
 #import "OneModel.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "NSDate+FormatDate.h"
-@interface Test1ViewController ()<UIWebViewDelegate>
-@property (nonatomic , strong) ED_MonthView *monthView;
+#import "ED_PageView.h"
+#import "ED_ToastView.h"
+@interface Test1ViewController ()<ED_PageViewHandleDelegate>
 
-@property (nonatomic , strong) UITableView *tableView;
-
-@property (nonatomic , strong) UIWebView *webView;
-
-@property (nonatomic , strong) JSContext *context;
-
-
-
-
-
-
+@property (nonatomic , strong) ED_PageView *pageView;
 
 
 
@@ -43,22 +34,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
-    
-//    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    self.view.backgroundColor = [UIColor whiteColor];
+//    [self.navigationController setNavigationBarHidden:YES];
 //
-//    [self.view addSubview:self.webView];
-//    self.webView.delegate = self;
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.21.12.73:9090/patient/#/HandRegistration?code=SZDJ&unitId=36"]];
-//
-//    [self.webView loadRequest:request];
-    
-    
-    NSDate *date = [NSDate date];
-    
-    NSLog(@"%@",[[date getMonthBeginDate] getStringDateWithTimeForm:@"YY-MM-dd HH:mm:ss"]);
-    
-     NSLog(@"%@",[[date getMonthEndDate] getStringDateWithTimeForm:@"YY-MM-dd HH:mm:ss"]);
+//    [self.view addSubview:self.pageView];
+//    self.pageView.frame = self.view.bounds;
+
   
 
   
@@ -67,32 +48,54 @@
 }
 
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"%@",request.URL);
-    
-    return YES;
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [ED_ToastView toastOnView:nil style:ED_ToastLoadingShortMessage title:@"我不知道\n诶奇偶" showTime:1.0 hideAfterTime:1.0 showAnmation:YES hideAnmation:YES];
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    NSLog(@"start ");
+// 零界点
+- (CGFloat)zeroPointWithPageView:(ED_PageView *)pageView {
+    return 100;
+}
+
+//---------------------------------------------------------------------
+- (UITableViewCell *)pageView:(ED_PageView *)pageView cellForRowAtIndexPath:(NSIndexPath *)indexPath viewTag:(NSInteger)tag {
+   UITableViewCell *cell = [pageView dequeueReusableCellWithIdentifier:@"cell" viewTag:tag];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%d + %d",tag ,indexPath.row];
+    return cell;
 }
 
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    __weak typeof(self)weakSelf = self;
-    self.context = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    self.context.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
-        context.exception = exceptionValue;
-        NSLog(@"异常信息：%@", exceptionValue);
-    };
+- (NSInteger)pageView:(ED_PageView *)pageView numOfSectionWithViewTag:(NSInteger)tag {
+    return 1;
+}
+
+
+- (NSInteger)pageView:(ED_PageView *)pageView numOfRowInSection:(NSInteger)section viewTag:(NSInteger)tag {
+    return 100 ;
+}
+
+- (void)pageView:(ED_PageView *)pageView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewTag:(NSInteger)tag  {
     
-    self.context[@"isApp"] = ^ {
-        NSLog(@"isApp");
-    };
-    self.context[@"userInvalid"] = ^ {
-        NSLog(@"userInvalid");
-    };
-    
+}
+
+//----------------------------------------------------------------------
+
+- (NSArray<NSString *> *)titleArrayWithPageView:(ED_PageView *)pageView {
+    return @[@"我不知道",@"我不知道",@"我不知道"];
+}
+
+
+
+
+- (ED_PageView *)pageView {
+    if (!_pageView) {
+        _pageView = [[ED_PageView alloc] init];
+        _pageView.delegate = self;
+    }
+    return _pageView;
 }
 
 
