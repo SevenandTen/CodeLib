@@ -13,11 +13,25 @@
 #import "ED_MonthView.h"
 #import "ED_ToastView.h"
 #import "ED_HighPrecisionControl.h"
-
-@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import <objc/runtime.h>
+#import "AppDelegate.h"
+#import "ED_TransitionManager.h"
+#import "ViewController.h"
+#import "OneModel.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "NSDate+FormatDate.h"
+@interface Test1ViewController ()<UIWebViewDelegate>
 @property (nonatomic , strong) ED_MonthView *monthView;
 
 @property (nonatomic , strong) UITableView *tableView;
+
+@property (nonatomic , strong) UIWebView *webView;
+
+@property (nonatomic , strong) JSContext *context;
+
+
+
+
 
 
 
@@ -29,36 +43,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+//    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+//
+//    [self.view addSubview:self.webView];
+//    self.webView.delegate = self;
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.21.12.73:9090/patient/#/HandRegistration?code=SZDJ&unitId=36"]];
+//
+//    [self.webView loadRequest:request];
+    
+    
+    NSDate *date = [NSDate date];
+    
+    NSLog(@"%@",[[date getMonthBeginDate] getStringDateWithTimeForm:@"YY-MM-dd HH:mm:ss"]);
+    
+     NSLog(@"%@",[[date getMonthEndDate] getStringDateWithTimeForm:@"YY-MM-dd HH:mm:ss"]);
+  
 
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [self.view addSubview:imageView];
-    [imageView loadNetImageWithUrl:@"https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=f2db86688ccb39dbdec06156e01709a7/2f738bd4b31c87018e9450642a7f9e2f0708ff16.jpg" placeHolder:nil];
- 
-    
   
     
 
 }
 
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"%@",request.URL);
+    
+    return YES;
+}
 
-
-#pragma mark - getter
-
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        
-    }
-    return _tableView;
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    NSLog(@"start ");
 }
 
 
-
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    __weak typeof(self)weakSelf = self;
+    self.context = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    self.context.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
+        context.exception = exceptionValue;
+        NSLog(@"异常信息：%@", exceptionValue);
+    };
+    
+    self.context[@"isApp"] = ^ {
+        NSLog(@"isApp");
+    };
+    self.context[@"userInvalid"] = ^ {
+        NSLog(@"userInvalid");
+    };
+    
+}
 
 
 @end

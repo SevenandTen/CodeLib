@@ -52,33 +52,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor redColor];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    btn.backgroundColor = [UIColor blueColor];
+    
+    [btn addTarget:self action:@selector(didClick) forControlEvents:UIControlEventTouchUpInside];
 
-    
-   
-
-
-   
-    
-    
-    
+    [self.view addSubview:btn];
     
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    for (UIView *obj in [UIApplication sharedApplication].keyWindow.subviews) {
-        NSLog(@"------------------ %@",obj);
-        for (UIView *view in obj.subviews) {
-            NSLog(@"+++++%@",view);
-        }
-    }
+- (void)didClick {
+    NSLog(@"............");
+//    [self dismissViewControllerAnimated:YES completion:nil];
     
-    NSLog(@"///////////////////////////////////////////////////");
-    BViewController *vc = [[BViewController alloc] init];
-    [self presentViewController:vc animated:YES completion:nil];
-    
-    
+    BViewController *bv = [[BViewController alloc] init];
+//    [self presentViewController:bv animated:YES completion:nil];
+//    [self.navigationController pushViewController:bv animated:YES];
+    [bv viewDidLoad];
+    [self.navigationController pushViewController:bv animated:YES];
 }
+
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    NSLog(@".....");
+////    BViewController *bv = [[BViewController alloc] init];
+////    [self presentViewController:bv animated:YES completion:nil];
+//}
 
 
 

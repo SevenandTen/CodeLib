@@ -58,7 +58,6 @@
         
         if (self.isShowBaseBackBtn) {
             self.myNavigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"normal_back_btn"] style:UIBarButtonItemStyleDone target:self action:@selector(didClickBaseBack)];
-        
         }
         
     }

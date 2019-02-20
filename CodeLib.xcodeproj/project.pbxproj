@@ -11,6 +11,7 @@
 		DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */; };
 		DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23828021DC9CCB0031178A /* ED_MoneyControl.m */; };
 		DB5DC31E21C8D5BA007B2B15 /* ED_ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */; };
+		DB5EB05421F16F290096AE09 /* OneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EB05321F16F290096AE09 /* OneModel.m */; };
 		DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824C21884C0E00CCD4EA /* AppDelegate.m */; };
 		DB64825021884C0E00CCD4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64824F21884C0E00CCD4EA /* ViewController.m */; };
 		DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB64825121884C0E00CCD4EA /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		DB64831421884D8E00CCD4EA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64831321884D8E00CCD4EA /* OpenGLES.framework */; };
 		DB64831D21B610F30064D94B /* UIView+SQWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64831C21B610F30064D94B /* UIView+SQWebCache.m */; };
 		DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64831F21B615970064D94B /* UIButton+SQWebCache.m */; };
+		DB659BE0221551A7004244ED /* ED_URLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = DB659BDF221551A7004244ED /* ED_URLProtocol.m */; };
 		DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */; };
 		DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB695D2C21896E26001B3515 /* ED_BasicViewController.m */; };
 		DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */; };
@@ -69,10 +71,14 @@
 		DB6B36E2219180A100970207 /* ED_TimeSelectControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B36E1219180A100970207 /* ED_TimeSelectControl.m */; };
 		DB6B36E52191832600970207 /* ico_change@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E32191832500970207 /* ico_change@2x.png */; };
 		DB6B36E62191832600970207 /* ico_change@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36E42191832500970207 /* ico_change@3x.png */; };
+		DB6D170221ED73820048C4CD /* ED_PrecentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D170121ED73820048C4CD /* ED_PrecentTransition.m */; };
 		DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */; };
 		DB71E91E21B1285B0040C7E6 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71E91D21B1285B0040C7E6 /* BViewController.m */; };
 		DB71E92121B128670040C7E6 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71E92021B128670040C7E6 /* CViewController.m */; };
 		DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */; };
+		DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB77B84D221BAB3A0030A6B4 /* ED_PageView.m */; };
+		DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855D921EC866300C0421F /* ED_TransitionManager.m */; };
+		DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */; };
 		DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */; };
 		DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */; };
 		DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */; };
@@ -90,6 +96,7 @@
 		DB9430EA21C8F8BD00B6A04A /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9430E821C8F8BD00B6A04A /* ico_ok@2x.png */; };
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
+		DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA0F60321F83BD9002D6422 /* ED_SignView.m */; };
 		DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */; };
 		DBAA8FA321E58BBF005E7707 /* ico_share_pyq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */; };
 		DBAA8FA421E58BBF005E7707 /* ico_share_pyq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9821E58BBF005E7707 /* ico_share_pyq@2x.png */; };
@@ -131,6 +138,8 @@
 		DB23828021DC9CCB0031178A /* ED_MoneyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_MoneyControl.m; sourceTree = "<group>"; };
 		DB5DC31C21C8D5BA007B2B15 /* ED_ToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ToastView.h; sourceTree = "<group>"; };
 		DB5DC31D21C8D5BA007B2B15 /* ED_ToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ToastView.m; sourceTree = "<group>"; };
+		DB5EB05221F16F290096AE09 /* OneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneModel.h; sourceTree = "<group>"; };
+		DB5EB05321F16F290096AE09 /* OneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneModel.m; sourceTree = "<group>"; };
 		DB64824821884C0E00CCD4EA /* CodeLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB64824B21884C0E00CCD4EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB64824C21884C0E00CCD4EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,6 +226,8 @@
 		DB64831C21B610F30064D94B /* UIView+SQWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQWebCache.m"; sourceTree = "<group>"; };
 		DB64831E21B615970064D94B /* UIButton+SQWebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SQWebCache.h"; sourceTree = "<group>"; };
 		DB64831F21B615970064D94B /* UIButton+SQWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SQWebCache.m"; sourceTree = "<group>"; };
+		DB659BDE221551A7004244ED /* ED_URLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_URLProtocol.h; sourceTree = "<group>"; };
+		DB659BDF221551A7004244ED /* ED_URLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_URLProtocol.m; sourceTree = "<group>"; };
 		DB67782221A3B5B200B0ED68 /* ED_RefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RefreshNormalHeader.h; sourceTree = "<group>"; };
 		DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalHeader.m; sourceTree = "<group>"; };
 		DB67782521A400CF00B0ED68 /* ED_Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Define.h; sourceTree = "<group>"; };
@@ -229,6 +240,8 @@
 		DB6B36E1219180A100970207 /* ED_TimeSelectControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TimeSelectControl.m; sourceTree = "<group>"; };
 		DB6B36E32191832500970207 /* ico_change@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_change@2x.png"; sourceTree = "<group>"; };
 		DB6B36E42191832500970207 /* ico_change@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_change@3x.png"; sourceTree = "<group>"; };
+		DB6D170021ED73820048C4CD /* ED_PrecentTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PrecentTransition.h; sourceTree = "<group>"; };
+		DB6D170121ED73820048C4CD /* ED_PrecentTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PrecentTransition.m; sourceTree = "<group>"; };
 		DB7008A4219556BC0075BFEC /* ED_BaseRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BaseRefreshView.h; sourceTree = "<group>"; };
 		DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BaseRefreshView.m; sourceTree = "<group>"; };
 		DB71E91C21B1285B0040C7E6 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
@@ -239,6 +252,12 @@
 		DB74F28521903A3C00AEAFE7 /* ED_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Frame.h; sourceTree = "<group>"; };
 		DB74F28721903F5500AEAFE7 /* ED_BasicTabelViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BasicTabelViewCell.h; sourceTree = "<group>"; };
 		DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BasicTabelViewCell.m; sourceTree = "<group>"; };
+		DB77B84C221BAB3A0030A6B4 /* ED_PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PageView.h; sourceTree = "<group>"; };
+		DB77B84D221BAB3A0030A6B4 /* ED_PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PageView.m; sourceTree = "<group>"; };
+		DB7855D821EC866300C0421F /* ED_TransitionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_TransitionManager.h; sourceTree = "<group>"; };
+		DB7855D921EC866300C0421F /* ED_TransitionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TransitionManager.m; sourceTree = "<group>"; };
+		DB7855DB21EC913000C0421F /* ED_TransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_TransitionAnimation.h; sourceTree = "<group>"; };
+		DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TransitionAnimation.m; sourceTree = "<group>"; };
 		DB85AC9621AE6B8E006DDD7D /* ED_DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_DBManager.h; sourceTree = "<group>"; };
 		DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_DBManager.m; sourceTree = "<group>"; };
 		DB85AC9B21AE6BBE006DDD7D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -272,6 +291,8 @@
 		DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthView.m; sourceTree = "<group>"; };
 		DB94C17C21C0AFC70051B2D1 /* ED_MonthItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthItemCell.h; sourceTree = "<group>"; };
 		DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthItemCell.m; sourceTree = "<group>"; };
+		DBA0F60221F83BD9002D6422 /* ED_SignView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SignView.h; sourceTree = "<group>"; };
+		DBA0F60321F83BD9002D6422 /* ED_SignView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SignView.m; sourceTree = "<group>"; };
 		DBA8831821D071EE00E0A29F /* ED_HighPrecisionControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_HighPrecisionControl.h; sourceTree = "<group>"; };
 		DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_HighPrecisionControl.m; sourceTree = "<group>"; };
 		DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_share_pyq@3x.png"; sourceTree = "<group>"; };
@@ -350,6 +371,15 @@
 			path = MoneyControl;
 			sourceTree = "<group>";
 		};
+		DB5EB05121F16F140096AE09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB5EB05221F16F290096AE09 /* OneModel.h */,
+				DB5EB05321F16F290096AE09 /* OneModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DB64823F21884C0E00CCD4EA = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +448,10 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB77B84B221BAB270030A6B4 /* ED_PageView */,
+				DB659BDD2215516B004244ED /* URLProtocol */,
+				DBA0F5FE21F83B94002D6422 /* SignView */,
+				DB7855D421EC839900C0421F /* ED_Transition */,
 				DBAA8F9621E58BBF005E7707 /* ED_AlertControl */,
 				DB23827E21DC9CCB0031178A /* MoneyControl */,
 				DBDCC17321D35167001367FE /* ImagePicker */,
@@ -664,6 +698,15 @@
 			path = MyBaseViewController;
 			sourceTree = "<group>";
 		};
+		DB659BDD2215516B004244ED /* URLProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				DB659BDE221551A7004244ED /* ED_URLProtocol.h */,
+				DB659BDF221551A7004244ED /* ED_URLProtocol.m */,
+			);
+			path = URLProtocol;
+			sourceTree = "<group>";
+		};
 		DB6B36DF2191807B00970207 /* ED_TimeSelectControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +734,7 @@
 		DB71E91B21B1282A0040C7E6 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				DB5EB05121F16F140096AE09 /* Model */,
 				DB64824E21884C0E00CCD4EA /* ViewController.h */,
 				DB64824F21884C0E00CCD4EA /* ViewController.m */,
 				DB71E91C21B1285B0040C7E6 /* BViewController.h */,
@@ -736,6 +780,28 @@
 				DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */,
 			);
 			path = MyBaseTableViewCell;
+			sourceTree = "<group>";
+		};
+		DB77B84B221BAB270030A6B4 /* ED_PageView */ = {
+			isa = PBXGroup;
+			children = (
+				DB77B84C221BAB3A0030A6B4 /* ED_PageView.h */,
+				DB77B84D221BAB3A0030A6B4 /* ED_PageView.m */,
+			);
+			path = ED_PageView;
+			sourceTree = "<group>";
+		};
+		DB7855D421EC839900C0421F /* ED_Transition */ = {
+			isa = PBXGroup;
+			children = (
+				DB7855D821EC866300C0421F /* ED_TransitionManager.h */,
+				DB7855D921EC866300C0421F /* ED_TransitionManager.m */,
+				DB7855DB21EC913000C0421F /* ED_TransitionAnimation.h */,
+				DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */,
+				DB6D170021ED73820048C4CD /* ED_PrecentTransition.h */,
+				DB6D170121ED73820048C4CD /* ED_PrecentTransition.m */,
+			);
+			path = ED_Transition;
 			sourceTree = "<group>";
 		};
 		DB85AC9521AE6B8E006DDD7D /* DBManager */ = {
@@ -823,6 +889,15 @@
 				DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		DBA0F5FE21F83B94002D6422 /* SignView */ = {
+			isa = PBXGroup;
+			children = (
+				DBA0F60221F83BD9002D6422 /* ED_SignView.h */,
+				DBA0F60321F83BD9002D6422 /* ED_SignView.m */,
+			);
+			path = SignView;
 			sourceTree = "<group>";
 		};
 		DBA8831B21D082C500E0A29F /* ED_HighPrecisionControl */ = {
@@ -1023,6 +1098,7 @@
 				DB8DC62121B5158800A2B5C4 /* TestTabBarController.m in Sources */,
 				DB8DC62A21B516EF00A2B5C4 /* Test3ViewController.m in Sources */,
 				DB64825021884C0E00CCD4EA /* ViewController.m in Sources */,
+				DB6D170221ED73820048C4CD /* ED_PrecentTransition.m in Sources */,
 				DB6482F121884C5B00CCD4EA /* UIImageView+SQWebCache.m in Sources */,
 				DB6482F021884C5B00CCD4EA /* NetFileRequest.m in Sources */,
 				DB6482EF21884C5B00CCD4EA /* NetImageWebCache.m in Sources */,
@@ -1039,9 +1115,11 @@
 				DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */,
 				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
+				DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */,
 				DB6482E121884C5B00CCD4EA /* UIImage+ModifyColor.m in Sources */,
 				DB6482E021884C5B00CCD4EA /* HttpRequest.m in Sources */,
 				DB6482F521884C5B00CCD4EA /* ED_BasicModel.m in Sources */,
+				DB5EB05421F16F290096AE09 /* OneModel.m in Sources */,
 				DB6482E421884C5B00CCD4EA /* UIView+Instance.m in Sources */,
 				DB85ACAE21AE6DF0006DDD7D /* ED_AnimationView.m in Sources */,
 				DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */,
@@ -1052,10 +1130,13 @@
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
 				DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */,
+				DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */,
 				DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
+				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
+				DB659BE0221551A7004244ED /* ED_URLProtocol.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
 				DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
@@ -1073,6 +1154,7 @@
 				DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */,
 				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
 				DB6482EA21884C5B00CCD4EA /* UIViewController+Animation.m in Sources */,
+				DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */,
 				DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */,
 				DB6B36E2219180A100970207 /* ED_TimeSelectControl.m in Sources */,
 			);

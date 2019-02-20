@@ -8,8 +8,11 @@
 
 #import "BViewController.h"
 #import "CViewController.h"
+#import "ED_TransitionManager.h"
 
 @interface BViewController ()
+@property (nonatomic , strong) ED_TransitionManager *manager;
+
 
 @end
 
@@ -17,21 +20,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor purpleColor];
+    self.manager = [[ED_TransitionManager alloc] init];
+    self.manager.toAnmation = [[ED_PrecentTransition alloc] initWithViewController:self];
+//    self.manager.outAnmaiton =  [[ED_TransitionAnimation alloc] init];
+    self.manager.inAnimation = [[ED_TransitionAnimation alloc] init];
+//    self.manager.outAnmaiton.duration =
+    CViewController *vc = [[CViewController alloc] init];
+    __weak typeof(self)weakSelf = self;
+    self.navigationController.delegate = self.manager;
+    self.manager.toAnmation.actionBlock = ^{
+        [weakSelf.navigationController pushViewController:vc animated:YES ];
+    };
+//       vc.transitioningDelegate = self.manager;
+    self.navigationController.delegate = self.manager;
     // Do any additional setup after loading the view.
+   
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    for (UIView *obj in [UIApplication sharedApplication].keyWindow.subviews) {
-        NSLog(@"------------------ %@",obj);
-        for (UIView *view in obj.subviews) {
-            NSLog(@"+++++%@",view);
-        }
-    }
-     NSLog(@"///////////////////////////////////////////////////");
-    CViewController *vc = [[CViewController alloc] init];
-    [self presentViewController:vc animated:YES completion:nil];
-}
+
+
+
+
 
 
 

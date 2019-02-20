@@ -65,7 +65,7 @@
             NSString * nameStr = [NSString stringWithCString:memberName encoding:NSUTF8StringEncoding];
             [self setValue:[aDecoder decodeObjectForKey:nameStr] forKey:nameStr];
         }
-        
+        free(member);
     }
     return self;
 }
@@ -89,6 +89,7 @@
         NSString * nameStr = [NSString stringWithCString:memberName encoding:NSUTF8StringEncoding];
         [aCoder encodeObject:[self valueForKey:nameStr] forKey:nameStr];
     }
+    free(member);
 }
 
 

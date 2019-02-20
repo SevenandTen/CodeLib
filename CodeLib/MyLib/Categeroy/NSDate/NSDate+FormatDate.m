@@ -30,6 +30,43 @@
     return [date getStringDateWithTimeForm:timeForm];
 }
 
++ (NSDate *)getDateFromString:(NSString *)string timeForm:(NSString *)timeForm {
+    if (string.length == 0) {
+        return nil;
+    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = timeForm;
+    return [formatter dateFromString:string];
+}
+
+
+- (NSDate *)getMonthBeginDate {
+    NSString *dateString = [self getStringDateWithTimeForm:@"YY-MM"];
+    dateString = [dateString stringByAppendingString:@"-01 00:00:00"];
+    return [NSDate getDateFromString:dateString timeForm:@"YY-MM-dd HH:mm:ss"];
+}
+
+- (NSDate *)getMonthEndDate {
+    NSString *monthString = [self getStringDateWithTimeForm:@"MM"];
+    NSString *yearString = [self getStringDateWithTimeForm:@"YY"];
+    NSInteger month = [monthString integerValue];
+    NSInteger year = [yearString integerValue];
+    NSInteger day = 0;
+    if (month == 2 ) {
+        if ((year %4 == 0 && year % 100 != 0) || (year %400 == 0)) {
+            day = 29;
+        }else{
+            day = 28;
+        }
+    }else if (month == 4 || month == 6 || month ==9 || month == 11) {
+        day = 30;
+    }else{
+        day = 31;
+    }
+    NSString *dateString = [NSString stringWithFormat:@"%@-%@-%d 23:59:59",yearString,monthString,day];
+    return [NSDate getDateFromString:dateString timeForm:@"YY-MM-dd HH:mm:ss"];
+    
+}
 
 
 #pragma mark - Private

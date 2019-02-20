@@ -14,4 +14,7 @@
 // 改变当前涂层的颜色
 - (UIImage *)imageWithColor:(UIColor *)color;
 
+
++ (UIImage *)imageWithView:(UIView *)view;
+
 @end

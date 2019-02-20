@@ -11,6 +11,7 @@
 //
 #import "ViewController.h"
 #import "TestTabBarController.h"
+#import "ED_URLProtocol.h"
 
 //
 
@@ -22,9 +23,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [NSURLProtocol registerClass:[ED_URLProtocol class]];
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = [[ViewController alloc ] init];
     self.window.rootViewController = [[TestTabBarController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
