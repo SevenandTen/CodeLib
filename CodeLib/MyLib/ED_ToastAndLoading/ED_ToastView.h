@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
     ED_ToastLocationCenter,         // 中间没圆角
     ED_ToastLocationBottom,         // 下面没圆角
     ED_ToastLoadingShortMessage,    // 正在加载
+    ED_ToastLocationCustom,         // 用户自定义
 } ;
 
 
@@ -25,6 +26,7 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
 + (ED_ToastView *)toastOnView:(UIView *)view
                         style:(ED_ToastStyle)style
                         title:(NSString *)title
+                    locationY:(CGFloat)loactionY
                      showTime:(NSTimeInterval)showTime
                 hideAfterTime:(NSTimeInterval)hideTime
                  showAnmation:(BOOL)showAnmation
@@ -33,6 +35,7 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
 + (ED_ToastView *)toastOnView:(UIView *)view
                         style:(ED_ToastStyle)style
                         title:(NSString *)title
+                    locationY:(CGFloat)locationY
                      showTime:(NSTimeInterval)showTime
                  showAnmation:(BOOL)showAnmation;
 

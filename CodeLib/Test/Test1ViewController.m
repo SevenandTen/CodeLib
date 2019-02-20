@@ -49,7 +49,7 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [ED_ToastView toastOnView:nil style:ED_ToastLoadingShortMessage title:@"我不知道\n诶奇偶" showTime:1.0 hideAfterTime:1.0 showAnmation:YES hideAnmation:YES];
+    [ED_ToastView toastOnView:nil style:ED_ToastLoadingShortMessage title:@"我不知道\n诶奇偶" locationY:0 showTime:1.0 hideAfterTime:1.0 showAnmation:YES hideAnmation:YES];
 }
 
 // 零界点

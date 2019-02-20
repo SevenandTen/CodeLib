@@ -41,12 +41,12 @@
 
 #pragma mark —— Public
 
-+ (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title showTime:(NSTimeInterval)showTime hideAfterTime:(NSTimeInterval)hideTime showAnmation:(BOOL)showAnmation hideAnmation:(BOOL)hideAnmation {
++ (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title locationY:(CGFloat)loactionY showTime:(NSTimeInterval)showTime hideAfterTime:(NSTimeInterval)hideTime showAnmation:(BOOL)showAnmation hideAnmation:(BOOL)hideAnmation {
     ED_ToastView *toast = [[ED_ToastView alloc] init];
     if (!view) {
         view = [UIApplication sharedApplication].keyWindow;
     }
-    [toast dealWithView:view style:style title:title];
+    [toast dealWithView:view style:style title:title locationY:loactionY];
     if (showTime == 0) {
         [toast showOnView:view complete:^{
             if (hideTime == 0) {
@@ -67,12 +67,12 @@
     return toast;
 }
 
-+ (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title showTime:(NSTimeInterval)showTime showAnmation:(BOOL)showAnmation {
++ (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title  locationY:(CGFloat)locationY showTime:(NSTimeInterval)showTime showAnmation:(BOOL)showAnmation {
     ED_ToastView *toast = [[ED_ToastView alloc] init];
     if (!view) {
         view = [UIApplication sharedApplication].keyWindow;
     }
-    [toast dealWithView:view style:style title:title];
+    [toast dealWithView:view style:style title:title locationY:locationY];
     if (showTime == 0) {
         [toast showOnView:view complete:nil];
     }else{
@@ -130,7 +130,7 @@
 
 #pragma mark - Private
 
-- (void)dealWithView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title {
+- (void)dealWithView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title  locationY:(CGFloat)locationY{
     CGFloat width = view.bounds.size.width;
     if (width - 60 > 0) {
         width = width - 60;
@@ -162,6 +162,10 @@
         self.frame = CGRectMake((view.bounds.size.width - 140)/2.0, (view.bounds.size.height -140)/2.0, 140, 140);
         self.anmationView.frame = CGRectMake(45, 30, 50, 50);
         [self.anmationView updateAnimation];
+    }else if (style == ED_ToastLocationCustom) {
+        self.textLabel.hidden = NO;
+        self.frame = CGRectMake((view.bounds.size.width - (size.width + 20))/2.0, (view.bounds.size.height - 20 - size.height)/2.0, size.width + 20, size.height + 20);
+        self.textLabel.text = title;
     }
     
 }
