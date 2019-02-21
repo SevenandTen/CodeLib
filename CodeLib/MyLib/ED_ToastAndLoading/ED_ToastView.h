@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
 @interface ED_ToastView : UIView
 
 
+@property (nonatomic , copy) void(^finish)(void);
+
 
 /**
  成功勾勾的toast
@@ -31,6 +33,8 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
 + (ED_ToastView *)successToastWithTitle:(NSString *)title;
 
 
++ (ED_ToastView *)successToastWithTitle:(NSString *)title finish:(void(^)(void))finish;
+
 /**
  UI 新的toast
 
@@ -39,6 +43,8 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
  @return 可以忽略
  */
 + (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY;
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY finish:(void(^)(void))finish;
 
 
 /**
@@ -49,6 +55,8 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
  @return 可以忽略
  */
 + (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView;
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView finish:(void(^)(void))finish;
 
 
 
@@ -62,6 +70,8 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
  @return 可以忽略
  */
 + (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView space:(CGFloat)space;
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView space:(CGFloat)space finish:(void(^)(void))finish;
 
 
 

@@ -24,6 +24,9 @@
 
 @property (nonatomic , assign) ED_ToastStyle style;
 
+
+
+
 @end
 
 @implementation ED_ToastView
@@ -100,6 +103,10 @@
 
 - (void)hideNow {
     [self removeFromSuperview];
+    if (self.finish) {
+        self.finish();
+    }
+    
 }
 
 - (void)showOnView:(UIView *)view complete:(void (^)(void))complete {
@@ -245,42 +252,50 @@
 
 #pragma mark - Public
 
++ (ED_ToastView *)successToastWithTitle:(NSString *)title finish:(void (^)(void))finish {
+   ED_ToastView *toast = [ED_ToastView toastOnView:nil style:ED_ToastSuccessShortMessage title:title locationY:0 showTime:1.0 hideAfterTime:0.3 showAnmation:YES hideAnmation:NO];
+    toast.finish = finish;
+    return toast;
+}
+
 + (ED_ToastView *)successToastWithTitle:(NSString *)title {
-    return [ED_ToastView toastOnView:nil style:ED_ToastSuccessShortMessage title:title locationY:0 showTime:1.0 hideAfterTime:0 showAnmation:YES hideAnmation:NO];
+    return [ED_ToastView successToastWithTitle:title finish:nil];
 }
 
 
-+ (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY {
-    return [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:title locationY:locationY showTime:1.0 hideAfterTime:0 showAnmation:YES hideAnmation:NO];
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY finish:(void (^)(void))finish {
+    ED_ToastView *toast =  [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:title locationY:locationY showTime:1.0 hideAfterTime:0.3 showAnmation:YES hideAnmation:NO];
+    toast.finish = finish;
+    return toast;
+}
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY  {
+    return [ED_ToastView defaultToastWithTitle:title locationY:locationY finish:nil];
 }
 
 
-+ (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView space:(CGFloat)space {
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView space:(CGFloat)space  finish:(void (^)(void))finish{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     CGRect rect = [window convertRect:referenceView.bounds fromView:referenceView];
     CGFloat locationY = CGRectGetMaxY(rect) + space;
     
-    return [ED_ToastView defaultToastWithTitle:title locationY:locationY];
+    return [ED_ToastView defaultToastWithTitle:title locationY:locationY finish:finish];
 }
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView space:(CGFloat)space {
+    return [ED_ToastView defaultToastWithTitle:title referenceView:referenceView space:space finish:nil];
+}
+
+
++  (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView finish:(void (^)(void))finish {
+    return  [ED_ToastView defaultToastWithTitle:title referenceView:referenceView space:25 finish:finish];
+}
+
+
 
 +  (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView {
-    return  [ED_ToastView defaultToastWithTitle:title referenceView:referenceView space:25];
+    return [ED_ToastView defaultToastWithTitle:title referenceView:referenceView finish:nil];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
