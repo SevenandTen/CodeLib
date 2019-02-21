@@ -40,6 +40,11 @@
 //    [self.view addSubview:self.pageView];
 //    self.pageView.frame = self.view.bounds;
 
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget:self action:@selector(didClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn];
   
 
   
@@ -47,9 +52,13 @@
 
 }
 
+- (void)didClick {
+    [ED_ToastView defaultToastWithTitle:@"我不知道" referenceView:self.view.subviews.firstObject];
+}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [ED_ToastView toastOnView:nil style:ED_ToastLoadingShortMessage title:@"我不知道\n诶奇偶" locationY:0 showTime:1.0 hideAfterTime:1.0 showAnmation:YES hideAnmation:YES];
+    [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:@"修改密码修改密码修改密码修改密码修改密码修改密码修改密码修改密码修改密码修改密码成功" locationY:100 showTime:1.0 hideAfterTime:1.0 showAnmation:YES hideAnmation:YES];
 }
 
 // 零界点

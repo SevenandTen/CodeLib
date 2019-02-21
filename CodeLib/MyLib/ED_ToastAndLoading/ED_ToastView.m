@@ -22,6 +22,8 @@
 
 @property (nonatomic , strong) UILabel *loadingLabel;
 
+@property (nonatomic , assign) ED_ToastStyle style;
+
 @end
 
 @implementation ED_ToastView
@@ -133,8 +135,9 @@
 - (void)dealWithView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title  locationY:(CGFloat)locationY{
     CGFloat width = view.bounds.size.width;
     if (width - 60 > 0) {
-        width = width - 60;
+        width = width - 32;
     }
+    self.style = style;
     CGSize size = [ED_ToastView calculateSizeWithAttributeText:title font:[UIFont systemFontOfSize:15] width:(width - 20)];
     if (style == ED_ToastSuccessShortMessage) {
         self.logoImageView.hidden = NO;
@@ -163,9 +166,23 @@
         self.anmationView.frame = CGRectMake(45, 30, 50, 50);
         [self.anmationView updateAnimation];
     }else if (style == ED_ToastLocationCustom) {
+        size = [ED_ToastView calculateSizeWithAttributeText:title font:[UIFont systemFontOfSize:15] width:(width - 40)];
+        
         self.textLabel.hidden = NO;
-        self.frame = CGRectMake((view.bounds.size.width - (size.width + 20))/2.0, (view.bounds.size.height - 20 - size.height)/2.0, size.width + 20, size.height + 20);
+        CGFloat height = size.height + 20;
+        if (height < 40) { // 1行
+            height = 40;
+            self.frame = CGRectMake((view.bounds.size.width - (size.width + 40))/2.0, locationY, size.width + 40, height);
+        }
+        if (height > 40) {
+            height = 60;
+            size = [ED_ToastView calculateSizeWithAttributeText:title font:[UIFont systemFontOfSize:15] width:(width - 60)];
+            self.frame = CGRectMake((view.bounds.size.width - (size.width + 60))/2.0, locationY, size.width + 60, height);
+        }
+      
         self.textLabel.text = title;
+        self.layer.cornerRadius = height/2.0;
+        self.layer.masksToBounds = YES;
     }
     
 }
@@ -211,7 +228,62 @@
     self.logoImageView.frame = CGRectMake((self.bounds.size.width - 43)/2.0, 40, 43, 30);
     self.titleLabel.frame = CGRectMake(0, self.bounds.size.height - 51, self.bounds.size.width, 21);
     self.textLabel.frame = CGRectMake(10, 10, self.bounds.size.width - 20, self.bounds.size.height - 20);
+  
+    if (self.style == ED_ToastLocationCustom) {
+       CGSize size = [ED_ToastView calculateSizeWithAttributeText:self.textLabel.text font:[UIFont systemFontOfSize:15] width:(self.bounds.size.width - 40)];
+        if (size.height <= 40) {
+            self.textLabel.frame = CGRectMake(20, 10, self.bounds.size.width - 40, self.bounds.size.height - 20);
+        }else{
+            self.textLabel.frame = CGRectMake(30, 10, self.bounds.size.width - 60, self.bounds.size.height - 20);
+        }
+    }
 }
+
+
+
+
+
+#pragma mark - Public
+
++ (ED_ToastView *)successToastWithTitle:(NSString *)title {
+    return [ED_ToastView toastOnView:nil style:ED_ToastSuccessShortMessage title:title locationY:0 showTime:1.0 hideAfterTime:0 showAnmation:YES hideAnmation:NO];
+}
+
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY {
+    return [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:title locationY:locationY showTime:1.0 hideAfterTime:0 showAnmation:YES hideAnmation:NO];
+}
+
+
++ (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView space:(CGFloat)space {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    CGRect rect = [window convertRect:referenceView.bounds fromView:referenceView];
+    CGFloat locationY = CGRectGetMaxY(rect) + space;
+    
+    return [ED_ToastView defaultToastWithTitle:title locationY:locationY];
+}
+
++  (ED_ToastView *)defaultToastWithTitle:(NSString *)title referenceView:(UIView *)referenceView {
+    return  [ED_ToastView defaultToastWithTitle:title referenceView:referenceView space:25];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - Getter
 
