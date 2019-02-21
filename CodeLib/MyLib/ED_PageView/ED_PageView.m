@@ -7,6 +7,7 @@
 //
 
 #import "ED_PageView.h"
+#import "UIScrollView+PageView.h"
 
 @interface ED_PageView ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -29,6 +30,14 @@
 @property (nonatomic , assign) BOOL isFirst;
 
 
+@property (nonatomic , assign) CGPoint lastPoint;
+
+@property (nonatomic , strong) NSMutableArray *pointArray;
+
+
+
+
+
 
 
 
@@ -48,6 +57,7 @@
 - (instancetype)initWithDelegate:(id<ED_PageViewHandleDelegate>)delegate {
     if (self = [super initWithFrame:CGRectZero]) {
         self.delegate = delegate;
+        _lastPoint = CGPointZero;
         [self configureViews];
     }
     return self;
@@ -78,6 +88,7 @@
         [view removeFromSuperview];
     }
     [self.viewArray removeAllObjects];
+    [self.pointArray removeAllObjects];
     NSArray *titleArray = [self.delegate titleArrayWithPageView:self];
     self.sideslipScrollView.contentSize = CGSizeMake(titleArray.count *width, 0);
     for (int i = 0; i < titleArray.count; i ++) {
@@ -85,8 +96,9 @@
         tabelView.delegate = self;
         tabelView.dataSource = self;
         tabelView.frame = CGRectMake(i * width , 0, width, height - self.titlHight);
-        tabelView.scrollEnabled = NO;
-       
+        tabelView.someOtherView = self.mainScrollView;
+        NSValue *value = [NSValue valueWithCGPoint:CGPointZero];
+        [self.pointArray addObject:value];
         [self.sideslipScrollView addSubview:tabelView];
         [self.viewArray addObject:tabelView];
     }
@@ -153,28 +165,73 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     CGPoint point = scrollView.contentOffset;
-    CGFloat zeroHeight = [self.delegate zeroPointWithPageView:self];
-    CGFloat width = self.bounds.size.width;
-    
-    if ([scrollView isEqual:self.mainScrollView]) {
-       
-       
-        
-      
-        
-    }else if ([scrollView isEqual:self.sideslipScrollView]){
-       
-        
-    }else if ([scrollView isEqual:self.titleView]) {
-        
-    }else{
+    if ([scrollView isEqual:self.sideslipScrollView]){
 
+
+    }else if ([scrollView isEqual:self.titleView]) {
+
+    }else{
+        CGFloat num = self.sideslipScrollView.contentOffset.x /self.bounds.size.width;
+        NSInteger tag = (NSInteger)(self.sideslipScrollView.contentOffset.x /self.bounds.size.width);
+        if (num > tag + 0.5) {
+            tag = tag + 1;
+        }
+        CGFloat zeroHeight = [self.delegate zeroPointWithPageView:self];
         
+        
+        if ([scrollView isEqual:self.mainScrollView]) {
+            if (point.y > zeroHeight) {
+                [scrollView setContentOffset:CGPointMake(point.x, zeroHeight)];
+                
+                return;
+                
+            }else {
+                UIScrollView *subView = [self.viewArray objectAtIndex:tag];
+                if (self.lastPoint.y >= point.y) { //下拉
+                    if (subView.contentOffset.y != 0) {
+                        [scrollView setContentOffset:self.lastPoint];
+                        return;
+                    }
+         
+                }else{ //上啦
+                    
+                }
+                 self.lastPoint = point;
+            }
+            
+           
+            
+            
+         
+        }else{
+            
+            CGPoint lastPoint = [[self.pointArray objectAtIndex:tag] CGPointValue];
+            if (point.y < 0) {
+                [scrollView setContentOffset:CGPointMake(point.x, 0)];
+                [self.pointArray replaceObjectAtIndex:tag withObject:[NSValue valueWithCGPoint:CGPointMake(point.x, 0)]];
+                return;
+            }
+            if (lastPoint.y > point.y) { // 下拉
+           
+
+            }else { // 上拉
+                if (self.mainScrollView.contentOffset.y <zeroHeight) {
+                     [scrollView setContentOffset:lastPoint];
+                    return;
+                    
+                }
+            }
+            
+           [self.pointArray replaceObjectAtIndex:tag withObject:[NSValue valueWithCGPoint:CGPointMake(point.x, point.y)]];
+            
+        }
     }
-    
-    
+
 }
+
+
 
 
 
@@ -270,6 +327,13 @@
         _viewArray = [[NSMutableArray alloc] init];
     }
     return _viewArray;
+}
+
+- (NSMutableArray *)pointArray {
+    if (!_pointArray) {
+        _pointArray = [[NSMutableArray alloc] init];
+    }
+    return _pointArray;
 }
 
 @end

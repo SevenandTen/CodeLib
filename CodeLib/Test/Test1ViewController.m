@@ -35,16 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+
+    [self.view addSubview:self.pageView];
+    self.pageView.frame = self.view.bounds;
+
+//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    btn.backgroundColor = [UIColor redColor];
+//    [btn addTarget:self action:@selector(didClick) forControlEvents:UIControlEventTouchUpInside];
 //
-//    [self.view addSubview:self.pageView];
-//    self.pageView.frame = self.view.bounds;
-
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget:self action:@selector(didClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:btn];
+//    [self.view addSubview:btn];
   
 
   
@@ -52,14 +52,7 @@
 
 }
 
-- (void)didClick {
-    [ED_ToastView defaultToastWithTitle:@"我不知道" referenceView:self.view.subviews.firstObject];
-}
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:@"修改密码修改密码修改密码修改密码修改密码修改密码修改密码修改密码修改密码修改密码成功" locationY:100 showTime:1.0 hideAfterTime:1.0 showAnmation:YES hideAnmation:YES];
-}
 
 // 零界点
 - (CGFloat)zeroPointWithPageView:(ED_PageView *)pageView {
