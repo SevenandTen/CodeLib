@@ -95,6 +95,9 @@
 		DB8DC62421B516D100A2B5C4 /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62321B516D100A2B5C4 /* Test1ViewController.m */; };
 		DB8DC62721B516E300A2B5C4 /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */; };
 		DB8DC62A21B516EF00A2B5C4 /* Test3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62921B516EF00A2B5C4 /* Test3ViewController.m */; };
+		DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93747B221F8D7D00D5BF9E /* ED_PageContext.m */; };
+		DB93747F221FA3EA00D5BF9E /* ED_PageTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB93747E221FA3EA00D5BF9E /* ED_PageTitleCell.m */; };
+		DB937482221FA64600D5BF9E /* ED_PageContainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937481221FA64600D5BF9E /* ED_PageContainCell.m */; };
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
 		DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA0F60321F83BD9002D6422 /* ED_SignView.m */; };
@@ -290,6 +293,12 @@
 		DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
 		DB8DC62821B516EF00A2B5C4 /* Test3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test3ViewController.h; sourceTree = "<group>"; };
 		DB8DC62921B516EF00A2B5C4 /* Test3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3ViewController.m; sourceTree = "<group>"; };
+		DB93747A221F8D7D00D5BF9E /* ED_PageContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PageContext.h; sourceTree = "<group>"; };
+		DB93747B221F8D7D00D5BF9E /* ED_PageContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PageContext.m; sourceTree = "<group>"; };
+		DB93747D221FA3EA00D5BF9E /* ED_PageTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PageTitleCell.h; sourceTree = "<group>"; };
+		DB93747E221FA3EA00D5BF9E /* ED_PageTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PageTitleCell.m; sourceTree = "<group>"; };
+		DB937480221FA64600D5BF9E /* ED_PageContainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PageContainCell.h; sourceTree = "<group>"; };
+		DB937481221FA64600D5BF9E /* ED_PageContainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PageContainCell.m; sourceTree = "<group>"; };
 		DB94C17921C0A7AE0051B2D1 /* ED_MonthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthView.h; sourceTree = "<group>"; };
 		DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthView.m; sourceTree = "<group>"; };
 		DB94C17C21C0AFC70051B2D1 /* ED_MonthItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthItemCell.h; sourceTree = "<group>"; };
@@ -790,8 +799,14 @@
 			children = (
 				DB77B84C221BAB3A0030A6B4 /* ED_PageView.h */,
 				DB77B84D221BAB3A0030A6B4 /* ED_PageView.m */,
+				DB93747D221FA3EA00D5BF9E /* ED_PageTitleCell.h */,
+				DB93747E221FA3EA00D5BF9E /* ED_PageTitleCell.m */,
+				DB937480221FA64600D5BF9E /* ED_PageContainCell.h */,
+				DB937481221FA64600D5BF9E /* ED_PageContainCell.m */,
 				DB55F1A5221E92160017B642 /* UIScrollView+PageView.h */,
 				DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */,
+				DB93747A221F8D7D00D5BF9E /* ED_PageContext.h */,
+				DB93747B221F8D7D00D5BF9E /* ED_PageContext.m */,
 			);
 			path = ED_PageView;
 			sourceTree = "<group>";
@@ -1118,6 +1133,7 @@
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
 				DB6482ED21884C5B00CCD4EA /* ED_PhoneCodeView.m in Sources */,
 				DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */,
+				DB937482221FA64600D5BF9E /* ED_PageContainCell.m in Sources */,
 				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
 				DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */,
@@ -1139,6 +1155,7 @@
 				DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
+				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB659BE0221551A7004244ED /* ED_URLProtocol.m in Sources */,
@@ -1157,6 +1174,7 @@
 				DB6482EB21884C5B00CCD4EA /* UITableView+RegisterCell.m in Sources */,
 				DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */,
 				DB6482F321884C5B00CCD4EA /* ED_LocationManager.m in Sources */,
+				DB93747F221FA3EA00D5BF9E /* ED_PageTitleCell.m in Sources */,
 				DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */,
 				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
 				DB6482EA21884C5B00CCD4EA /* UIViewController+Animation.m in Sources */,

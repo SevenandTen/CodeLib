@@ -8,34 +8,28 @@
 
 #import "ED_PageView.h"
 #import "UIScrollView+PageView.h"
+#import "ED_PageContext.h"
+#import "ED_PageTitleCell.h"
+#import "ED_PageContainCell.h"
 
-@interface ED_PageView ()<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ED_PageView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 
 @property (nonatomic , strong) UIScrollView *mainScrollView;
 
-
-@property (nonatomic , strong) UIScrollView *sideslipScrollView;
-
-
 @property (nonatomic , strong) UICollectionView *titleView;
 
-
-@property (nonatomic , strong) NSMutableArray *viewArray;
-
-
-@property (nonatomic , strong) NSMutableArray *titleArray;
-
-
-@property (nonatomic , assign) BOOL isFirst;
-
-
-@property (nonatomic , assign) CGPoint lastPoint;
-
-@property (nonatomic , strong) NSMutableArray *pointArray;
+@property (nonatomic , strong) UICollectionView *containView;
 
 
 
+
+
+@property (nonatomic , strong) UIView *lineView;
+
+@property (nonatomic , strong) UIView *topLineView;
+
+@property (nonatomic , strong) UIView *bottomLineView;
 
 
 
@@ -47,76 +41,13 @@
 @implementation ED_PageView
 
 
+
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self configureViews];
-    }
-    return self;
-}
-
-- (instancetype)initWithDelegate:(id<ED_PageViewHandleDelegate>)delegate {
     if (self = [super initWithFrame:CGRectZero]) {
-        self.delegate = delegate;
-        _lastPoint = CGPointZero;
         [self configureViews];
     }
     return self;
 }
-
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    if (!self.isFirst) {
-        self.isFirst = YES;
-        [self reloadAll];
-    }
-    
-}
-
-- (void)reloadAll {
-    self.mainScrollView.frame = self.bounds;
-    CGFloat zeroHeight = [self.delegate zeroPointWithPageView:self];
-    CGFloat height = self.bounds.size.height;
-    CGFloat width = self.bounds.size.width;
-    
-    self.mainScrollView.contentSize = CGSizeMake(width, height + zeroHeight);
-    
-    self.titleView.frame = CGRectMake(0 , zeroHeight,width , self.titlHight);
-    
-    self.sideslipScrollView.frame = CGRectMake(0, zeroHeight + self.titlHight, width, height - self.titlHight);
-    for (UIView *view in self.viewArray) {
-        [view removeFromSuperview];
-    }
-    [self.viewArray removeAllObjects];
-    [self.pointArray removeAllObjects];
-    NSArray *titleArray = [self.delegate titleArrayWithPageView:self];
-    self.sideslipScrollView.contentSize = CGSizeMake(titleArray.count *width, 0);
-    for (int i = 0; i < titleArray.count; i ++) {
-        UITableView *tabelView = [[UITableView alloc] init];
-        tabelView.delegate = self;
-        tabelView.dataSource = self;
-        tabelView.frame = CGRectMake(i * width , 0, width, height - self.titlHight);
-        tabelView.someOtherView = self.mainScrollView;
-        NSValue *value = [NSValue valueWithCGPoint:CGPointZero];
-        [self.pointArray addObject:value];
-        [self.sideslipScrollView addSubview:tabelView];
-        [self.viewArray addObject:tabelView];
-    }
-   
-}
-
-
-
-- (UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier viewTag:(NSInteger)tag {
-    UITableView *tableView = [self.viewArray objectAtIndex:tag];
-    return [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-}
-
-    
- 
-   
-
 
 
 #pragma mark - ConfigureViews
@@ -124,117 +55,52 @@
 - (void)configureViews {
     //1.外部scrollView;
     [self addSubview:self.mainScrollView];
-    
-    //2.测滑scrollView;
-    
-    [self.mainScrollView addSubview:self.sideslipScrollView];
-    
-    //3.添加 titleView;
-    
+
     [self.mainScrollView addSubview:self.titleView];
     
-}
-
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger tag = [self.viewArray indexOfObject:tableView];
-    return [self.delegate pageView:self numOfRowInSection:section viewTag:tag];
+    [self.mainScrollView addSubview:self.containView];
     
+    [self.titleView addSubview:self.topLineView];
+    [self.titleView addSubview:self.bottomLineView];
+    [self.titleView addSubview:self.lineView];
+
+
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSInteger tag = [self.viewArray indexOfObject:tableView];
-    return [self.delegate pageView:self numOfSectionWithViewTag:tag];
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger tag = [self.viewArray indexOfObject:tableView];
-    return  [self.delegate pageView:self cellForRowAtIndexPath:indexPath viewTag:tag];
-}
-
-#pragma mark - UITableViewDelegate
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     NSInteger tag = [self.viewArray indexOfObject:tableView];
-    [self.delegate pageView:self didSelectRowAtIndexPath:indexPath viewTag:tag];
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    ED_PageContextManager *manager = [ED_PageContextManager shareIntance];
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    self.mainScrollView.frame = self.bounds;
+    self.mainScrollView.contentSize = CGSizeMake(width, height + [ED_PageContextManager shareIntance].zeroHeight);
+    self.titleView.frame = CGRectMake(0, manager.zeroHeight, width, manager.titleHeight);
     
-    CGPoint point = scrollView.contentOffset;
-    if ([scrollView isEqual:self.sideslipScrollView]){
+    self.containView.frame = CGRectMake(0, manager.zeroHeight + manager.titleHeight, width, height - manager.titleHeight);
+    
+    self.topLineView.frame = CGRectMake(0, 0, self.titleView.frame.size.width, 1/[UIScreen mainScreen].scale);
+    
+    self.bottomLineView.frame = CGRectMake(0, self.titleView.frame.size.height - 1 /[UIScreen mainScreen].scale, self.titleView.frame.size.width, 1/[UIScreen mainScreen].scale);
+    self.topLineView.backgroundColor = [ED_PageContextManager shareIntance].lineColor;
+    self.bottomLineView.backgroundColor = [ED_PageContextManager shareIntance].lineColor;
+  
 
-
-    }else if ([scrollView isEqual:self.titleView]) {
-
-    }else{
-        CGFloat num = self.sideslipScrollView.contentOffset.x /self.bounds.size.width;
-        NSInteger tag = (NSInteger)(self.sideslipScrollView.contentOffset.x /self.bounds.size.width);
-        if (num > tag + 0.5) {
-            tag = tag + 1;
-        }
-        CGFloat zeroHeight = [self.delegate zeroPointWithPageView:self];
-        
-        
-        if ([scrollView isEqual:self.mainScrollView]) {
-            if (point.y > zeroHeight) {
-                [scrollView setContentOffset:CGPointMake(point.x, zeroHeight)];
-                
-                return;
-                
-            }else {
-                UIScrollView *subView = [self.viewArray objectAtIndex:tag];
-                if (self.lastPoint.y >= point.y) { //下拉
-                    if (subView.contentOffset.y != 0) {
-                        [scrollView setContentOffset:self.lastPoint];
-                        return;
-                    }
-         
-                }else{ //上啦
-                    
-                }
-                 self.lastPoint = point;
-            }
-            
-           
-            
-            
-         
-        }else{
-            
-            CGPoint lastPoint = [[self.pointArray objectAtIndex:tag] CGPointValue];
-            if (point.y < 0) {
-                [scrollView setContentOffset:CGPointMake(point.x, 0)];
-                [self.pointArray replaceObjectAtIndex:tag withObject:[NSValue valueWithCGPoint:CGPointMake(point.x, 0)]];
-                return;
-            }
-            if (lastPoint.y > point.y) { // 下拉
-           
-
-            }else { // 上拉
-                if (self.mainScrollView.contentOffset.y <zeroHeight) {
-                     [scrollView setContentOffset:lastPoint];
-                    return;
-                    
-                }
-            }
-            
-           [self.pointArray replaceObjectAtIndex:tag withObject:[NSValue valueWithCGPoint:CGPointMake(point.x, point.y)]];
-            
-        }
+    CGFloat lineWidth =  [ED_PageContextManager shareIntance].lineWidth;
+    CGFloat itemWidth =  0;
+    
+ 
+    self.lineView.backgroundColor = [ED_PageContextManager shareIntance].seletColor;
+    if ([ED_PageContextManager shareIntance].totalWidth > self.titleView.frame.size.width) {
+        itemWidth = [ED_PageContextManager shareIntance].itemWidth;
+       
+    }else {
+        itemWidth = self.titleView.frame.size.width / [ED_PageContextManager shareIntance].dataSource.count;
     }
+      self.lineView.frame = CGRectMake((itemWidth - lineWidth)/2, self.titleView.frame.size.height - 2, lineWidth, 2);
 
+    
 }
-
-
-
-
-
 
 
 
@@ -244,28 +110,117 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.delegate) {
-        return [self.delegate titleArrayWithPageView:self].count;
-    }
-    return 0;
+    return [ED_PageContextManager shareIntance].dataSource.count;
 }
 
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ED_PageTitleCell *cell = [self.titleView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ED_PageTitleCell class]) forIndexPath:indexPath];
-    NSString *title = [[self.delegate titleArrayWithPageView:self] objectAtIndex:indexPath.row];
-    [cell refreshCellWithTitle:title isSelect:YES];
+    if ([self.titleView isEqual:collectionView]) {
+        ED_PageTitleCell *cell = [self.titleView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ED_PageTitleCell class]) forIndexPath:indexPath];
+        BOOL flag = ([ED_PageContextManager shareIntance].currentIndex == indexPath.row);
+        [cell refreshCellWithIndexPath:indexPath isSelected:flag];
+        return cell;
+    }
+    ED_PageContainCell *containCell =  [self.containView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ED_PageContainCell class]) forIndexPath:indexPath];
+    [containCell refreshCellWithIndexPath:indexPath scrollView:self.mainScrollView];
     
-    return cell;
+    return containCell;
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.titleView isEqual:collectionView]) {
+        [self.containView setContentOffset:CGPointMake(self.containView.frame.size.width * indexPath.row, 0) animated:YES];
+      
+    }
 }
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = self.bounds.size.width / [self.delegate titleArrayWithPageView:self].count;
-    return CGSizeMake(width, self.titlHight);
+    if ([collectionView isEqual:self.titleView]) {
+        NSLog(@"%f",[ED_PageContextManager shareIntance].totalWidth);
+        CGFloat width = self.titleView.frame.size.width;
+        if (width >= [ED_PageContextManager shareIntance].totalWidth) {
+            return CGSizeMake(width/[ED_PageContextManager shareIntance].dataSource.count, self.titleView.frame.size.height);
+        }else{
+          
+            return CGSizeMake([ED_PageContextManager shareIntance].itemWidth, self.titleView.frame.size.height);
+        }
+        
+    }
+    return self.containView.frame.size;
 }
 
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+    CGPoint point = scrollView.contentOffset;
+    if ([scrollView isEqual:self.mainScrollView]) {
+        CGFloat zeroHeight = [ED_PageContextManager shareIntance].zeroHeight;
+        if (point.y > zeroHeight) {
+            [scrollView setContentOffset:CGPointMake(point.x,zeroHeight)];
+            [ED_PageContextManager shareIntance].lastPoint = CGPointMake(point.x,zeroHeight);
+        }else{
+            CGPoint lastPoint = [ED_PageContextManager shareIntance].lastPoint;
+            if (lastPoint.y >= point.y) { //下拉
+                ED_PageContainCell *cell = (ED_PageContainCell *) [self.containView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:[ED_PageContextManager shareIntance].currentIndex inSection:0]];
+                CGPoint contentOffSet = [cell getCurrentContentOffSet];
+                if (contentOffSet.y != 0) {
+
+                    [scrollView setContentOffset:lastPoint];
+                    return;
+                }
+            }else{ // 上啦
+
+            }
+            [ED_PageContextManager shareIntance].lastPoint = point;
+        }
+
+    }else if ([scrollView isEqual:self.containView]) {
+        CGFloat num = point.x / self.containView.frame.size.width;
+        CGFloat itemWidth = 0;
+        CGFloat lineWidth = [ED_PageContextManager shareIntance].lineWidth;
+        if ([ED_PageContextManager shareIntance].totalWidth > self.containView.frame.size.width) {
+             itemWidth = [ED_PageContextManager shareIntance].itemWidth;
+        }else{
+            itemWidth = self.titleView.frame.size.width / [ED_PageContextManager shareIntance].dataSource.count;
+        }
+         self.lineView.frame = CGRectMake((itemWidth - lineWidth)/2 + num *itemWidth, self.lineView.frame.origin.y, self.lineView.frame.size.width, self.lineView.frame.size.height);
+        
+        
+    
+        
+    }
+
+}
+
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    [self  scrollViewDidEndDecelerating:scrollView];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if ([scrollView isEqual:self.containView]) {
+        CGPoint point = scrollView.contentOffset;
+        CGFloat width = self.containView.frame.size.width;
+        CGFloat indexFloat = point.x /width;
+        NSInteger indexInt = (NSInteger)(point.x/ width);
+        if (indexFloat > indexInt + 0.5) {
+            indexInt = indexInt + 1;
+        }
+        [ED_PageContextManager shareIntance].currentIndex = indexInt;
+        [self.titleView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:[ED_PageContextManager shareIntance].currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+        [self.titleView reloadData];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        [self scrollViewDidEndDecelerating:scrollView];
+    }
+}
 
 #pragma mark - Getter
 
@@ -283,21 +238,6 @@
 }
 
 
-- (UIScrollView *)sideslipScrollView {
-    if (!_sideslipScrollView) {
-        _sideslipScrollView = [[UIScrollView alloc] init];
-        _sideslipScrollView.contentSize = CGSizeZero;
-        _sideslipScrollView.delegate = self;
-        if (@available(iOS 11, *)) {
-            [_sideslipScrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-        }
-        _sideslipScrollView.pagingEnabled = YES;
-        _sideslipScrollView.bounces = NO;
-    } 
-    return _sideslipScrollView;
-}
-
-
 - (UICollectionView *)titleView {
     if (!_titleView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -309,80 +249,66 @@
         _titleView.dataSource = self;
         _titleView.delegate = self;
         [_titleView registerClass:[ED_PageTitleCell class] forCellWithReuseIdentifier:NSStringFromClass([ED_PageTitleCell class])];
-    
+        _titleView.backgroundColor = [UIColor whiteColor];
+
     }
     return _titleView;
+
 }
 
-
-- (CGFloat)titlHight {
-    if (!_titlHight) {
-        _titlHight = 40;
+- (UICollectionView *)containView {
+    if (!_containView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.itemSize = CGSizeZero;
+        layout.minimumLineSpacing = 0 ;
+        layout.minimumInteritemSpacing = 0;
+        _containView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _containView.dataSource = self;
+        _containView.delegate = self;
+        [_containView registerClass:[ED_PageTitleCell class] forCellWithReuseIdentifier:NSStringFromClass([ED_PageTitleCell class])];
+        _containView.backgroundColor = [UIColor whiteColor];
+        _containView.pagingEnabled = YES;
+        [_containView registerClass:[ED_PageContainCell class] forCellWithReuseIdentifier:NSStringFromClass([ED_PageContainCell class])];
+        
     }
-    return _titlHight;
+    return _containView;
 }
 
-- (NSMutableArray *)viewArray {
-    if (!_viewArray) {
-        _viewArray = [[NSMutableArray alloc] init];
+
+
+
+
+- (UIView *)lineView {
+    if (!_lineView) {
+        _lineView = [[UIView alloc] init];
     }
-    return _viewArray;
+    return _lineView;
 }
 
-- (NSMutableArray *)pointArray {
-    if (!_pointArray) {
-        _pointArray = [[NSMutableArray alloc] init];
+
+- (UIView *)topLineView {
+    if (!_topLineView) {
+        _topLineView = [[UIView alloc] init];
+        _topLineView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
     }
-    return _pointArray;
+    return _topLineView;
 }
+
+- (UIView *)bottomLineView {
+    if (!_bottomLineView) {
+        _bottomLineView = [[UIView alloc] init];
+        _bottomLineView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
+    }
+    return _bottomLineView ;
+}
+
+
 
 @end
 
 
 
-
-
-@interface ED_PageTitleCell ()
-
-@property (nonatomic , strong) UILabel *titLabel;
-
-@end
-
-
-@implementation ED_PageTitleCell
-
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self addSubview:self.titLabel];
-    }
-    return self;
-}
-
-- (void)layoutSubviews {
-    self.titLabel.frame = self.bounds;
-}
-
-- (void)refreshCellWithTitle:(NSString *)title isSelect:(BOOL)isSelect {
-    self.titLabel.text = title;
-}
-
-#pragma mark - Getter
-
-- (UILabel *)titLabel {
-    if (!_titLabel) {
-        _titLabel = [[UILabel alloc] init];
-        _titLabel.font = [UIFont systemFontOfSize:15];
-        _titLabel.textColor = [UIColor redColor];
-        _titLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _titLabel;
-}
-
-
-
-
-@end
 
 
 

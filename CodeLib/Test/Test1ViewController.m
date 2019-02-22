@@ -22,7 +22,8 @@
 #import "NSDate+FormatDate.h"
 #import "ED_PageView.h"
 #import "ED_ToastView.h"
-@interface Test1ViewController ()<ED_PageViewHandleDelegate>
+#import "ED_PageContext.h"
+@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic , strong) ED_PageView *pageView;
 
@@ -36,69 +37,45 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES];
+    
+    [[ED_PageContextManager shareIntance] fillWithTitleArray:@[@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"到家哦"] fontNumber:15];
+    [ED_PageContextManager shareIntance].delegate = self;
+    [ED_PageContextManager shareIntance].titleHeight = 40;
+    [ED_PageContextManager shareIntance].zeroHeight = 100;
+    
+    
 
     [self.view addSubview:self.pageView];
     self.pageView.frame = self.view.bounds;
 
-//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    btn.backgroundColor = [UIColor redColor];
-//    [btn addTarget:self action:@selector(didClick) forControlEvents:UIControlEventTouchUpInside];
-//
-//    [self.view addSubview:btn];
   
-
-  
-    
 
 }
 
 
-
-// 零界点
-- (CGFloat)zeroPointWithPageView:(ED_PageView *)pageView {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 100;
 }
 
-//---------------------------------------------------------------------
-- (UITableViewCell *)pageView:(ED_PageView *)pageView cellForRowAtIndexPath:(NSIndexPath *)indexPath viewTag:(NSInteger)tag {
-   UITableViewCell *cell = [pageView dequeueReusableCellWithIdentifier:@"cell" viewTag:tag];
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%d + %d",tag ,indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d +++扫地机几件",indexPath.row];
     return cell;
 }
-
-
-- (NSInteger)pageView:(ED_PageView *)pageView numOfSectionWithViewTag:(NSInteger)tag {
-    return 1;
-}
-
-
-- (NSInteger)pageView:(ED_PageView *)pageView numOfRowInSection:(NSInteger)section viewTag:(NSInteger)tag {
-    return 100 ;
-}
-
-- (void)pageView:(ED_PageView *)pageView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewTag:(NSInteger)tag  {
-    
-}
-
-//----------------------------------------------------------------------
-
-- (NSArray<NSString *> *)titleArrayWithPageView:(ED_PageView *)pageView {
-    return @[@"我不知道",@"我不知道",@"我不知道"];
-}
-
-
 
 
 - (ED_PageView *)pageView {
     if (!_pageView) {
         _pageView = [[ED_PageView alloc] init];
-        _pageView.delegate = self;
     }
     return _pageView;
 }
+
 
 
 @end
