@@ -61,9 +61,14 @@
 
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@",........................xxxxxxxxxx");
     CGPoint point = self.tableView.contentOffset;
-     ED_PageContext *otherContext = [[ED_PageContextManager shareIntance].dataSource objectAtIndex:self.indexPath.row];
+    ED_PageContext *otherContext = [[ED_PageContextManager shareIntance].dataSource objectAtIndex:self.indexPath.row];
     CGPoint lastPoint = otherContext.lastPoint;
+
+    if (point.y == 0 || point.y == lastPoint.y) {
+        return;
+    }
 
     if (point.y < 0) {
         [self.tableView setContentOffset:CGPointMake(point.x, 0)];
@@ -88,6 +93,8 @@
         }
     }
      otherContext.lastPoint = point;
+    
+    
     
     // tableView 
     

@@ -100,6 +100,7 @@
 		DB937482221FA64600D5BF9E /* ED_PageContainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937481221FA64600D5BF9E /* ED_PageContainCell.m */; };
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
+		DB95FB7C222661DB00AFB061 /* ED_ContinueLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95FB7B222661DB00AFB061 /* ED_ContinueLocationManager.m */; };
 		DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA0F60321F83BD9002D6422 /* ED_SignView.m */; };
 		DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */; };
 		DBAA8FA321E58BBF005E7707 /* ico_share_pyq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */; };
@@ -303,6 +304,8 @@
 		DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthView.m; sourceTree = "<group>"; };
 		DB94C17C21C0AFC70051B2D1 /* ED_MonthItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MonthItemCell.h; sourceTree = "<group>"; };
 		DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthItemCell.m; sourceTree = "<group>"; };
+		DB95FB7A222661DB00AFB061 /* ED_ContinueLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ContinueLocationManager.h; sourceTree = "<group>"; };
+		DB95FB7B222661DB00AFB061 /* ED_ContinueLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ContinueLocationManager.m; sourceTree = "<group>"; };
 		DBA0F60221F83BD9002D6422 /* ED_SignView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SignView.h; sourceTree = "<group>"; };
 		DBA0F60321F83BD9002D6422 /* ED_SignView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SignView.m; sourceTree = "<group>"; };
 		DBA8831821D071EE00E0A29F /* ED_HighPrecisionControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_HighPrecisionControl.h; sourceTree = "<group>"; };
@@ -662,6 +665,8 @@
 			children = (
 				DB6482CA21884C5B00CCD4EA /* ED_LocationManager.m */,
 				DB6482CB21884C5B00CCD4EA /* ED_LocationManager.h */,
+				DB95FB7A222661DB00AFB061 /* ED_ContinueLocationManager.h */,
+				DB95FB7B222661DB00AFB061 /* ED_ContinueLocationManager.m */,
 			);
 			path = LocationManager;
 			sourceTree = "<group>";
@@ -1033,6 +1038,11 @@
 				TargetAttributes = {
 					DB64824721884C0E00CCD4EA = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					DB64825F21884C0F00CCD4EA = {
 						CreatedOnToolsVersion = 10.0;
@@ -1148,6 +1158,7 @@
 				DB6482DF21884C5B00CCD4EA /* ED_SharePayManager.m in Sources */,
 				DB71E92121B128670040C7E6 /* CViewController.m in Sources */,
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
+				DB95FB7C222661DB00AFB061 /* ED_ContinueLocationManager.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
 				DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */,

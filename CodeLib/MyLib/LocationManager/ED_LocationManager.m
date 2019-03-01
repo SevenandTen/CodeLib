@@ -86,6 +86,7 @@
         [_locationManager requestWhenInUseAuthorization];
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         _locationManager.distanceFilter = kCLDistanceFilterNone;
+        _locationManager.pausesLocationUpdatesAutomatically = NO;
     }
     return _locationManager;
 }
