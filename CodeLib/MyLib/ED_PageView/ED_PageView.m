@@ -98,7 +98,7 @@
         itemWidth = self.titleView.frame.size.width / [ED_PageContextManager shareIntance].dataSource.count;
     }
       self.lineView.frame = CGRectMake((itemWidth - lineWidth)/2, self.titleView.frame.size.height - 2, lineWidth, 2);
-    NSLog(@"/////////////////////////////////1");
+   
 
     
 }
@@ -218,7 +218,7 @@
         [self.titleView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:[ED_PageContextManager shareIntance].currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
         [self.titleView reloadData];
     }
-    NSLog(@"/////////////////////////////////2");
+   
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {

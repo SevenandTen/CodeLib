@@ -96,6 +96,17 @@ typedef NS_ENUM(NSInteger ,ED_ToastStyle){
                  showAnmation:(BOOL)showAnmation
                  hideAnmation:(BOOL)hideAnmation;
 
+
++ (ED_ToastView *)toastOnView:(UIView *)view
+                        style:(ED_ToastStyle)style
+                        title:(NSString *)title
+                    locationY:(CGFloat)loactionY
+                     showTime:(NSTimeInterval)showTime
+                     stayTime:(NSTimeInterval)stayTime
+                hideAfterTime:(NSTimeInterval)hideTime
+                 showAnmation:(BOOL)showAnmation
+                 hideAnmation:(BOOL)hideAnmation;
+
 + (ED_ToastView *)toastOnView:(UIView *)view
                         style:(ED_ToastStyle)style
                         title:(NSString *)title

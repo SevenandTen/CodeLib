@@ -47,6 +47,10 @@
 #pragma mark —— Public
 
 + (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title locationY:(CGFloat)loactionY showTime:(NSTimeInterval)showTime hideAfterTime:(NSTimeInterval)hideTime showAnmation:(BOOL)showAnmation hideAnmation:(BOOL)hideAnmation {
+    return [ED_ToastView toastOnView:view style:style title:title locationY:loactionY showTime:showTime stayTime:0 hideAfterTime:hideTime showAnmation:showAnmation hideAnmation:hideAnmation];
+}
+
++ (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title locationY:(CGFloat)loactionY showTime:(NSTimeInterval)showTime stayTime:(NSTimeInterval)stayTime hideAfterTime:(NSTimeInterval)hideTime showAnmation:(BOOL)showAnmation hideAnmation:(BOOL)hideAnmation {
     ED_ToastView *toast = [[ED_ToastView alloc] init];
     if (!view) {
         view = [UIApplication sharedApplication].keyWindow;
@@ -57,7 +61,10 @@
             if (hideTime == 0) {
                 [toast hideNow];
             }else{
-                [toast hideAfterTime:hideTime anmation:hideAnmation];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(stayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                     [toast hideAfterTime:hideTime anmation:hideAnmation];
+                });
+               
             }
         }];
     }else{
@@ -65,12 +72,16 @@
             if (hideTime == 0) {
                 [toast hideNow];
             }else{
-                [toast hideAfterTime:hideTime anmation:hideAnmation];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(stayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [toast hideAfterTime:hideTime anmation:hideAnmation];
+                });
             }
         }];
     }
     return toast;
+    
 }
+
 
 + (ED_ToastView *)toastOnView:(UIView *)view style:(ED_ToastStyle)style title:(NSString *)title  locationY:(CGFloat)locationY showTime:(NSTimeInterval)showTime showAnmation:(BOOL)showAnmation {
     ED_ToastView *toast = [[ED_ToastView alloc] init];
@@ -264,7 +275,15 @@
 
 
 + (ED_ToastView *)defaultToastWithTitle:(NSString *)title locationY:(CGFloat)locationY finish:(void (^)(void))finish {
-    ED_ToastView *toast =  [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:title locationY:locationY showTime:1.0 hideAfterTime:0.3 showAnmation:YES hideAnmation:NO];
+     CGSize size = [ED_ToastView calculateSizeWithAttributeText:title font:[UIFont systemFontOfSize:15] width:MAXFLOAT];
+    NSTimeInterval stayTime = 0;
+    if (size.width > [UIScreen mainScreen].bounds.size.width / 2.0 ) {
+        stayTime = 3;
+    }else {
+        stayTime = 1.5;
+    }
+    
+    ED_ToastView *toast =  [ED_ToastView toastOnView:nil style:ED_ToastLocationCustom title:title locationY:locationY showTime:0 stayTime:stayTime hideAfterTime:0.5 showAnmation:YES hideAnmation:YES];
     toast.finish = finish;
     return toast;
 }
