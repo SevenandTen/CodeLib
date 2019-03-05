@@ -25,7 +25,10 @@
 #import "ED_PageContext.h"
 #import "ED_RefreshNormalFooter.h"
 #import "ED_RefreshNormalHeader.h"
-@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "ED_AlertViewController.h"
+
+#import <MapKit/MapKit.h>
+@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
 
 @property (nonatomic , strong) ED_PageView *pageView;
 
@@ -34,6 +37,10 @@
 @property (nonatomic , strong) ED_RefreshNormalFooter *footer;
 
 @property (nonatomic , strong) UITableView *tableView;
+
+@property (nonatomic , strong) UIWebView *webView;
+
+@property (nonatomic , strong) UIScrollView *scrollView;
 
 @end
 
@@ -44,34 +51,34 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES];
     
-    [[ED_PageContextManager shareIntance] fillWithTitleArray:@[@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"我 i 哦哦",@"大叔控",@"到家哦"] fontNumber:15];
-    [ED_PageContextManager shareIntance].delegate = self;
-    [ED_PageContextManager shareIntance].titleHeight = 40;
-    [ED_PageContextManager shareIntance].zeroHeight = 100;
+    self.scrollView = [[UIScrollView alloc] init];
+    self.scrollView.frame = self.view.bounds;
+    [self.view addSubview:self.scrollView];
+    
+    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
 
+    self.webView.delegate = self;
+    [self.scrollView addSubview:self.webView];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://sijibao.ipnavi.cn/sjbServer2/app/resources/html/sjbWalletServe.html"]];
 
-
-    [self.view addSubview:self.pageView];
-    self.pageView.frame = self.view.bounds;
-//    [self.view addSubview:self.tableView];
-//    self.tableView.frame = self.view.bounds;
-//    [self.tableView addSubview:self.header];
-//    [self.tableView addSubview:self.footer];
-//    __weak typeof(self)weakSelf = self;
-//    self.header.complete = ^(void) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [weakSelf.header endRefreshing];
-//        });
-//    };
-//
-//    self.footer.complete =^(void) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [weakSelf.footer endRefreshing];
-//        });
-//    };
-
+    [self.webView loadRequest:request];
   
 
+}
+
+
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"%@", NSStringFromCGSize(webView.scrollView.contentSize));
+    self.webView.frame = CGRectMake(0, 0, webView.scrollView.contentSize.width, webView.scrollView.contentSize.height);
+    self.webView.scrollView.scrollEnabled = NO;
+    self.scrollView.contentSize = webView.scrollView.contentSize;
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
 }
 
 

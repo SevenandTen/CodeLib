@@ -123,8 +123,6 @@ NSString *const ED_LocationDateKey = @"date";
     UIApplicationState status = [UIApplication sharedApplication].applicationState;
     
     if (status == UIApplicationStateBackground) {
-//        [[NSUserDefaults standardUserDefaults] setInteger:1077 forKey:@"1077"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
         [self startLocationOutOfApp];
     }
 }
@@ -255,21 +253,15 @@ NSString *const ED_LocationDateKey = @"date";
                 
             });
             
-        //            [HttpRequest startRequestWithUrlString:@"http://192.168.12.84:8080/test1/param" httpMethod:HttpPost getParam:nil postParam:dic headerParam:nil customServiceType:0 httpDataType:HttpDataForm complete:^(id response, NSError *error) {
-        //                if (error) {
-        //                    NSLog(@"%@",error.description);
-        //                }else {
-        //                    NSDictionary *reslut = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
-        //                    NSLog(@"%@",reslut);
-        //                }
-        //            }];
-        //
+     
             
         }else{
         
             [self.locationManager stopUpdatingLocation];
             self.locationManager.delegate = nil;
             NSLog(@".................前台");
+            NSLog(@"------------------%f",locations.firstObject.coordinate.latitude);
+            NSLog(@"++++++++++++++++++%f",locations.firstObject.coordinate.longitude);
             if (self.delegate && [self.delegate respondsToSelector:@selector(locationManager:didReceviceLoactionInfo:)]) {
                 [self.delegate locationManager:self didReceviceLoactionInfo:dic];
             }
@@ -338,9 +330,9 @@ NSString *const ED_LocationDateKey = @"date";
 
 
 
-void transform_earth_from_mars(double lat, double lng, double* tarLat, double* tarLng);
-void transform_mars_from_baidu(double lat, double lng, double* tarLat, double* tarLng);
-void transform_baidu_from_mars(double lat, double lng, double* tarLat, double* tarLng);
+void transform_earth_from_mars_locationManager(double lat, double lng, double* tarLat, double* tarLng);
+void transform_mars_from_baidu_locationManager(double lat, double lng, double* tarLat, double* tarLng);
+void transform_baidu_from_mars_locationManager(double lat, double lng, double* tarLat, double* tarLng);
 
 
 
@@ -352,7 +344,7 @@ void transform_baidu_from_mars(double lat, double lng, double* tarLat, double* t
 {
     double lat = 0.0;
     double lng = 0.0;
-    transform_earth_from_mars(location.coordinate.latitude, location.coordinate.longitude, &lat, &lng);
+    transform_earth_from_mars_locationManager(location.coordinate.latitude, location.coordinate.longitude, &lat, &lng);
     return [[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake(lat, lng)
                                          altitude:location.altitude
                                horizontalAccuracy:location.horizontalAccuracy
@@ -368,7 +360,7 @@ void transform_baidu_from_mars(double lat, double lng, double* tarLat, double* t
 {
     double lat = 0.0;
     double lng = 0.0;
-    transform_mars_from_baidu(location.coordinate.latitude, location.coordinate.longitude, &lat, &lng);
+    transform_mars_from_baidu_locationManager(location.coordinate.latitude, location.coordinate.longitude, &lat, &lng);
     return [[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake(lat, lng)
                                          altitude:location.altitude
                                horizontalAccuracy:location.horizontalAccuracy
@@ -382,7 +374,7 @@ void transform_baidu_from_mars(double lat, double lng, double* tarLat, double* t
 {
     double lat = 0.0;
     double lng = 0.0;
-    transform_baidu_from_mars(location.coordinate.latitude, location.coordinate.longitude, &lat, &lng);
+    transform_baidu_from_mars_locationManager(location.coordinate.latitude, location.coordinate.longitude, &lat, &lng);
     return [[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake(lat, lng)
                                          altitude:location.altitude
                                horizontalAccuracy:location.horizontalAccuracy
@@ -407,10 +399,10 @@ void transform_baidu_from_mars(double lat, double lng, double* tarLat, double* t
 // a = 6378245.0, 1/f = 298.3
 // b = a * (1 - f)
 // ee = (a^2 - b^2) / a^2;
-const double a = 6378245.0;
-const double ee = 0.00669342162296594323;
+const double a_locationManager = 6378245.0;
+const double ee_locationManager = 0.00669342162296594323;
 
-bool transform_sino_out_china(double lat, double lon)
+bool transform_sino_out_china_locationManager(double lat, double lon)
 {
     if (lon < 72.004 || lon > 137.8347)
         return true;
@@ -419,7 +411,7 @@ bool transform_sino_out_china(double lat, double lon)
     return false;
 }
 
-double transform_earth_from_mars_lat(double x, double y)
+double transform_earth_from_mars_lat_locationManager(double x, double y)
 {
     double ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * sqrt(fabs(x));
     ret += (20.0 * sin(6.0 * x * M_PI) + 20.0 * sin(2.0 * x * M_PI)) * 2.0 / 3.0;
@@ -428,7 +420,7 @@ double transform_earth_from_mars_lat(double x, double y)
     return ret;
 }
 
-double transform_earth_from_mars_lng(double x, double y)
+double transform_earth_from_mars_lng_locationManager(double x, double y)
 {
     double ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * sqrt(fabs(x));
     ret += (20.0 * sin(6.0 * x * M_PI) + 20.0 * sin(2.0 * x * M_PI)) * 2.0 / 3.0;
@@ -437,22 +429,22 @@ double transform_earth_from_mars_lng(double x, double y)
     return ret;
 }
 
-void transform_earth_from_mars(double lat, double lng, double* tarLat, double* tarLng)
+void transform_earth_from_mars_locationManager(double lat, double lng, double* tarLat, double* tarLng)
 {
-    if (transform_sino_out_china(lat, lng))
+    if (transform_sino_out_china_locationManager(lat, lng))
     {
         *tarLat = lat;
         *tarLng = lng;
         return;
     }
-    double dLat = transform_earth_from_mars_lat(lng - 105.0, lat - 35.0);
-    double dLon = transform_earth_from_mars_lng(lng - 105.0, lat - 35.0);
+    double dLat = transform_earth_from_mars_lat_locationManager(lng - 105.0, lat - 35.0);
+    double dLon = transform_earth_from_mars_lng_locationManager(lng - 105.0, lat - 35.0);
     double radLat = lat / 180.0 * M_PI;
     double magic = sin(radLat);
-    magic = 1 - ee * magic * magic;
+    magic = 1 - ee_locationManager * magic * magic;
     double sqrtMagic = sqrt(magic);
-    dLat = (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * M_PI);
-    dLon = (dLon * 180.0) / (a / sqrtMagic * cos(radLat) * M_PI);
+    dLat = (dLat * 180.0) / ((a_locationManager * (1 - ee_locationManager)) / (magic * sqrtMagic) * M_PI);
+    dLon = (dLon * 180.0) / (a_locationManager / sqrtMagic * cos(radLat) * M_PI);
     *tarLat = lat + dLat;
     *tarLng = lng + dLon;
 }
@@ -460,22 +452,22 @@ void transform_earth_from_mars(double lat, double lng, double* tarLat, double* t
 // --- transform_earth_from_mars end ---
 // --- transform_mars_vs_bear_paw ---
 // 参考来源：http://blog.woodbunny.com/post-68.html
-const double x_pi = M_PI * 3000.0 / 180.0;
+const double x_pi_locationManager = M_PI * 3000.0 / 180.0;
 
-void transform_mars_from_baidu(double gg_lat, double gg_lon, double *bd_lat, double *bd_lon)
+void transform_mars_from_baidu_locationManager(double gg_lat, double gg_lon, double *bd_lat, double *bd_lon)
 {
     double x = gg_lon, y = gg_lat;
-    double z = sqrt(x * x + y * y) + 0.00002 * sin(y * x_pi);
-    double theta = atan2(y, x) + 0.000003 * cos(x * x_pi);
+    double z = sqrt(x * x + y * y) + 0.00002 * sin(y * x_pi_locationManager);
+    double theta = atan2(y, x) + 0.000003 * cos(x * x_pi_locationManager);
     *bd_lon = z * cos(theta) + 0.0065;
     *bd_lat = z * sin(theta) + 0.006;
 }
 
-void transform_baidu_from_mars(double bd_lat, double bd_lon, double *gg_lat, double *gg_lon)
+void transform_baidu_from_mars_locationManager(double bd_lat, double bd_lon, double *gg_lat, double *gg_lon)
 {
     double x = bd_lon - 0.0065, y = bd_lat - 0.006;
-    double z = sqrt(x * x + y * y) - 0.00002 * sin(y * x_pi);
-    double theta = atan2(y, x) - 0.000003 * cos(x * x_pi);
+    double z = sqrt(x * x + y * y) - 0.00002 * sin(y * x_pi_locationManager);
+    double theta = atan2(y, x) - 0.000003 * cos(x * x_pi_locationManager);
     *gg_lon = z * cos(theta);
     *gg_lat = z * sin(theta);
 }
