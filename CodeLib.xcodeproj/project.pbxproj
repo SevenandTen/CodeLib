@@ -497,6 +497,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DBFA10F12230F6670041DBCA /* ED_SystemControl */,
 				DB5EE68F222E54B400A99511 /* ED_AlertViewController */,
 				DB5EE685222E117300A99511 /* ED_PhoneMapControl */,
 				DBBD10C3222D118400C42F80 /* ED_ToastAndLoading */,
@@ -1005,6 +1006,13 @@
 				DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		DBFA10F12230F6670041DBCA /* ED_SystemControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ED_SystemControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

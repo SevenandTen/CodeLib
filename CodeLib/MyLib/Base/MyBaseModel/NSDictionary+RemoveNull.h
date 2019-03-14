@@ -16,6 +16,7 @@
 
 - (NSDictionary *)dictionaryObjectForKey:(NSString *)key ;
 
+- (NSString *)stringObjectForKey:(NSString *)key;
 
 
 @end

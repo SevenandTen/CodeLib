@@ -13,7 +13,7 @@
 @interface ED_MoneyControl : NSObject
 
 
-// 格式化金钱字符串 加，去尾巴操作
+// 格式化金钱字符串 加，去尾巴操作  保留两位
 + (NSString *)getMoneyFormatterWithObject:(id)object isHaveChar:(BOOL) isHaveChar;
 
 @end

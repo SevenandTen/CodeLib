@@ -51,20 +51,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES];
     
-    self.scrollView = [[UIScrollView alloc] init];
-    self.scrollView.frame = self.view.bounds;
-    [self.view addSubview:self.scrollView];
-    
-    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-
-    self.webView.delegate = self;
-    [self.scrollView addSubview:self.webView];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://sijibao.ipnavi.cn/sjbServer2/app/resources/html/sjbWalletServe.html"]];
-
-    [self.webView loadRequest:request];
-  
 
 }
+
+
 
 
 
@@ -77,9 +67,8 @@
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-}
+
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -43,4 +43,19 @@
 }
 
 
+- (NSString *)stringObjectForKey:(NSString *)key {
+    id object = [self objectForKey:key];
+    if (!object || [object isKindOfClass:[NSNull class]] ) {
+        return [NSString string];
+    }
+    if ([object isKindOfClass:[NSString class]]) {
+        return object;
+    }
+    if ([object isKindOfClass:[NSValue class]]) {
+        return [NSString stringWithFormat:@"%@",object];
+    }
+    return [NSString string];
+}
+
+
 @end

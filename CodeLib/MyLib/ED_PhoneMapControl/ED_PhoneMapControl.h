@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger ,ED_LocationType) {
 
 + (void)openOtherMapAppToDestinationLatitude:(double)latitude longitude:(double)longitude adressTip:(NSString *)adressTip locationType:(ED_LocationType)loactionType appName:(NSString *)appName appScheme:(NSString *)appScheme viewController:(UIViewController *)viewController;
 
+
 @end
 
 

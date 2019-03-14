@@ -14,7 +14,7 @@
 @implementation ED_PhoneMapControl
 
 
-+ (void)openOtherMapAppToDestinationLatitude:(double)latitude longitude:(double)longitude adressTip:(NSString *)adressTip locationType:(ED_LocationType)loactionType appName:(NSString *)appName appScheme:(NSString *)appScheme {
++ (void)openOtherMapAppToDestinationLatitude:(double)latitude longitude:(double)longitude adressTip:(NSString *)adressTip locationType:(ED_LocationType)loactionType appName:(NSString *)appName appScheme:(NSString *)appScheme viewController:(UIViewController *)viewController {
     //1.坐标转化
     CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     CLLocation *marLocation = nil;
@@ -45,7 +45,7 @@
     //高德地图
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
         UIAlertAction *gaodeAction  = [UIAlertAction actionWithTitle:@"用高德地图导航" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
+            [self openGaodeMapWithLocation:marLocation appName:appName appScheme:appScheme];
         }];
         [alertVC addAction:gaodeAction];
     }
@@ -57,6 +57,15 @@
     [alertVC addAction:systemMapAction];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     [alertVC addAction:cancelAction];
+    
+    if (!viewController) {
+        viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+        while (viewController.presentedViewController) {
+            viewController = viewController.presentedViewController;
+        }
+    }
+    
+    [viewController presentViewController:alertVC animated:YES completion:nil];
     
     
     
@@ -89,8 +98,9 @@
 }
 
 
-+ (void)openGaodeMapWithLocation:(CLLocation *)location {
-    
++ (void)openGaodeMapWithLocation:(CLLocation *)location appName:(NSString *)appName appScheme:(NSString *)appScheme {
+    NSString *urlString = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&backScheme=%@&lat=%f&lon=%f&dev=0&style=2",appScheme,appScheme,location.coordinate.latitude,location.coordinate.longitude ] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
 
 

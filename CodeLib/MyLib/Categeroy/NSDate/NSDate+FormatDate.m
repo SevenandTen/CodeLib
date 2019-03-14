@@ -41,14 +41,14 @@
 
 
 - (NSDate *)getMonthBeginDate {
-    NSString *dateString = [self getStringDateWithTimeForm:@"YY-MM"];
+    NSString *dateString = [self getStringDateWithTimeForm:@"yyyy-MM"];
     dateString = [dateString stringByAppendingString:@"-01 00:00:00"];
-    return [NSDate getDateFromString:dateString timeForm:@"YY-MM-dd HH:mm:ss"];
+    return [NSDate getDateFromString:dateString timeForm:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 - (NSDate *)getMonthEndDate {
     NSString *monthString = [self getStringDateWithTimeForm:@"MM"];
-    NSString *yearString = [self getStringDateWithTimeForm:@"YY"];
+    NSString *yearString = [self getStringDateWithTimeForm:@"yyyy"];
     NSInteger month = [monthString integerValue];
     NSInteger year = [yearString integerValue];
     NSInteger day = 0;
@@ -64,7 +64,7 @@
         day = 31;
     }
     NSString *dateString = [NSString stringWithFormat:@"%@-%@-%d 23:59:59",yearString,monthString,day];
-    return [NSDate getDateFromString:dateString timeForm:@"YY-MM-dd HH:mm:ss"];
+    return [NSDate getDateFromString:dateString timeForm:@"yyyy-MM-dd HH:mm:ss"];
     
 }
 
@@ -73,10 +73,10 @@
 
 - (NSDate *)getDayDateWithYourWantTime:(NSString *)timeString {
     NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
-    formatter1.dateFormat = @"YY-MM-dd";
+    formatter1.dateFormat = @"yyyy-MM-dd";
     NSString *dateString1 = [formatter1 stringFromDate:self];
     NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
-    formatter2.dateFormat = @"YY-MM-dd HH:mm:ss";
+    formatter2.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     NSString *dateString2 = [dateString1 stringByAppendingString:timeString];
     NSDate *date = [formatter2 dateFromString:dateString2];
     return date;
