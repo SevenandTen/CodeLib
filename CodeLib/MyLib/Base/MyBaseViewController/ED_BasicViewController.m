@@ -41,6 +41,21 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.navigationController) {
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.navigationController) {
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+    }
+}
+
+
 - (void)configureViews_Basic {
     if (self.nibName.length) {
         _contentView = self.view;
@@ -87,13 +102,13 @@
         if (self.isLayoutFromOrigin) {
             self.myNavigationBGView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.mySafeArea.top);
             self.myNavigationBGView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-            self.myNavigationBar.frame = CGRectMake(0, self.systemSafeArea.top, self.view.bounds.size.width, self.navgationBarHeight);
+            self.myNavigationBar.frame = CGRectMake(0, self.systemSafeArea.top, self.view.bounds.size.width, self.ed_navgationBarHeight);
             self.myNavigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
             
         }else{
             self.myNavigationBGView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.mySafeArea.top);
             self.myNavigationBGView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-            self.myNavigationBar.frame = CGRectMake(0, self.systemSafeArea.top, self.view.bounds.size.width, self.navgationBarHeight);
+            self.myNavigationBar.frame = CGRectMake(0, self.systemSafeArea.top, self.view.bounds.size.width, self.ed_navgationBarHeight);
             self.myNavigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
             self.contentView.frame = CGRectMake(0, self.mySafeArea.top, self.view.bounds.size.width, self.view.bounds.size.height - self.mySafeArea.top);
             self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
@@ -129,11 +144,11 @@
     return NO;
 }
 
-- (CGFloat)navgationBarHeight {
+- (CGFloat)ed_navgationBarHeight {
     return [[UINavigationController alloc] init].navigationBar.frame.size.height;
 }
 
-- (CGFloat)tabBarHeight {
+- (CGFloat)ed_tabBarHeight {
     return [[UITabBarController alloc] init].tabBar.frame.size.height;
 }
 
@@ -162,7 +177,7 @@
     }
     CGFloat bottom = 0;
     if (self.tabBarController && !self.tabBarController.tabBar.hidden) {
-        bottom = self.tabBarHeight;
+        bottom = self.ed_tabBarHeight;
     }
     return UIEdgeInsetsMake(20, 0, 0, bottom);
 }
@@ -173,7 +188,7 @@
     CGFloat left = self.systemSafeArea.left + self.extendMySafeArea.left;
     CGFloat right = self.systemSafeArea.right + self.extendMySafeArea.right;
     if (self.isShowNavgationBar) {
-        top = top + self.navgationBarHeight;
+        top = top + self.ed_navgationBarHeight;
     }
     return UIEdgeInsetsMake(top, left, bottom, right);
 }

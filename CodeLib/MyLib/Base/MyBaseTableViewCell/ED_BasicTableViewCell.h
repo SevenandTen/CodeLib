@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger , ED_BasicTabelViewCellShowType) {
 
 
 
-@interface ED_BasicTabelViewCell : UITableViewCell
+@interface ED_BasicTableViewCell : UITableViewCell
 
 //选中颜色
 @property (nonatomic , strong) UIColor *selectedColor;

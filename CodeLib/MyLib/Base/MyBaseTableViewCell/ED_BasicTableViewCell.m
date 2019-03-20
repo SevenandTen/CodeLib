@@ -6,9 +6,9 @@
 //  Copyright © 2018 seventeen. All rights reserved.
 //
 
-#import "ED_BasicTabelViewCell.h"
+#import "ED_BasicTableViewCell.h"
 
-@interface ED_BasicTabelViewCell ()
+@interface ED_BasicTableViewCell ()
 
 @property (nonatomic , strong) NSMutableArray *hightLightViewArray;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ED_BasicTabelViewCell
+@implementation ED_BasicTableViewCell
 
 
 #pragma mark - Init

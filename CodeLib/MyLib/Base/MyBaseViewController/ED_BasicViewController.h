@@ -79,13 +79,13 @@
 /**
  系统导航栏高度
  */
-@property (nonatomic , readonly) CGFloat navgationBarHeight;
+@property (nonatomic , readonly) CGFloat ed_navgationBarHeight;
 
 
 /**
  系统 tab 高度
  */
-@property (nonatomic , readonly) CGFloat tabBarHeight;
+@property (nonatomic , readonly) CGFloat ed_tabBarHeight;
 
 
 /**

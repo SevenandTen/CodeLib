@@ -79,10 +79,11 @@
 		DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7008A5219556BC0075BFEC /* ED_BaseRefreshView.m */; };
 		DB71E91E21B1285B0040C7E6 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71E91D21B1285B0040C7E6 /* BViewController.m */; };
 		DB71E92121B128670040C7E6 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71E92021B128670040C7E6 /* CViewController.m */; };
-		DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */; };
+		DB74F28921903F5500AEAFE7 /* ED_BasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB74F28821903F5500AEAFE7 /* ED_BasicTableViewCell.m */; };
 		DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB77B84D221BAB3A0030A6B4 /* ED_PageView.m */; };
 		DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855D921EC866300C0421F /* ED_TransitionManager.m */; };
 		DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */; };
+		DB79295F223A34190024907B /* ED_SystemControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB79295E223A34190024907B /* ED_SystemControl.m */; };
 		DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */; };
 		DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */; };
 		DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */; };
@@ -267,14 +268,16 @@
 		DB71E92021B128670040C7E6 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
 		DB74F284219039DE00AEAFE7 /* ED_Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Color.h; sourceTree = "<group>"; };
 		DB74F28521903A3C00AEAFE7 /* ED_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Frame.h; sourceTree = "<group>"; };
-		DB74F28721903F5500AEAFE7 /* ED_BasicTabelViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BasicTabelViewCell.h; sourceTree = "<group>"; };
-		DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BasicTabelViewCell.m; sourceTree = "<group>"; };
+		DB74F28721903F5500AEAFE7 /* ED_BasicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_BasicTableViewCell.h; sourceTree = "<group>"; };
+		DB74F28821903F5500AEAFE7 /* ED_BasicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_BasicTableViewCell.m; sourceTree = "<group>"; };
 		DB77B84C221BAB3A0030A6B4 /* ED_PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PageView.h; sourceTree = "<group>"; };
 		DB77B84D221BAB3A0030A6B4 /* ED_PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PageView.m; sourceTree = "<group>"; };
 		DB7855D821EC866300C0421F /* ED_TransitionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_TransitionManager.h; sourceTree = "<group>"; };
 		DB7855D921EC866300C0421F /* ED_TransitionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TransitionManager.m; sourceTree = "<group>"; };
 		DB7855DB21EC913000C0421F /* ED_TransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_TransitionAnimation.h; sourceTree = "<group>"; };
 		DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TransitionAnimation.m; sourceTree = "<group>"; };
+		DB79295D223A34190024907B /* ED_SystemControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SystemControl.h; sourceTree = "<group>"; };
+		DB79295E223A34190024907B /* ED_SystemControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SystemControl.m; sourceTree = "<group>"; };
 		DB85AC9621AE6B8E006DDD7D /* ED_DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_DBManager.h; sourceTree = "<group>"; };
 		DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_DBManager.m; sourceTree = "<group>"; };
 		DB85AC9B21AE6BBE006DDD7D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -830,8 +833,8 @@
 		DB74F28621903A8C00AEAFE7 /* MyBaseTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				DB74F28721903F5500AEAFE7 /* ED_BasicTabelViewCell.h */,
-				DB74F28821903F5500AEAFE7 /* ED_BasicTabelViewCell.m */,
+				DB74F28721903F5500AEAFE7 /* ED_BasicTableViewCell.h */,
+				DB74F28821903F5500AEAFE7 /* ED_BasicTableViewCell.m */,
 			);
 			path = MyBaseTableViewCell;
 			sourceTree = "<group>";
@@ -1011,6 +1014,8 @@
 		DBFA10F12230F6670041DBCA /* ED_SystemControl */ = {
 			isa = PBXGroup;
 			children = (
+				DB79295D223A34190024907B /* ED_SystemControl.h */,
+				DB79295E223A34190024907B /* ED_SystemControl.m */,
 			);
 			path = ED_SystemControl;
 			sourceTree = "<group>";
@@ -1204,6 +1209,7 @@
 				DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */,
 				DB95FB7C222661DB00AFB061 /* ED_ContinueLocationManager.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
+				DB79295F223A34190024907B /* ED_SystemControl.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
 				DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */,
 				DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */,
@@ -1236,7 +1242,7 @@
 				DB6482EA21884C5B00CCD4EA /* UIViewController+Animation.m in Sources */,
 				DB5EE68E222E202D00A99511 /* ED_PhoneMapControl.m in Sources */,
 				DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */,
-				DB74F28921903F5500AEAFE7 /* ED_BasicTabelViewCell.m in Sources */,
+				DB74F28921903F5500AEAFE7 /* ED_BasicTableViewCell.m in Sources */,
 				DB5EE698222E54B500A99511 /* ED_AlertContentCell.m in Sources */,
 				DB6B36E2219180A100970207 /* ED_TimeSelectControl.m in Sources */,
 				DBBD10CA222D118500C42F80 /* ED_ToastView.m in Sources */,

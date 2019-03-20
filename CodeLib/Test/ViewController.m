@@ -10,7 +10,7 @@
 #import "ED_LocationManager.h"
 #import "UIImageView+SQWebCache.h"
 #import "UITableView+RegisterCell.h"
-#import "ED_BasicTabelViewCell.h"
+#import "ED_BasicTableViewCell.h"
 #import "UIView+Instance.h"
 #import "ED_TimeSelectControl.h"
 #import "ED_BaseRefreshView.h"
