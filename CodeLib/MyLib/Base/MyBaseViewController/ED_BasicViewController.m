@@ -41,20 +41,6 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (self.navigationController) {
-        [self.navigationController setNavigationBarHidden:YES animated:NO];
-    }
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    if (self.navigationController) {
-        [self.navigationController setNavigationBarHidden:NO animated:NO];
-    }
-}
-
 
 - (void)configureViews_Basic {
     if (self.nibName.length) {
@@ -85,6 +71,7 @@
     self.myNavigationBGView.backgroundColor = self.myNavgationBarColor;
     [self.myNavigationBar setBackgroundImage:[[UIImage alloc] init]forBarMetrics:UIBarMetricsDefault];
     [self.myNavigationBar setTintColor:[UIColor whiteColor]];
+    self.myNavigationBar.backgroundColor = [UIColor clearColor];
 }
 
 

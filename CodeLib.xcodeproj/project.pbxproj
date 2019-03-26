@@ -84,6 +84,8 @@
 		DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855D921EC866300C0421F /* ED_TransitionManager.m */; };
 		DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */; };
 		DB79295F223A34190024907B /* ED_SystemControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB79295E223A34190024907B /* ED_SystemControl.m */; };
+		DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7C0BC922439D5B00B0A176 /* HorizontallyOpposedView.m */; };
+		DB8547142249D10400C90A52 /* UIImage+QRcode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8547132249D10400C90A52 /* UIImage+QRcode.m */; };
 		DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */; };
 		DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */; };
 		DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */; };
@@ -278,6 +280,10 @@
 		DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_TransitionAnimation.m; sourceTree = "<group>"; };
 		DB79295D223A34190024907B /* ED_SystemControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SystemControl.h; sourceTree = "<group>"; };
 		DB79295E223A34190024907B /* ED_SystemControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SystemControl.m; sourceTree = "<group>"; };
+		DB7C0BC822439D5B00B0A176 /* HorizontallyOpposedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontallyOpposedView.h; sourceTree = "<group>"; };
+		DB7C0BC922439D5B00B0A176 /* HorizontallyOpposedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontallyOpposedView.m; sourceTree = "<group>"; };
+		DB8547122249D10400C90A52 /* UIImage+QRcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRcode.h"; sourceTree = "<group>"; };
+		DB8547132249D10400C90A52 /* UIImage+QRcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRcode.m"; sourceTree = "<group>"; };
 		DB85AC9621AE6B8E006DDD7D /* ED_DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_DBManager.h; sourceTree = "<group>"; };
 		DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_DBManager.m; sourceTree = "<group>"; };
 		DB85AC9B21AE6BBE006DDD7D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -500,6 +506,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB7C0BC722439D5B00B0A176 /* HorizontallyOpposedView */,
 				DBFA10F12230F6670041DBCA /* ED_SystemControl */,
 				DB5EE68F222E54B400A99511 /* ED_AlertViewController */,
 				DB5EE685222E117300A99511 /* ED_PhoneMapControl */,
@@ -593,6 +600,8 @@
 		DB64829B21884C5B00CCD4EA /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				DB8547122249D10400C90A52 /* UIImage+QRcode.h */,
+				DB8547132249D10400C90A52 /* UIImage+QRcode.m */,
 				DB64829C21884C5B00CCD4EA /* UIImage+ModifyColor.m */,
 				DB64829D21884C5B00CCD4EA /* UIImage+ModifyColor.h */,
 			);
@@ -867,6 +876,15 @@
 				DB6D170121ED73820048C4CD /* ED_PrecentTransition.m */,
 			);
 			path = ED_Transition;
+			sourceTree = "<group>";
+		};
+		DB7C0BC722439D5B00B0A176 /* HorizontallyOpposedView */ = {
+			isa = PBXGroup;
+			children = (
+				DB7C0BC822439D5B00B0A176 /* HorizontallyOpposedView.h */,
+				DB7C0BC922439D5B00B0A176 /* HorizontallyOpposedView.m */,
+			);
+			path = HorizontallyOpposedView;
 			sourceTree = "<group>";
 		};
 		DB85AC9521AE6B8E006DDD7D /* DBManager */ = {
@@ -1217,8 +1235,10 @@
 				DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
+				DB8547142249D10400C90A52 /* UIImage+QRcode.m in Sources */,
 				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
+				DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB659BE0221551A7004244ED /* ED_URLProtocol.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,

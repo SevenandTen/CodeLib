@@ -278,7 +278,7 @@ NSString *const ED_LocationDateKey = @"date";
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error {
     NSLog(@"%@",error.description);
-    [self startLocation];
+    
     
 }
 
