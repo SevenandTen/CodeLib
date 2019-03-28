@@ -36,7 +36,7 @@
     //百度地图
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
         UIAlertAction *baiduAction  = [UIAlertAction actionWithTitle:@"用百度地图导航" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
+            [self openBaiduMapWithLocation:baiduLocation adress:adressTip];
         }];
         [alertVC addAction:baiduAction];
     }
@@ -148,7 +148,7 @@ void transform_baidu_from_mars_phoneMap(double lat, double lng, double* tarLat, 
                                         timestamp:location.timestamp];
 }
 
-- (CLLocation*)locationMarsFromBaidu:(CLLocation *)location
++ (CLLocation*)locationMarsFromBaidu:(CLLocation *)location
 {
     double lat = 0.0;
     double lng = 0.0;
