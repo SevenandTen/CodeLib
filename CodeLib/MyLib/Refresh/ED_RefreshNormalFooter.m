@@ -67,6 +67,11 @@
     }else if (self.status == ED_RefreshStatusWillStartRefresh) {
         self.status = ED_RefreshStatusRefreshing;
         [self updateContentUI];
+        CGFloat space = self.scrollView.bounds.size.height - self.scrollView.contentSize.height - self.originContentInset.top - self.originContentInset.bottom;
+        if (space < 0) {
+            space = 0;
+        }
+        
         CGFloat insetBottom = self.originContentInset.bottom;
         if (@available(iOS 11.0, *)) {
             insetBottom = insetBottom - (self.scrollView.adjustedContentInset.bottom - self.scrollView.contentInset.bottom);
@@ -74,7 +79,7 @@
         
         [UIView animateWithDuration:0.5 animations:^{
             
-            [self.scrollView setContentInset:UIEdgeInsetsMake(self.scrollView.contentInset.top, self.scrollView.contentInset.left, insetBottom + self.footerHeight, self.scrollView.contentInset.right)];
+            [self.scrollView setContentInset:UIEdgeInsetsMake(self.scrollView.contentInset.top, self.scrollView.contentInset.left, insetBottom + self.footerHeight + space, self.scrollView.contentInset.right)];
             [self.scrollView setContentOffset:CGPointMake(0,happenY2) animated:NO];
         } completion:^(BOOL finished) {
             if (self.complete) {
@@ -92,14 +97,16 @@
     [self updateContentUI];
     CGFloat happenY1 = 0;
     CGFloat happenY2 = 0;
+    
     if (self.scrollView.contentSize.height + self.originContentInset.top + self.originContentInset.bottom < self.scrollView.bounds.size.height) { // 内容小于屏幕
+//        space = self.scrollView.bounds.size.height - self.scrollView.contentSize.height - self.originContentInset.top - self.originContentInset.bottom;
         happenY1 = - self.originContentInset.top;
     }else{
         happenY1 = self.scrollView.contentSize.height + self.originContentInset.bottom - self.scrollView.bounds.size.height;
     }
     happenY2 = happenY1 + self.footerHeight;
     
-    CGFloat insetBottom  = self.originContentInset.bottom;
+    CGFloat insetBottom  = self.originContentInset.bottom ;
     if (@available(iOS 11.0, *)) {
         insetBottom = insetBottom - (self.scrollView.adjustedContentInset.bottom - self.scrollView.contentInset.bottom);
     }

@@ -55,7 +55,6 @@ typedef NS_ENUM(NSInteger ,WXShareView) {
 
 
 // 调用支付宝支付
-
 - (void)payWithOrderString:(NSString *)orderString scheme:(NSString *)scheme;
 
 //微信支付

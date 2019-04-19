@@ -145,6 +145,10 @@ NSString *const ED_RefreshKeyPathAdjustedContentInset = @"adjustedContentInset";
 
 - (void)endRefreshing {}
 
+- (void)updateProgress:(CGFloat)progress {
+    
+}
+
 - (void)placeSubView {
     [self addSubview:self.titleLabel];
     self.titleLabel.frame = self.bounds;

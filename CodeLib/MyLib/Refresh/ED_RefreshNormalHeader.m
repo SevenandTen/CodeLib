@@ -36,6 +36,25 @@
 - (void)scrollViewDidChangedContentOffset:(NSDictionary *)change {
     [super scrollViewDidChangedContentOffset:change];
     CGFloat offSetY = self.scrollView.contentOffset.y;
+    if (self.isSuspend) {
+        if (self.isFromOrigin) {
+            if (offSetY  + self.originContentInset.top < 0) {
+                self.frame = CGRectMake(0, offSetY  + self.originContentInset.top , self.scrollView.frame.size.width, self.headerHeight);
+            }else {
+                self.frame = CGRectMake(0, 0, self.scrollView.frame.size.width, self.headerHeight);
+            }
+        }else{
+            if (offSetY + self.originContentInset.top < 0) {
+                 self.frame = CGRectMake(0 , offSetY, self.scrollView.frame.size.width, self.headerHeight);
+            }else{
+                 self.frame = CGRectMake(0 , - self.originContentInset.top, self.scrollView.frame.size.width, self.headerHeight);
+            }
+        }
+    }
+    
+    
+    
+    
     CGFloat happenY1 = - self.originContentInset.top;
     CGFloat happenY2 = happenY1 - self.headerHeight;
     if (self.status == ED_RefreshStatusRefreshing) {
@@ -136,10 +155,15 @@
     CGFloat happenY2 = happenY1 - self.headerHeight;
     if (offSetY <= happenY2) {
         self.alpha = 1;
+        [self updateProgress:1];
     }else if (offSetY >= happenY1) {
         self.alpha = 0;
+        [self updateProgress:0];
     }else{
-        self.alpha = (offSetY - happenY1)/(happenY2 - happenY1);
+        CGFloat f = (offSetY - happenY1)/(happenY2 - happenY1);
+        self.alpha = f ;
+        [self updateProgress:f];
+        
     }
 }
 
@@ -162,6 +186,9 @@
             self.frame = CGRectMake(0 , - self.originContentInset.top - self.headerHeight, self.scrollView.frame.size.width, self.headerHeight);
         }
         [self updateAlpha];
+    }
+    if (self.isSuspend) {
+        [self.scrollView insertSubview:self atIndex:0];
     }
     
 }

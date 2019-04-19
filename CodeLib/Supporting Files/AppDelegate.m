@@ -28,8 +28,9 @@
     // Override point for customization after application launch.
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[TestTabBarController alloc] init];
+//    self.window.rootViewController = [[UIViewController alloc] init];
     [self.window makeKeyAndVisible];
-    [[ED_ContinueLocationManager shareInstance] startLocationIfAppKilled];
+//    [[ED_ContinueLocationManager shareInstance] startLocationIfAppKilled];
     
     
     return YES;

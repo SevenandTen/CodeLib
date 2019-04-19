@@ -18,6 +18,9 @@
 @property (nonatomic , assign) BOOL isFromOrigin;
 
 
+@property (nonatomic , assign) BOOL isSuspend;
+
+
 
 
 

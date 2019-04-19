@@ -88,6 +88,9 @@ typedef NS_ENUM(NSInteger ,ED_RefreshStatus) {
 - (void)updateContentUI;
 
 
+- (void)updateProgress:(CGFloat)progress;
+
+
 @end
 
 

@@ -30,7 +30,6 @@
 		DB6482DF21884C5B00CCD4EA /* ED_SharePayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64829621884C5B00CCD4EA /* ED_SharePayManager.m */; };
 		DB6482E021884C5B00CCD4EA /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64829821884C5B00CCD4EA /* HttpRequest.m */; };
 		DB6482E121884C5B00CCD4EA /* UIImage+ModifyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64829C21884C5B00CCD4EA /* UIImage+ModifyColor.m */; };
-		DB6482E221884C5B00CCD4EA /* UILabel+CalculateShowSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A021884C5B00CCD4EA /* UILabel+CalculateShowSize.m */; };
 		DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A221884C5B00CCD4EA /* UIView+IBDesignable.m */; };
 		DB6482E421884C5B00CCD4EA /* UIView+Instance.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A321884C5B00CCD4EA /* UIView+Instance.m */; };
 		DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A421884C5B00CCD4EA /* UIView+Frame.m */; };
@@ -85,13 +84,15 @@
 		DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7855DC21EC913000C0421F /* ED_TransitionAnimation.m */; };
 		DB79295F223A34190024907B /* ED_SystemControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB79295E223A34190024907B /* ED_SystemControl.m */; };
 		DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7C0BC922439D5B00B0A176 /* HorizontallyOpposedView.m */; };
-		DB8547142249D10400C90A52 /* UIImage+QRcode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8547132249D10400C90A52 /* UIImage+QRcode.m */; };
 		DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */; };
 		DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9C21AE6BBE006DDD7D /* FMDatabaseQueue.m */; };
 		DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85AC9F21AE6BBE006DDD7D /* FMDatabaseAdditions.m */; };
 		DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */; };
 		DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */; };
 		DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */; };
+		DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */; };
+		DB8A4B0C224DBBB000DA1C5C /* UILabel+CalculateShowSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */; };
+		DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B0E224DBC1600DA1C5C /* UIView+UnreadNumber.m */; };
 		DB8C75A621ABD2D2005D0546 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C75A421ABD2D2005D0546 /* Reachability.m */; };
 		DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8C75A821ABD342005D0546 /* ED_NetListener.m */; };
 		DB8DC62121B5158800A2B5C4 /* TestTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8DC62021B5158800A2B5C4 /* TestTabBarController.m */; };
@@ -187,8 +188,6 @@
 		DB64829921884C5B00CCD4EA /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		DB64829C21884C5B00CCD4EA /* UIImage+ModifyColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ModifyColor.m"; sourceTree = "<group>"; };
 		DB64829D21884C5B00CCD4EA /* UIImage+ModifyColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ModifyColor.h"; sourceTree = "<group>"; };
-		DB64829F21884C5B00CCD4EA /* UILabel+CalculateShowSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CalculateShowSize.h"; sourceTree = "<group>"; };
-		DB6482A021884C5B00CCD4EA /* UILabel+CalculateShowSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CalculateShowSize.m"; sourceTree = "<group>"; };
 		DB6482A221884C5B00CCD4EA /* UIView+IBDesignable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBDesignable.m"; sourceTree = "<group>"; };
 		DB6482A321884C5B00CCD4EA /* UIView+Instance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Instance.m"; sourceTree = "<group>"; };
 		DB6482A421884C5B00CCD4EA /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
@@ -282,8 +281,6 @@
 		DB79295E223A34190024907B /* ED_SystemControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SystemControl.m; sourceTree = "<group>"; };
 		DB7C0BC822439D5B00B0A176 /* HorizontallyOpposedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontallyOpposedView.h; sourceTree = "<group>"; };
 		DB7C0BC922439D5B00B0A176 /* HorizontallyOpposedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontallyOpposedView.m; sourceTree = "<group>"; };
-		DB8547122249D10400C90A52 /* UIImage+QRcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRcode.h"; sourceTree = "<group>"; };
-		DB8547132249D10400C90A52 /* UIImage+QRcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRcode.m"; sourceTree = "<group>"; };
 		DB85AC9621AE6B8E006DDD7D /* ED_DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_DBManager.h; sourceTree = "<group>"; };
 		DB85AC9721AE6B8E006DDD7D /* ED_DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_DBManager.m; sourceTree = "<group>"; };
 		DB85AC9B21AE6BBE006DDD7D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -297,6 +294,12 @@
 		DB85ACA321AE6BBE006DDD7D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DB8A4B07224DBBA300DA1C5C /* UIImage+QRcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRcode.h"; sourceTree = "<group>"; };
+		DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRcode.m"; sourceTree = "<group>"; };
+		DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CalculateShowSize.m"; sourceTree = "<group>"; };
+		DB8A4B0B224DBBB000DA1C5C /* UILabel+CalculateShowSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CalculateShowSize.h"; sourceTree = "<group>"; };
+		DB8A4B0D224DBC1600DA1C5C /* UIView+UnreadNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UnreadNumber.h"; sourceTree = "<group>"; };
+		DB8A4B0E224DBC1600DA1C5C /* UIView+UnreadNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UnreadNumber.m"; sourceTree = "<group>"; };
 		DB8C75A421ABD2D2005D0546 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DB8C75A521ABD2D2005D0546 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DB8C75A721ABD342005D0546 /* ED_NetListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_NetListener.h; sourceTree = "<group>"; };
@@ -600,8 +603,8 @@
 		DB64829B21884C5B00CCD4EA /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				DB8547122249D10400C90A52 /* UIImage+QRcode.h */,
-				DB8547132249D10400C90A52 /* UIImage+QRcode.m */,
+				DB8A4B07224DBBA300DA1C5C /* UIImage+QRcode.h */,
+				DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */,
 				DB64829C21884C5B00CCD4EA /* UIImage+ModifyColor.m */,
 				DB64829D21884C5B00CCD4EA /* UIImage+ModifyColor.h */,
 			);
@@ -611,8 +614,8 @@
 		DB64829E21884C5B00CCD4EA /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
-				DB64829F21884C5B00CCD4EA /* UILabel+CalculateShowSize.h */,
-				DB6482A021884C5B00CCD4EA /* UILabel+CalculateShowSize.m */,
+				DB8A4B0B224DBBB000DA1C5C /* UILabel+CalculateShowSize.h */,
+				DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -630,6 +633,8 @@
 				DB6482A521884C5B00CCD4EA /* UIView+PlaceHolder.m */,
 				DB6482AB21884C5B00CCD4EA /* UIView+Autoresizing.h */,
 				DB6482A621884C5B00CCD4EA /* UIView+Autoresizing.m */,
+				DB8A4B0D224DBC1600DA1C5C /* UIView+UnreadNumber.h */,
+				DB8A4B0E224DBC1600DA1C5C /* UIView+UnreadNumber.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1194,6 +1199,7 @@
 				DB6482F221884C5B00CCD4EA /* ED_SearchRecordView.m in Sources */,
 				DB8DC62121B5158800A2B5C4 /* TestTabBarController.m in Sources */,
 				DB8DC62A21B516EF00A2B5C4 /* Test3ViewController.m in Sources */,
+				DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */,
 				DB64825021884C0E00CCD4EA /* ViewController.m in Sources */,
 				DB6D170221ED73820048C4CD /* ED_PrecentTransition.m in Sources */,
 				DB6482F121884C5B00CCD4EA /* UIImageView+SQWebCache.m in Sources */,
@@ -1204,7 +1210,6 @@
 				DB6482F421884C5B00CCD4EA /* NSDictionary+RemoveNull.m in Sources */,
 				DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
-				DB6482E221884C5B00CCD4EA /* UILabel+CalculateShowSize.m in Sources */,
 				DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */,
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
@@ -1235,8 +1240,8 @@
 				DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
-				DB8547142249D10400C90A52 /* UIImage+QRcode.m in Sources */,
 				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
+				DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
@@ -1256,6 +1261,7 @@
 				DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */,
 				DB6482F321884C5B00CCD4EA /* ED_LocationManager.m in Sources */,
 				DB93747F221FA3EA00D5BF9E /* ED_PageTitleCell.m in Sources */,
+				DB8A4B0C224DBBB000DA1C5C /* UILabel+CalculateShowSize.m in Sources */,
 				DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */,
 				DB5EE696222E54B500A99511 /* ED_AlertViewController.m in Sources */,
 				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
