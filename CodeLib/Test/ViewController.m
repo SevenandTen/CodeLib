@@ -85,63 +85,63 @@
 
 
 
+//
+//- (void)netWorkChange {
+//    ED_NetWorkEnvironment status = [ED_NetListener shareInstance].status;
+//    if (status == ED_NetWorkDisable) {
+//        NSLog(@"网路不可用");
+//    }else if (status == ED_NetWorkWifi) {
+//        NSLog(@"wifi");
+//    }else {
+//        NSLog(@"4g");
+//    }
+//}
+//
+//- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
+//    switch (central.state) {
+//        case CBCentralManagerStateUnknown:
+//            NSLog(@">>>CBCentralManagerStateUnknown");
+//            break;
+//        case CBCentralManagerStateResetting:
+//            NSLog(@">>>CBCentralManagerStateResetting");
+//            break;
+//        case CBCentralManagerStateUnsupported:
+//            NSLog(@">>>CBCentralManagerStateUnsupported");
+//            break;
+//        case CBCentralManagerStateUnauthorized:
+//            NSLog(@">>>CBCentralManagerStateUnauthorized");
+//            break;
+//        case CBCentralManagerStatePoweredOff:
+//            NSLog(@">>>CBCentralManagerStatePoweredOff");
+//            break;
+//        case CBCentralManagerStatePoweredOn:
+//        {
+//            NSLog(@">>>CBCentralManagerStatePoweredOn");
+//            // 开始扫描周围的外设。
+//            /*
+//             -- 两个参数为Nil表示默认扫描所有可见蓝牙设备。
+//             -- 注意：第一个参数是用来扫描有指定服务的外设。然后有些外设的服务是相同的，比如都有FFF5服务，那么都会发现；而有些外设的服务是不可见的，就会扫描不到设备。
+//             -- 成功扫描到外设后调用didDiscoverPeripheral
+//             */
+//            [self.manager scanForPeripheralsWithServices:nil options:nil];
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+//}
 
-- (void)netWorkChange {
-    ED_NetWorkEnvironment status = [ED_NetListener shareInstance].status;
-    if (status == ED_NetWorkDisable) {
-        NSLog(@"网路不可用");
-    }else if (status == ED_NetWorkWifi) {
-        NSLog(@"wifi");
-    }else {
-        NSLog(@"4g");
-    }
-}
+//#pragma mark 发现外设
+//- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary*)advertisementData RSSI:(NSNumber *)RSSI{
+//    NSLog(@"-------------------------------------");
+//    NSLog(@"Find device:%@", peripheral.name );
+//    NSLog(@"11111 :%@", advertisementData );
+//    NSLog(@"22222 :%@", RSSI );
+//
+//
+//
+//}
 
-- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
-    switch (central.state) {
-        case CBCentralManagerStateUnknown:
-            NSLog(@">>>CBCentralManagerStateUnknown");
-            break;
-        case CBCentralManagerStateResetting:
-            NSLog(@">>>CBCentralManagerStateResetting");
-            break;
-        case CBCentralManagerStateUnsupported:
-            NSLog(@">>>CBCentralManagerStateUnsupported");
-            break;
-        case CBCentralManagerStateUnauthorized:
-            NSLog(@">>>CBCentralManagerStateUnauthorized");
-            break;
-        case CBCentralManagerStatePoweredOff:
-            NSLog(@">>>CBCentralManagerStatePoweredOff");
-            break;
-        case CBCentralManagerStatePoweredOn:
-        {
-            NSLog(@">>>CBCentralManagerStatePoweredOn");
-            // 开始扫描周围的外设。
-            /*
-             -- 两个参数为Nil表示默认扫描所有可见蓝牙设备。
-             -- 注意：第一个参数是用来扫描有指定服务的外设。然后有些外设的服务是相同的，比如都有FFF5服务，那么都会发现；而有些外设的服务是不可见的，就会扫描不到设备。
-             -- 成功扫描到外设后调用didDiscoverPeripheral
-             */
-            [self.manager scanForPeripheralsWithServices:nil options:nil];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
-#pragma mark 发现外设
-- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary*)advertisementData RSSI:(NSNumber *)RSSI{
-    NSLog(@"-------------------------------------");
-    NSLog(@"Find device:%@", peripheral.name );
-    NSLog(@"11111 :%@", advertisementData );
-    NSLog(@"22222 :%@", RSSI );
-    
-   
-    
-}
-    
 
 //- (void)refreshViewBeginRefreshHeader:(ED_BaseRefreshView *)refreshView {
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

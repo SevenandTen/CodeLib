@@ -131,6 +131,19 @@
 //
 //
 //
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSArray *array = @[@"1",@"2"];
+//    @try {
+//        NSString *str = [array objectAtIndex:3];
+//    } @catch (NSException *exception) {
+//        NSLog(@"exception");
+//    } @finally {
+//        NSLog(@".......");
+//    }
+    
+}
+
 - (ED_RefreshNormalHeader *)header {
     if (!_header) {
         _header = [[ED_RefreshNormalHeader alloc] init];

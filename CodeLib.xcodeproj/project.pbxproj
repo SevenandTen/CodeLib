@@ -123,6 +123,7 @@
 		DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C6222D118400C42F80 /* ED_AnimationView.m */; };
 		DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C7222D118400C42F80 /* ico_ok@3x.png */; };
 		DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */; };
+		DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA7A226D933A0024310D /* ED_CrashControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +349,8 @@
 		DBBD10C9222D118400C42F80 /* ED_AnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AnimationView.h; sourceTree = "<group>"; };
 		DBDCC17421D351A3001367FE /* ED_ImagePickerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerManager.h; sourceTree = "<group>"; };
 		DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ImagePickerManager.m; sourceTree = "<group>"; };
+		DBEBCA79226D933A0024310D /* ED_CrashControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CrashControl.h; sourceTree = "<group>"; };
+		DBEBCA7A226D933A0024310D /* ED_CrashControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CrashControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +512,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DBEBCA78226D8E690024310D /* ED_CrashChaser */,
 				DB7C0BC722439D5B00B0A176 /* HorizontallyOpposedView */,
 				DBFA10F12230F6670041DBCA /* ED_SystemControl */,
 				DB5EE68F222E54B400A99511 /* ED_AlertViewController */,
@@ -1034,6 +1038,15 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		DBEBCA78226D8E690024310D /* ED_CrashChaser */ = {
+			isa = PBXGroup;
+			children = (
+				DBEBCA79226D933A0024310D /* ED_CrashControl.h */,
+				DBEBCA7A226D933A0024310D /* ED_CrashControl.m */,
+			);
+			path = ED_CrashChaser;
+			sourceTree = "<group>";
+		};
 		DBFA10F12230F6670041DBCA /* ED_SystemControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1230,6 +1243,7 @@
 				DB71E92121B128670040C7E6 /* CViewController.m in Sources */,
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */,
+				DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */,
 				DB95FB7C222661DB00AFB061 /* ED_ContinueLocationManager.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB79295F223A34190024907B /* ED_SystemControl.m in Sources */,

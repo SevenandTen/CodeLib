@@ -299,7 +299,7 @@ NSString *const ED_LocationDateKey = @"date";
 - (NSString *)path {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
      NSString *path = [paths objectAtIndex:0];
-    return  [path stringByAppendingPathExtension:ED_LocationsFileName];
+    return  [path stringByAppendingPathComponent:ED_LocationsFileName];
 }
 
 

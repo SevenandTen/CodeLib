@@ -14,6 +14,8 @@
 #import "ED_URLProtocol.h"
 #import "ED_ContinueLocationManager.h"
 
+#import "ED_CrashControl.h"
+
 //
 
 @interface AppDelegate ()
@@ -26,6 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSURLProtocol registerClass:[ED_URLProtocol class]];
     // Override point for customization after application launch.
+    
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[TestTabBarController alloc] init];
 //    self.window.rootViewController = [[UIViewController alloc] init];
@@ -53,14 +56,17 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [ED_CrashControl beginListenCrash];
+    
+    
     
     NSLog(@"==================================== %ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"1077"]);
-    
+
     NSArray *array = [[ED_ContinueLocationManager shareInstance]getLocationsFromLocalWithTimeSpace:120];
     NSLog(@"-------------------------------------%@",array);
     [[ED_ContinueLocationManager shareInstance] removeLocationsFromLocal];
     
-//    [[ED_ContinueLocationManager shareInstance] startLocationInApp];
+    [[ED_ContinueLocationManager shareInstance] startLocationInApp];
 }
 
 
