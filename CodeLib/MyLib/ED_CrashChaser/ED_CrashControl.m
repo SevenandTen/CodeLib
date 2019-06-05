@@ -117,6 +117,14 @@ void  ED_CurrentSignalHandler(int signo, siginfo_t *info, void *context) {
     
 }
 
++ (NSDictionary *)getExceptionInfo {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    
+    NSString *path = [paths objectAtIndex:0];
+    NSString *newPath = [path stringByAppendingPathComponent:@"exception"];
+    return [[NSDictionary alloc] initWithContentsOfFile:newPath];
+}
+
 + (void)saveSignalInfo:(NSDictionary *)info {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     
@@ -125,5 +133,15 @@ void  ED_CurrentSignalHandler(int signo, siginfo_t *info, void *context) {
     [info writeToFile:newPath atomically:YES];
     
 }
+
++ (NSDictionary *)getSignalInfo {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    
+    NSString *path = [paths objectAtIndex:0];
+    NSString *newPath = [path stringByAppendingPathComponent:@"signal."];
+    return [[NSDictionary alloc] initWithContentsOfFile:newPath];
+}
+
+
 
 @end

@@ -11,7 +11,7 @@
 //
 #import "ViewController.h"
 #import "TestTabBarController.h"
-#import "ED_URLProtocol.h"
+//#import "ED_URLProtocol.h"
 #import "ED_ContinueLocationManager.h"
 
 #import "ED_CrashControl.h"
@@ -26,7 +26,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [NSURLProtocol registerClass:[ED_URLProtocol class]];
+//    [NSURLProtocol registerClass:[ED_URLProtocol class]];
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

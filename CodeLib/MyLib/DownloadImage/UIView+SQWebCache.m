@@ -61,6 +61,7 @@
 
 - (void)dealWithImage:(UIImage *)image {
     
+    
 }
 
 

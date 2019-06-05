@@ -66,7 +66,6 @@
 		DB64831421884D8E00CCD4EA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64831321884D8E00CCD4EA /* OpenGLES.framework */; };
 		DB64831D21B610F30064D94B /* UIView+SQWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64831C21B610F30064D94B /* UIView+SQWebCache.m */; };
 		DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64831F21B615970064D94B /* UIButton+SQWebCache.m */; };
-		DB659BE0221551A7004244ED /* ED_URLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = DB659BDF221551A7004244ED /* ED_URLProtocol.m */; };
 		DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */; };
 		DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB695D2C21896E26001B3515 /* ED_BasicViewController.m */; };
 		DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */; };
@@ -90,6 +89,9 @@
 		DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */; };
 		DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */; };
 		DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */; };
+		DB872C8D2271A6D10014F32D /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB872C8C2271A6D10014F32D /* TestView.m */; };
+		DB872C8F2271A7560014F32D /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB872C8E2271A7560014F32D /* TestView.xib */; };
+		DB872C922271A95E0014F32D /* UIImageView+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = DB872C912271A95E0014F32D /* UIImageView+IBDesignable.m */; };
 		DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */; };
 		DB8A4B0C224DBBB000DA1C5C /* UILabel+CalculateShowSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */; };
 		DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B0E224DBC1600DA1C5C /* UIView+UnreadNumber.m */; };
@@ -105,6 +107,9 @@
 		DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17A21C0A7AE0051B2D1 /* ED_MonthView.m */; };
 		DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */; };
 		DB95FB7C222661DB00AFB061 /* ED_ContinueLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95FB7B222661DB00AFB061 /* ED_ContinueLocationManager.m */; };
+		DB9747AA2295182B00B03128 /* ED_EnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9747A92295182B00B03128 /* ED_EnvironmentManager.m */; };
+		DB9747AD22952F8A00B03128 /* ED_EnviromentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9747AC22952F8A00B03128 /* ED_EnviromentView.m */; };
+		DB9747AF2295312000B03128 /* ED_EnvironmentManager.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9747AE2295312000B03128 /* ED_EnvironmentManager.plist */; };
 		DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA0F60321F83BD9002D6422 /* ED_SignView.m */; };
 		DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8831921D071EE00E0A29F /* ED_HighPrecisionControl.m */; };
 		DBAA8FA321E58BBF005E7707 /* ico_share_pyq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8F9721E58BBF005E7707 /* ico_share_pyq@3x.png */; };
@@ -246,8 +251,6 @@
 		DB64831C21B610F30064D94B /* UIView+SQWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQWebCache.m"; sourceTree = "<group>"; };
 		DB64831E21B615970064D94B /* UIButton+SQWebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SQWebCache.h"; sourceTree = "<group>"; };
 		DB64831F21B615970064D94B /* UIButton+SQWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SQWebCache.m"; sourceTree = "<group>"; };
-		DB659BDE221551A7004244ED /* ED_URLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_URLProtocol.h; sourceTree = "<group>"; };
-		DB659BDF221551A7004244ED /* ED_URLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_URLProtocol.m; sourceTree = "<group>"; };
 		DB67782221A3B5B200B0ED68 /* ED_RefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RefreshNormalHeader.h; sourceTree = "<group>"; };
 		DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalHeader.m; sourceTree = "<group>"; };
 		DB67782521A400CF00B0ED68 /* ED_Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Define.h; sourceTree = "<group>"; };
@@ -295,6 +298,11 @@
 		DB85ACA321AE6BBE006DDD7D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DB872C8B2271A6D00014F32D /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		DB872C8C2271A6D10014F32D /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		DB872C8E2271A7560014F32D /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		DB872C902271A95E0014F32D /* UIImageView+IBDesignable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+IBDesignable.h"; sourceTree = "<group>"; };
+		DB872C912271A95E0014F32D /* UIImageView+IBDesignable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+IBDesignable.m"; sourceTree = "<group>"; };
 		DB8A4B07224DBBA300DA1C5C /* UIImage+QRcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRcode.h"; sourceTree = "<group>"; };
 		DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRcode.m"; sourceTree = "<group>"; };
 		DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CalculateShowSize.m"; sourceTree = "<group>"; };
@@ -325,6 +333,11 @@
 		DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MonthItemCell.m; sourceTree = "<group>"; };
 		DB95FB7A222661DB00AFB061 /* ED_ContinueLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ContinueLocationManager.h; sourceTree = "<group>"; };
 		DB95FB7B222661DB00AFB061 /* ED_ContinueLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ContinueLocationManager.m; sourceTree = "<group>"; };
+		DB9747A82295182B00B03128 /* ED_EnvironmentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_EnvironmentManager.h; sourceTree = "<group>"; };
+		DB9747A92295182B00B03128 /* ED_EnvironmentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_EnvironmentManager.m; sourceTree = "<group>"; };
+		DB9747AB22952F8A00B03128 /* ED_EnviromentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_EnviromentView.h; sourceTree = "<group>"; };
+		DB9747AC22952F8A00B03128 /* ED_EnviromentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_EnviromentView.m; sourceTree = "<group>"; };
+		DB9747AE2295312000B03128 /* ED_EnvironmentManager.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ED_EnvironmentManager.plist; sourceTree = "<group>"; };
 		DBA0F60221F83BD9002D6422 /* ED_SignView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SignView.h; sourceTree = "<group>"; };
 		DBA0F60321F83BD9002D6422 /* ED_SignView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SignView.m; sourceTree = "<group>"; };
 		DBA8831821D071EE00E0A29F /* ED_HighPrecisionControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_HighPrecisionControl.h; sourceTree = "<group>"; };
@@ -512,6 +525,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB9747A72295176C00B03128 /* ED_EnvironmentManager */,
 				DBEBCA78226D8E690024310D /* ED_CrashChaser */,
 				DB7C0BC722439D5B00B0A176 /* HorizontallyOpposedView */,
 				DBFA10F12230F6670041DBCA /* ED_SystemControl */,
@@ -776,8 +790,6 @@
 		DB659BDD2215516B004244ED /* URLProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				DB659BDE221551A7004244ED /* ED_URLProtocol.h */,
-				DB659BDF221551A7004244ED /* ED_URLProtocol.m */,
 			);
 			path = URLProtocol;
 			sourceTree = "<group>";
@@ -824,6 +836,11 @@
 				DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */,
 				DB8DC62221B516D100A2B5C4 /* Test1ViewController.h */,
 				DB8DC62321B516D100A2B5C4 /* Test1ViewController.m */,
+				DB872C8B2271A6D00014F32D /* TestView.h */,
+				DB872C8C2271A6D10014F32D /* TestView.m */,
+				DB872C8E2271A7560014F32D /* TestView.xib */,
+				DB872C902271A95E0014F32D /* UIImageView+IBDesignable.h */,
+				DB872C912271A95E0014F32D /* UIImageView+IBDesignable.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -968,6 +985,18 @@
 				DB94C17D21C0AFC70051B2D1 /* ED_MonthItemCell.m */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		DB9747A72295176C00B03128 /* ED_EnvironmentManager */ = {
+			isa = PBXGroup;
+			children = (
+				DB9747A82295182B00B03128 /* ED_EnvironmentManager.h */,
+				DB9747A92295182B00B03128 /* ED_EnvironmentManager.m */,
+				DB9747AB22952F8A00B03128 /* ED_EnviromentView.h */,
+				DB9747AC22952F8A00B03128 /* ED_EnviromentView.m */,
+				DB9747AE2295312000B03128 /* ED_EnvironmentManager.plist */,
+			);
+			path = ED_EnvironmentManager;
 			sourceTree = "<group>";
 		};
 		DBA0F5FE21F83B94002D6422 /* SignView */ = {
@@ -1169,6 +1198,7 @@
 				DBAA8FA821E58BBF005E7707 /* ico_share_qq@3x.png in Resources */,
 				DB6482DD21884C5B00CCD4EA /* AlipaySDK.bundle in Resources */,
 				DBAA8FA721E58BBF005E7707 /* ico_share_weixin@2x.png in Resources */,
+				DB9747AF2295312000B03128 /* ED_EnvironmentManager.plist in Resources */,
 				DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */,
 				DB6B36E52191832600970207 /* ico_change@2x.png in Resources */,
 				DBAA8FA321E58BBF005E7707 /* ico_share_pyq@3x.png in Resources */,
@@ -1176,6 +1206,7 @@
 				DB64825821884C0F00CCD4EA /* LaunchScreen.storyboard in Resources */,
 				DBAA8FAB21E58BBF005E7707 /* ico_tc_ok@3x.png in Resources */,
 				DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */,
+				DB872C8F2271A7560014F32D /* TestView.xib in Resources */,
 				DB6B36E62191832600970207 /* ico_change@3x.png in Resources */,
 				DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */,
 				DBAA8FA921E58BBF005E7707 /* ico_share_weixin@3x.png in Resources */,
@@ -1227,6 +1258,7 @@
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
 				DB6482ED21884C5B00CCD4EA /* ED_PhoneCodeView.m in Sources */,
+				DB9747AD22952F8A00B03128 /* ED_EnviromentView.m in Sources */,
 				DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */,
 				DB937482221FA64600D5BF9E /* ED_PageContainCell.m in Sources */,
 				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
@@ -1250,17 +1282,19 @@
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
 				DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */,
 				DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */,
+				DB9747AA2295182B00B03128 /* ED_EnvironmentManager.m in Sources */,
 				DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */,
 				DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
+				DB872C8D2271A6D10014F32D /* TestView.m in Sources */,
 				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
 				DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
-				DB659BE0221551A7004244ED /* ED_URLProtocol.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
+				DB872C922271A95E0014F32D /* UIImageView+IBDesignable.m in Sources */,
 				DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
 				DB55F1A7221E92160017B642 /* UIScrollView+PageView.m in Sources */,
@@ -1473,6 +1507,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CodeLib/Other/ShareAndPay/Third/WXSDK",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqq.CodeLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1500,6 +1535,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CodeLib/Other/ShareAndPay/Third/WXSDK",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqq.CodeLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

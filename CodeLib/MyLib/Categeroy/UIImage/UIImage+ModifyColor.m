@@ -43,5 +43,15 @@
 }
 
 
++ (UIImage *)imageWithColor:(UIColor *)imageColor imageSize:(CGSize)imageSize {
+    // 使用颜色创建UIImage
+    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
+    [imageColor set];
+    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 @end

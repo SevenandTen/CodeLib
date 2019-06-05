@@ -27,10 +27,6 @@
         [UIView animateWithDuration:2 animations:^{
             self.alpha = 1;
         }];
-        
-       
-        
-        
     }
     
 }

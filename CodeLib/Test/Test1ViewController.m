@@ -31,7 +31,12 @@
 #import "UIImage+QRcode.h"
 
 #import "UIView+UnreadNumber.h"
-@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
+#import "UIImage+ModifyColor.h"
+#import "ED_EnvironmentManager.h"
+#import <objc/runtime.h>
+@interface Test1ViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>{
+    
+}
 
 //@property (nonatomic , strong) ED_PageView *pageView;
 //
@@ -53,39 +58,15 @@
 
 @implementation Test1ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-//
-//    [self.view addSubview:imageView];
-//    imageView.image = [UIImage createQRcodeWithContent:@"我不知道" size:CGSizeMake(150, 150)];
-//    [imageView openUnreadMode];
-//    [imageView setEd_unreadInset:UIEdgeInsetsMake(- 10, 0, 0, - 10)];
-//    [imageView setED_unreadNumber:1000];
-//    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-//    [dic setObject:@"1" forKey:@{@"1":@"2"}];
-//    NSLog(@"%@",dic);
-//
-    [self.view addSubview:self.tableView];
-    self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 500);
-    [self.tableView addSubview:self.header];
-    __weak typeof(self)weakSelf = self;
-    self.header.complete = ^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.header endRefreshing];
-        });
-    };
-    
-    [self.tableView addSubview:self.footer];
-    self.footer.complete = ^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.footer endRefreshing];
-        });
-    };
-    
-///
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithCapacity:2];
+    if (param.count == 2) {
+        NSLog(@"/////");
+    }
     
 }
 
@@ -133,14 +114,12 @@
 //
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSArray *array = @[@"1",@"2"];
-//    @try {
-//        NSString *str = [array objectAtIndex:3];
-//    } @catch (NSException *exception) {
-//        NSLog(@"exception");
-//    } @finally {
-//        NSLog(@".......");
-//    }
+//    NSURLErrorCancelled
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://www.sijibao.com/i"]];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSLog(@"%@", @(httpResponse.statusCode));
+    }] resume];
     
 }
 
@@ -159,6 +138,7 @@
     }
     return _footer;
 }
+
 
 
 - (UITableView *)tableView {

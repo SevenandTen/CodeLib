@@ -17,4 +17,7 @@
 
 + (UIImage *)imageWithView:(UIView *)view;
 
+
++ (UIImage *)imageWithColor:(UIColor *)imageColor imageSize:(CGSize)imageSize;
+
 @end

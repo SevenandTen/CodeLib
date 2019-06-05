@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>value</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>内网环境（开发专用）</string>
+	</dict>
+	<dict>
+		<key>value</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>测试环境</string>
+	</dict>
+	<dict>
+		<key>value</key>
+		<integer>11</integer>
+		<key>name</key>
+		<string>准生产环境</string>
+	</dict>
+	<dict>
+		<key>value</key>
+		<integer>1077</integer>
+		<key>name</key>
+		<string>正式环境</string>
+	</dict>
+</array>
+</plist>

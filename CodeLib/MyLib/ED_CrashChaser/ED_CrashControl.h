@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)saveSignalInfo:(NSDictionary *)info ;
 
++ (NSDictionary *)getExceptionInfo;
+
++ (NSDictionary *)getSignalInfo;
+
 
 @end
 

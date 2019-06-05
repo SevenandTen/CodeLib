@@ -94,7 +94,6 @@
         *error = responeseErr;
     }
     return responseData;
-    
 }
 
 
@@ -278,7 +277,7 @@ completionHandler:(nonnull void (^)(NSURLSessionResponseDisposition))completionH
         
     }else{
         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-        if (response.statusCode == 200) {
+        if (response.statusCode / 200 == 1) {
             if (self.complete) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.complete(self.data, nil);

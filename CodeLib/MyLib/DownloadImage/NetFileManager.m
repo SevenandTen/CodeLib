@@ -103,9 +103,12 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrit url:(NSString *)url 
             flag = NO;
         }else {
             NSMutableArray *array = [[NSMutableArray alloc] initWithArray:viewArray];
-            [array addObject:view];
-            [self.requestDic setObject:array forKey:url];
+            if (![array containsObject:view]) {
+                [array addObject:view];
+                [self.requestDic setObject:array forKey:url];
+            }
             flag = YES;
+            
         }
     });
     return flag;
