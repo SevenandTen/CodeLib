@@ -57,16 +57,18 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [ED_CrashControl beginListenCrash];
+    NSLog(@"%@",[ED_CrashControl getSignalInfo]);
+    NSLog(@"%@",[ED_CrashControl getExceptionInfo]);
     
     
     
-    NSLog(@"==================================== %ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"1077"]);
-
-    NSArray *array = [[ED_ContinueLocationManager shareInstance]getLocationsFromLocalWithTimeSpace:120];
-    NSLog(@"-------------------------------------%@",array);
-    [[ED_ContinueLocationManager shareInstance] removeLocationsFromLocal];
-    
-    [[ED_ContinueLocationManager shareInstance] startLocationInApp];
+//    NSLog(@"==================================== %ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"1077"]);
+//
+//    NSArray *array = [[ED_ContinueLocationManager shareInstance]getLocationsFromLocalWithTimeSpace:120];
+//    NSLog(@"-------------------------------------%@",array);
+//    [[ED_ContinueLocationManager shareInstance] removeLocationsFromLocal];
+//    
+//    [[ED_ContinueLocationManager shareInstance] startLocationInApp];
 }
 
 

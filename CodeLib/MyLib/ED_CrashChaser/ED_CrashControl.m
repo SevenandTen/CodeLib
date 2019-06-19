@@ -22,7 +22,7 @@ static ED_SignalHandler previousSignalHandler = NULL;
 
 
 void ED_CrashControl_uncaughtExceptionHandler(NSException *exception) {
-    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:3];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:4];
     if (exception.name) {
          [dic setObject:exception.name forKey:@"name"];
     }
@@ -30,7 +30,10 @@ void ED_CrashControl_uncaughtExceptionHandler(NSException *exception) {
         [dic setObject:exception.reason forKey:@"reason"];
     }
     if (exception.callStackSymbols) {
-        [dic setObject:exception forKey:@"callStackSymbols"];
+        [dic setObject:exception.description forKey:@"callStackSymbols"];
+    }
+    if (exception.userInfo) {
+        [dic setObject:exception.userInfo.description forKey:@"userInfo"];
     }
     [ED_CrashControl saveExceptionInfo:dic];
     
@@ -113,7 +116,12 @@ void  ED_CurrentSignalHandler(int signo, siginfo_t *info, void *context) {
     
     NSString *path = [paths objectAtIndex:0];
     NSString *newPath = [path stringByAppendingPathComponent:@"exception"];
-    [info writeToFile:newPath atomically:YES];
+    BOOL flag = [info writeToFile:newPath atomically:YES];
+    if (flag) {
+        NSLog(@"success");
+    }else {
+        NSLog(@"failed");
+    }
     
 }
 
@@ -130,7 +138,12 @@ void  ED_CurrentSignalHandler(int signo, siginfo_t *info, void *context) {
     
     NSString *path = [paths objectAtIndex:0];
     NSString *newPath = [path stringByAppendingPathComponent:@"signal"];
-    [info writeToFile:newPath atomically:YES];
+    BOOL flag = [info writeToFile:newPath atomically:YES];
+    if (flag) {
+        NSLog(@"success");
+    }else {
+        NSLog(@"failed");
+    }
     
 }
 
@@ -138,7 +151,7 @@ void  ED_CurrentSignalHandler(int signo, siginfo_t *info, void *context) {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     
     NSString *path = [paths objectAtIndex:0];
-    NSString *newPath = [path stringByAppendingPathComponent:@"signal."];
+    NSString *newPath = [path stringByAppendingPathComponent:@"signal"];
     return [[NSDictionary alloc] initWithContentsOfFile:newPath];
 }
 

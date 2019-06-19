@@ -89,9 +89,6 @@
 		DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA021AE6BBE006DDD7D /* FMDatabase.m */; };
 		DB85ACA921AE6BBE006DDD7D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */; };
 		DB85ACAA21AE6BBE006DDD7D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */; };
-		DB872C8D2271A6D10014F32D /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB872C8C2271A6D10014F32D /* TestView.m */; };
-		DB872C8F2271A7560014F32D /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB872C8E2271A7560014F32D /* TestView.xib */; };
-		DB872C922271A95E0014F32D /* UIImageView+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = DB872C912271A95E0014F32D /* UIImageView+IBDesignable.m */; };
 		DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */; };
 		DB8A4B0C224DBBB000DA1C5C /* UILabel+CalculateShowSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */; };
 		DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8A4B0E224DBC1600DA1C5C /* UIView+UnreadNumber.m */; };
@@ -298,11 +295,6 @@
 		DB85ACA321AE6BBE006DDD7D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		DB85ACA421AE6BBE006DDD7D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DB85ACA521AE6BBE006DDD7D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		DB872C8B2271A6D00014F32D /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
-		DB872C8C2271A6D10014F32D /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
-		DB872C8E2271A7560014F32D /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
-		DB872C902271A95E0014F32D /* UIImageView+IBDesignable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+IBDesignable.h"; sourceTree = "<group>"; };
-		DB872C912271A95E0014F32D /* UIImageView+IBDesignable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+IBDesignable.m"; sourceTree = "<group>"; };
 		DB8A4B07224DBBA300DA1C5C /* UIImage+QRcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRcode.h"; sourceTree = "<group>"; };
 		DB8A4B08224DBBA400DA1C5C /* UIImage+QRcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRcode.m"; sourceTree = "<group>"; };
 		DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CalculateShowSize.m"; sourceTree = "<group>"; };
@@ -836,11 +828,6 @@
 				DB8DC62621B516E300A2B5C4 /* Test2ViewController.m */,
 				DB8DC62221B516D100A2B5C4 /* Test1ViewController.h */,
 				DB8DC62321B516D100A2B5C4 /* Test1ViewController.m */,
-				DB872C8B2271A6D00014F32D /* TestView.h */,
-				DB872C8C2271A6D10014F32D /* TestView.m */,
-				DB872C8E2271A7560014F32D /* TestView.xib */,
-				DB872C902271A95E0014F32D /* UIImageView+IBDesignable.h */,
-				DB872C912271A95E0014F32D /* UIImageView+IBDesignable.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1206,7 +1193,6 @@
 				DB64825821884C0F00CCD4EA /* LaunchScreen.storyboard in Resources */,
 				DBAA8FAB21E58BBF005E7707 /* ico_tc_ok@3x.png in Resources */,
 				DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */,
-				DB872C8F2271A7560014F32D /* TestView.xib in Resources */,
 				DB6B36E62191832600970207 /* ico_change@3x.png in Resources */,
 				DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */,
 				DBAA8FA921E58BBF005E7707 /* ico_share_weixin@3x.png in Resources */,
@@ -1287,14 +1273,12 @@
 				DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
-				DB872C8D2271A6D10014F32D /* TestView.m in Sources */,
 				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
 				DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
 				DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
-				DB872C922271A95E0014F32D /* UIImageView+IBDesignable.m in Sources */,
 				DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
 				DB55F1A7221E92160017B642 /* UIScrollView+PageView.m in Sources */,

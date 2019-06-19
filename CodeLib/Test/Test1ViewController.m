@@ -63,90 +63,23 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithCapacity:2];
-    if (param.count == 2) {
-        NSLog(@"/////");
-    }
+   
     
 }
 
 
-
-
-
-
-//- (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    NSLog(@"%@", NSStringFromCGSize(webView.scrollView.contentSize));
-//    self.webView.frame = CGRectMake(0, 0, webView.scrollView.contentSize.width, webView.scrollView.contentSize.height);
-//    self.webView.scrollView.scrollEnabled = NO;
-//    self.scrollView.contentSize = webView.scrollView.contentSize;
-//}
-
-
-
-
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSArray * array = [NSArray array];
+    id objec = [array objectAtIndex:100];
 }
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%d +++扫地机几件",indexPath.row];
-    return cell;
-}
-//
-//
-//- (ED_PageView *)pageView {
-//    if (!_pageView) {
-//        _pageView = [[ED_PageView alloc] init];
-//    }
-//    return _pageView;
-//}
-//
-//
-//
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSURLErrorCancelled
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://www.sijibao.com/i"]];
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        NSLog(@"%@", @(httpResponse.statusCode));
-    }] resume];
-    
-}
-
-- (ED_RefreshNormalHeader *)header {
-    if (!_header) {
-        _header = [[ED_RefreshNormalHeader alloc] init];
-        _header.isFromOrigin = YES;
-        _header.isSuspend = YES;
-    }
-    return _header;
-}
-
-- (ED_RefreshNormalFooter *)footer {
-    if (!_footer) {
-        _footer = [[ED_RefreshNormalFooter alloc] init];
-    }
-    return _footer;
-}
 
 
 
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
-        _tableView.dataSource = self;
-        _tableView.delegate = self;
-    }
-    return _tableView;
-}
+
+
+
+
 @end

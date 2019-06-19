@@ -72,6 +72,8 @@
     [self.myNavigationBar setBackgroundImage:[[UIImage alloc] init]forBarMetrics:UIBarMetricsDefault];
     [self.myNavigationBar setTintColor:[UIColor whiteColor]];
     self.myNavigationBar.backgroundColor = [UIColor clearColor];
+    
+    
 }
 
 
