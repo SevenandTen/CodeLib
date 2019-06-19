@@ -65,6 +65,9 @@
 		DB64831421884D8E00CCD4EA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB64831321884D8E00CCD4EA /* OpenGLES.framework */; };
 		DB64831D21B610F30064D94B /* UIView+SQWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64831C21B610F30064D94B /* UIView+SQWebCache.m */; };
 		DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64831F21B615970064D94B /* UIButton+SQWebCache.m */; };
+		DB64864122B9F224002FA58F /* ED_OCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64864022B9F224002FA58F /* ED_OCRViewController.m */; };
+		DB64864522B9F2BE002FA58F /* ED_OCRView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64864422B9F2BE002FA58F /* ED_OCRView.m */; };
+		DB64864822BA1190002FA58F /* ED_ORCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64864722BA1190002FA58F /* ED_ORCControl.m */; };
 		DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */; };
 		DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB695D2C21896E26001B3515 /* ED_BasicViewController.m */; };
 		DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */; };
@@ -239,6 +242,12 @@
 		DB64831C21B610F30064D94B /* UIView+SQWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQWebCache.m"; sourceTree = "<group>"; };
 		DB64831E21B615970064D94B /* UIButton+SQWebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SQWebCache.h"; sourceTree = "<group>"; };
 		DB64831F21B615970064D94B /* UIButton+SQWebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SQWebCache.m"; sourceTree = "<group>"; };
+		DB64863F22B9F224002FA58F /* ED_OCRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_OCRViewController.h; sourceTree = "<group>"; };
+		DB64864022B9F224002FA58F /* ED_OCRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_OCRViewController.m; sourceTree = "<group>"; };
+		DB64864322B9F2BE002FA58F /* ED_OCRView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_OCRView.h; sourceTree = "<group>"; };
+		DB64864422B9F2BE002FA58F /* ED_OCRView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_OCRView.m; sourceTree = "<group>"; };
+		DB64864622BA1190002FA58F /* ED_ORCControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ORCControl.h; sourceTree = "<group>"; };
+		DB64864722BA1190002FA58F /* ED_ORCControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ORCControl.m; sourceTree = "<group>"; };
 		DB67782221A3B5B200B0ED68 /* ED_RefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RefreshNormalHeader.h; sourceTree = "<group>"; };
 		DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalHeader.m; sourceTree = "<group>"; };
 		DB67782521A400CF00B0ED68 /* ED_Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Define.h; sourceTree = "<group>"; };
@@ -749,6 +758,27 @@
 			path = MyBaseViewController;
 			sourceTree = "<group>";
 		};
+		DB64863E22B9F1D3002FA58F /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				DB64864222B9F2A7002FA58F /* View */,
+				DB64863F22B9F224002FA58F /* ED_OCRViewController.h */,
+				DB64864022B9F224002FA58F /* ED_OCRViewController.m */,
+				DB64864622BA1190002FA58F /* ED_ORCControl.h */,
+				DB64864722BA1190002FA58F /* ED_ORCControl.m */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		DB64864222B9F2A7002FA58F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB64864322B9F2BE002FA58F /* ED_OCRView.h */,
+				DB64864422B9F2BE002FA58F /* ED_OCRView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DB659BDD2215516B004244ED /* URLProtocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -983,6 +1013,7 @@
 		DBAA8FAE21E5D267005E7707 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				DB64863E22B9F1D3002FA58F /* OCR */,
 				DB64828C21884C5B00CCD4EA /* ShareAndPay */,
 				DB85AC9521AE6B8E006DDD7D /* DBManager */,
 			);
@@ -1186,6 +1217,7 @@
 				DB6482F221884C5B00CCD4EA /* ED_SearchRecordView.m in Sources */,
 				DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */,
 				DB64825021884C0E00CCD4EA /* ViewController.m in Sources */,
+				DB64864822BA1190002FA58F /* ED_ORCControl.m in Sources */,
 				DB6D170221ED73820048C4CD /* ED_PrecentTransition.m in Sources */,
 				DB6482F121884C5B00CCD4EA /* UIImageView+SQWebCache.m in Sources */,
 				DB6482F021884C5B00CCD4EA /* NetFileRequest.m in Sources */,
@@ -1230,6 +1262,7 @@
 				DB7C0BCA22439D5B00B0A176 /* HorizontallyOpposedView.m in Sources */,
 				DB7008A6219556BC0075BFEC /* ED_BaseRefreshView.m in Sources */,
 				DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */,
+				DB64864522B9F2BE002FA58F /* ED_OCRView.m in Sources */,
 				DB94C17E21C0AFC70051B2D1 /* ED_MonthItemCell.m in Sources */,
 				DB64825B21884C0F00CCD4EA /* main.m in Sources */,
 				DB55F1A7221E92160017B642 /* UIScrollView+PageView.m in Sources */,
@@ -1253,6 +1286,7 @@
 				DB74F28921903F5500AEAFE7 /* ED_BasicTableViewCell.m in Sources */,
 				DB5EE698222E54B500A99511 /* ED_AlertContentCell.m in Sources */,
 				DB6B36E2219180A100970207 /* ED_TimeSelectControl.m in Sources */,
+				DB64864122B9F224002FA58F /* ED_OCRViewController.m in Sources */,
 				DBBD10CA222D118500C42F80 /* ED_ToastView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

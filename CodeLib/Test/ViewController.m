@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "ED_OCRView.h"
 
 
 
 @interface ViewController ()
+
+@property (nonatomic , strong) ED_OCRView *orcView;
 
 
 
@@ -25,11 +28,21 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     
+    [self.view addSubview:self.orcView];
+//    self.orcView.frame = self.view.bounds;
+    
    
 
 }
 
 
+
+- (ED_OCRView *)orcView {
+    if (!_orcView) {
+        _orcView = [[ED_OCRView alloc] initWithFrame:self.view.bounds];
+    }
+    return _orcView;
+}
 
 
 
