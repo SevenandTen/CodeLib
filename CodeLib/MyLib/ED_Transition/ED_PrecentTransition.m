@@ -7,7 +7,7 @@
 //
 
 #import "ED_PrecentTransition.h"
-#import "CViewController.h"
+
 
 @interface ED_PrecentTransition ()
 {

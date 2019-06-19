@@ -9,12 +9,7 @@
 #import "AppDelegate.h"
 
 //
-#import "ViewController.h"
-#import "TestTabBarController.h"
-//#import "ED_URLProtocol.h"
-#import "ED_ContinueLocationManager.h"
 
-#import "ED_CrashControl.h"
 
 //
 
@@ -26,14 +21,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [NSURLProtocol registerClass:[ED_URLProtocol class]];
-    // Override point for customization after application launch.
-    
-    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[TestTabBarController alloc] init];
-//    self.window.rootViewController = [[UIViewController alloc] init];
-    [self.window makeKeyAndVisible];
-//    [[ED_ContinueLocationManager shareInstance] startLocationIfAppKilled];
+
     
     
     return YES;
@@ -56,19 +44,7 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [ED_CrashControl beginListenCrash];
-    NSLog(@"%@",[ED_CrashControl getSignalInfo]);
-    NSLog(@"%@",[ED_CrashControl getExceptionInfo]);
-    
-    
-    
-//    NSLog(@"==================================== %ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"1077"]);
-//
-//    NSArray *array = [[ED_ContinueLocationManager shareInstance]getLocationsFromLocalWithTimeSpace:120];
-//    NSLog(@"-------------------------------------%@",array);
-//    [[ED_ContinueLocationManager shareInstance] removeLocationsFromLocal];
-//    
-//    [[ED_ContinueLocationManager shareInstance] startLocationInApp];
+
 }
 
 
