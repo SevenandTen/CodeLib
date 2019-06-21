@@ -27,8 +27,11 @@
 #endif
 
 
+
+#define ImgName(_hex)  [UIImage imageNamed:_hex]
+
 //字体
-#define FontWithNumber(_hex) [UIFont systemFontOfSize:_hex]
+#define Font(_hex) [UIFont systemFontOfSize:_hex]
 
 
 #endif /* ED_Define_h */

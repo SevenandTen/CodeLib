@@ -116,6 +116,7 @@
 		DBAA8FAB21E58BBF005E7707 /* ico_tc_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8FA021E58BBF005E7707 /* ico_tc_ok@3x.png */; };
 		DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */; };
 		DBAA8FAD21E58BBF005E7707 /* ico_tc_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */; };
+		DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB2CAC422BB2B810060BE86 /* ED_RectView.m */; };
 		DBBD10CA222D118500C42F80 /* ED_ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C4222D118400C42F80 /* ED_ToastView.m */; };
 		DBBD10CB222D118500C42F80 /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C5222D118400C42F80 /* ico_ok@2x.png */; };
 		DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C6222D118400C42F80 /* ED_AnimationView.m */; };
@@ -334,6 +335,8 @@
 		DBAA8FA021E58BBF005E7707 /* ico_tc_ok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@3x.png"; sourceTree = "<group>"; };
 		DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_AlertControl.m; sourceTree = "<group>"; };
 		DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@2x.png"; sourceTree = "<group>"; };
+		DBB2CAC322BB2B810060BE86 /* ED_RectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RectView.h; sourceTree = "<group>"; };
+		DBB2CAC422BB2B810060BE86 /* ED_RectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RectView.m; sourceTree = "<group>"; };
 		DBBD10C4222D118400C42F80 /* ED_ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_ToastView.m; sourceTree = "<group>"; };
 		DBBD10C5222D118400C42F80 /* ico_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@2x.png"; sourceTree = "<group>"; };
 		DBBD10C6222D118400C42F80 /* ED_AnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_AnimationView.m; sourceTree = "<group>"; };
@@ -775,6 +778,8 @@
 			children = (
 				DB64864322B9F2BE002FA58F /* ED_OCRView.h */,
 				DB64864422B9F2BE002FA58F /* ED_OCRView.m */,
+				DBB2CAC322BB2B810060BE86 /* ED_RectView.h */,
+				DBB2CAC422BB2B810060BE86 /* ED_RectView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1226,6 +1231,7 @@
 				DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
 				DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */,
+				DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */,
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
 				DB6482ED21884C5B00CCD4EA /* ED_PhoneCodeView.m in Sources */,

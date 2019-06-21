@@ -66,9 +66,6 @@
         CGContextStrokePath(context);
     }
     
-    
-    
-    
 }
 
 

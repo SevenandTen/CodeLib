@@ -8,6 +8,8 @@
 
 #import "ED_OCRView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ED_RectView.h"
+#import "UIImage+ModifyColor.h"
 
 @interface ED_OCRView ()<AVCaptureMetadataOutputObjectsDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -33,6 +35,18 @@
 @property (nonatomic , strong) CIDetector *detector;
 
 
+@property (nonatomic , strong) ED_RectView *rectView;
+
+@property (nonatomic , strong) UIImageView *fileImageView;
+
+@property (nonatomic , assign) NSInteger count;
+
+
+
+
+
+
+
 @end
 
 
@@ -49,6 +63,8 @@
 
 - (void)configureViews {
     [self.layer addSublayer:self.videoPreviewLayer];
+//    [self addSubview:self.fileImageView];
+    [self addSubview:self.rectView];
     
 //    self.output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypeFace];
     
@@ -59,6 +75,9 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.videoPreviewLayer.frame = self.bounds;
+//    self.fileImageView.frame = CGRectMake(0, 0, 100, 300);
+    self.rectView.frame = self.bounds;
+    
 }
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
@@ -96,23 +115,61 @@
     if (!CMSampleBufferIsValid(sampleBuffer)) {
         return;
     }
-
+    self.count ++ ;
+    if (self.count % 2 == 0) {
+        return;
+    }
+    
     
     CVPixelBufferRef pixelBuffer = (CVPixelBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
-    
     CIImage *image = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+    
+    CIFilter *transform = [CIFilter filterWithName:@"CIAffineTransform"];
+    [transform setValue:image forKey:kCIInputImageKey];
+    NSValue *rotation = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeRotation(-90 * (M_PI/180))];
+    [transform setValue:rotation forKey:@"inputTransform"];
+    image = [transform outputImage];
+ 
+
+    
     NSLog(@"--------------------------");
     NSArray<CIFeature *> * features = [self.detector featuresInImage:image];
-    CGRect rect =  CGRectZero;
+    
+   
     
     if (features.count != 0) {
+        CGRect previewRect = self.bounds;
+        CGRect imageRect = image.extent;
+        CGFloat deltaX = CGRectGetWidth(previewRect)/CGRectGetWidth(imageRect);
+        CGFloat deltaY = CGRectGetHeight(previewRect)/CGRectGetHeight(imageRect);
+        CGAffineTransform transform2 = CGAffineTransformMakeTranslation(0.f, CGRectGetHeight(previewRect));
+        transform2 = CGAffineTransformScale(transform2, 1, -1);
+        transform2 = CGAffineTransformScale(transform2, deltaX, deltaY);
+        CIRectangleFeature *currentRect = nil;
+        
+        for (CIFeature *obj in features) {
+            if ([obj.type isEqualToString:CIFeatureTypeRectangle]) {
+                CIRectangleFeature *rectObject = (CIRectangleFeature *)obj;
+                if (currentRect && rectObject.bounds.size.width * rectObject.bounds.size.height > currentRect.bounds.size.width * currentRect.bounds.size.height) {
+                    currentRect = rectObject;
+                }else {
+                    currentRect = rectObject;
+                }
+            }
+        }
        
-       
+            CGPoint points[4];
+            points[0] = CGPointApplyAffineTransform(currentRect.topLeft, transform2);
+            points[1] = CGPointApplyAffineTransform(currentRect.topRight, transform2);
+            points[2] = CGPointApplyAffineTransform(currentRect.bottomRight, transform2);
+            points[3] = CGPointApplyAffineTransform(currentRect.bottomLeft, transform2);
+        
+        [self.rectView refreshPoint1:points[0] point2:points[1] point3:points[2] point4:points[3]];
     
         
         
     }else{
-        NSLog(@"+++++++++++++++++++++++++++++++++++++++++++++++++");
+        [self.rectView refreshPoint1:CGPointZero point2:CGPointZero point3:CGPointZero point4:CGPointZero];
     }
     
     
@@ -242,5 +299,22 @@
     return _faceView;
 }
 
+- (ED_RectView *)rectView {
+    if (!_rectView) {
+        _rectView = [[ED_RectView alloc] init];
+    }
+    return _rectView;
+}
+
+
+//- (UIImageView *)fileImageView {
+//    if (!_fileImageView) {
+//        _fileImageView = [[UIImageView alloc] init];
+////        _fileImageView.layer.masksToBounds = YES;
+////        _fileImageView.contentMode = UIViewContentModeCenter;
+////        _fileImageView.backgroundColor = [UIColor whiteColor];
+//    }
+//    return _fileImageView;
+//}
 
 @end
