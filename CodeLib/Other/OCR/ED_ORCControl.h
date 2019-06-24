@@ -10,7 +10,18 @@
 
 
 
-@interface ED_ORCControl : UIView
+@interface ED_ORCControl : NSObject
+
+
+/**
+  图片灰度处理
+ */
++ (UIImage *)opencvGrayProcessingWithImage:(UIImage *)image;
+
+/**
+ 图片二值化
+ */
++ (UIImage *)opencvBinaryzationWithImage:(UIImage *)image;
 
 @end
 

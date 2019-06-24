@@ -6,6 +6,13 @@
 //  Copyright © 2019 seventeen. All rights reserved.
 //
 
+
+
+
+//#import <opencv2/videoio/cap_ios.h>
+//#import <opencv2/imgcodecs/ios.h>
+//#import <opencv2/highgui.hpp>
+
 #import "ED_OCRView.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ED_RectView.h"
@@ -85,7 +92,7 @@
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     [self.faceView removeFromSuperview];
     if (metadataObjects.count > 0) {
-        NSLog(@"--------------------------")
+//        NSLog(@"--------------------------")
         for (AVMetadataObject *obj in metadataObjects) {
             if ([obj.type isEqualToString: AVMetadataObjectTypeFace]) {
                 AVMetadataFaceObject *face = (AVMetadataFaceObject *)obj;
