@@ -44,6 +44,32 @@
     
 }
 
+
+- (NSDictionary *)modelToDictionary {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    unsigned int count = 0;
+    Ivar *member = class_copyIvarList([self class], &count);
+    for (int i = 0; i < count; i++) {
+        Ivar var = member[i];
+        const char *memberName = ivar_getName(var);
+        NSString * nameStr = [NSString stringWithCString:memberName encoding:NSUTF8StringEncoding];
+        id object = [self valueForKey:nameStr];
+        if (object) {
+            if ([object isKindOfClass:[ED_BasicModel class]]) {
+                ED_BasicModel *model = (ED_BasicModel *)object;
+                [dic setObject:[model modelToDictionary] forKey:[nameStr substringFromIndex:1]];
+                
+            }else {
+                [dic setObject:object forKey:[nameStr substringFromIndex:1]];
+            }
+            
+        }
+    }
+    free(member);
+    
+    return dic;
+}
+
 #pragma mark - Init
 
 - (instancetype)initWithDic:(NSDictionary *)dic {

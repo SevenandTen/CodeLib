@@ -25,5 +25,8 @@
 - (void)dealWithData:(NSDictionary *)data;
 
 
+- (NSDictionary *)modelToDictionary;
+
+
 
 @end
