@@ -19,6 +19,7 @@
 		DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */; };
 		DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */; };
 		DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23828021DC9CCB0031178A /* ED_MoneyControl.m */; };
+		DB26EB5F22DF0F2F00855ED8 /* ED_CirCleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB26EB5E22DF0F2F00855ED8 /* ED_CirCleView.m */; };
 		DB55F1A7221E92160017B642 /* UIScrollView+PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */; };
 		DB5EE68E222E202D00A99511 /* ED_PhoneMapControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE68D222E202D00A99511 /* ED_PhoneMapControl.m */; };
 		DB5EE696222E54B500A99511 /* ED_AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE691222E54B400A99511 /* ED_AlertViewController.m */; };
@@ -126,12 +127,15 @@
 		DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */; };
 		DBAA8FAD21E58BBF005E7707 /* ico_tc_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */; };
 		DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB2CAC422BB2B810060BE86 /* ED_RectView.m */; };
+		DBB5800922EFDEF100E1E316 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800822EFDEF100E1E316 /* AViewController.m */; };
+		DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800B22EFE0D000E1E316 /* BViewController.m */; };
+		DBB5800F22EFE27C00E1E316 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800E22EFE27C00E1E316 /* CViewController.m */; };
 		DBBD10CA222D118500C42F80 /* ED_ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C4222D118400C42F80 /* ED_ToastView.m */; };
 		DBBD10CB222D118500C42F80 /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C5222D118400C42F80 /* ico_ok@2x.png */; };
 		DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C6222D118400C42F80 /* ED_AnimationView.m */; };
 		DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C7222D118400C42F80 /* ico_ok@3x.png */; };
+		DBCC25CF22E984540093AC7A /* TestNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC25CE22E984540093AC7A /* TestNavgationController.m */; };
 		DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */; };
-		DBE4466622CF4130000AC193 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE4466522CF4130000AC193 /* opencv2.framework */; };
 		DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA7A226D933A0024310D /* ED_CrashControl.m */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +172,8 @@
 		DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_GradedColorView.m; sourceTree = "<group>"; };
 		DB23827F21DC9CCB0031178A /* ED_MoneyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_MoneyControl.h; sourceTree = "<group>"; };
 		DB23828021DC9CCB0031178A /* ED_MoneyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_MoneyControl.m; sourceTree = "<group>"; };
+		DB26EB5D22DF0F2F00855ED8 /* ED_CirCleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CirCleView.h; sourceTree = "<group>"; };
+		DB26EB5E22DF0F2F00855ED8 /* ED_CirCleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CirCleView.m; sourceTree = "<group>"; };
 		DB55F1A5221E92160017B642 /* UIScrollView+PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PageView.h"; sourceTree = "<group>"; };
 		DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PageView.m"; sourceTree = "<group>"; };
 		DB5EE68C222E202D00A99511 /* ED_PhoneMapControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PhoneMapControl.h; sourceTree = "<group>"; };
@@ -356,12 +362,20 @@
 		DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@2x.png"; sourceTree = "<group>"; };
 		DBB2CAC322BB2B810060BE86 /* ED_RectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RectView.h; sourceTree = "<group>"; };
 		DBB2CAC422BB2B810060BE86 /* ED_RectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RectView.m; sourceTree = "<group>"; };
+		DBB5800722EFDEF100E1E316 /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		DBB5800822EFDEF100E1E316 /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		DBB5800A22EFE0D000E1E316 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		DBB5800B22EFE0D000E1E316 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		DBB5800D22EFE27C00E1E316 /* CViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
+		DBB5800E22EFE27C00E1E316 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
 		DBBD10C4222D118400C42F80 /* ED_ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_ToastView.m; sourceTree = "<group>"; };
 		DBBD10C5222D118400C42F80 /* ico_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@2x.png"; sourceTree = "<group>"; };
 		DBBD10C6222D118400C42F80 /* ED_AnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_AnimationView.m; sourceTree = "<group>"; };
 		DBBD10C7222D118400C42F80 /* ico_ok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@3x.png"; sourceTree = "<group>"; };
 		DBBD10C8222D118400C42F80 /* ED_ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_ToastView.h; sourceTree = "<group>"; };
 		DBBD10C9222D118400C42F80 /* ED_AnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AnimationView.h; sourceTree = "<group>"; };
+		DBCC25CD22E984540093AC7A /* TestNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavgationController.h; sourceTree = "<group>"; };
+		DBCC25CE22E984540093AC7A /* TestNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavgationController.m; sourceTree = "<group>"; };
 		DBDCC17421D351A3001367FE /* ED_ImagePickerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerManager.h; sourceTree = "<group>"; };
 		DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ImagePickerManager.m; sourceTree = "<group>"; };
 		DBE4466522CF4130000AC193 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
@@ -392,7 +406,6 @@
 				DB64830621884D4B00CCD4EA /* UIKit.framework in Frameworks */,
 				DB64830021884D3D00CCD4EA /* CoreLocation.framework in Frameworks */,
 				DB64830121884D3D00CCD4EA /* CoreTelephony.framework in Frameworks */,
-				DBE4466622CF4130000AC193 /* opencv2.framework in Frameworks */,
 				DB64830221884D3D00CCD4EA /* CoreText.framework in Frameworks */,
 				DB64830321884D3D00CCD4EA /* CoreGraphics.framework in Frameworks */,
 				DB64830421884D3D00CCD4EA /* CoreMotion.framework in Frameworks */,
@@ -436,6 +449,15 @@
 				DB23828021DC9CCB0031178A /* ED_MoneyControl.m */,
 			);
 			path = MoneyControl;
+			sourceTree = "<group>";
+		};
+		DB26EB5C22DF0F1300855ED8 /* ED_CirCle */ = {
+			isa = PBXGroup;
+			children = (
+				DB26EB5D22DF0F2F00855ED8 /* ED_CirCleView.h */,
+				DB26EB5E22DF0F2F00855ED8 /* ED_CirCleView.m */,
+			);
+			path = ED_CirCle;
 			sourceTree = "<group>";
 		};
 		DB5EE685222E117300A99511 /* ED_PhoneMapControl */ = {
@@ -528,6 +550,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB26EB5C22DF0F1300855ED8 /* ED_CirCle */,
 				DB9747A72295176C00B03128 /* ED_EnvironmentManager */,
 				DBEBCA78226D8E690024310D /* ED_CrashChaser */,
 				DB7C0BC722439D5B00B0A176 /* HorizontallyOpposedView */,
@@ -859,6 +882,14 @@
 				DB153A2222BCD74600570066 /* test.jpg */,
 				DB64824E21884C0E00CCD4EA /* ViewController.h */,
 				DB64824F21884C0E00CCD4EA /* ViewController.m */,
+				DBB5800722EFDEF100E1E316 /* AViewController.h */,
+				DBB5800822EFDEF100E1E316 /* AViewController.m */,
+				DBB5800A22EFE0D000E1E316 /* BViewController.h */,
+				DBB5800B22EFE0D000E1E316 /* BViewController.m */,
+				DBB5800D22EFE27C00E1E316 /* CViewController.h */,
+				DBB5800E22EFE27C00E1E316 /* CViewController.m */,
+				DBCC25CD22E984540093AC7A /* TestNavgationController.h */,
+				DBCC25CE22E984540093AC7A /* TestNavgationController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1279,6 +1310,7 @@
 				DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
 				DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */,
+				DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */,
 				DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */,
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
@@ -1306,10 +1338,13 @@
 				DB64832021B615970064D94B /* UIButton+SQWebCache.m in Sources */,
 				DB7855DD21EC913000C0421F /* ED_TransitionAnimation.m in Sources */,
 				DB9747AA2295182B00B03128 /* ED_EnvironmentManager.m in Sources */,
+				DBB5800922EFDEF100E1E316 /* AViewController.m in Sources */,
 				DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */,
+				DBCC25CF22E984540093AC7A /* TestNavgationController.m in Sources */,
 				DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
+				DBB5800F22EFE27C00E1E316 /* CViewController.m in Sources */,
 				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
 				DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,
@@ -1335,6 +1370,7 @@
 				DB5EE696222E54B500A99511 /* ED_AlertViewController.m in Sources */,
 				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
 				DB6482EA21884C5B00CCD4EA /* UIViewController+Animation.m in Sources */,
+				DB26EB5F22DF0F2F00855ED8 /* ED_CirCleView.m in Sources */,
 				DB5EE68E222E202D00A99511 /* ED_PhoneMapControl.m in Sources */,
 				DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */,
 				DB74F28921903F5500AEAFE7 /* ED_BasicTableViewCell.m in Sources */,

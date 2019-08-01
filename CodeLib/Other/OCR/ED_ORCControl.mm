@@ -6,18 +6,18 @@
 //  Copyright © 2019 seventeen. All rights reserved.
 //
 
-#import <opencv2/opencv.hpp>
-#import <opencv2/imgproc/types_c.h>
-#import <opencv2/core.hpp>
-#import <opencv2/features2d.hpp>
-#import <opencv2/calib3d.hpp>
-#import <opencv2/objdetect.hpp>
-#import <opencv2/highgui.hpp>
-#import <opencv2/imgproc.hpp>
-#import <opencv2/objdetect/objdetect.hpp>
-#import <opencv2/imgcodecs/ios.h>
-
-#import <opencv2/videoio/cap_ios.h>
+//#import <opencv2/opencv.hpp>
+//#import <opencv2/imgproc/types_c.h>
+//#import <opencv2/core.hpp>
+//#import <opencv2/features2d.hpp>
+//#import <opencv2/calib3d.hpp>
+//#import <opencv2/objdetect.hpp>
+//#import <opencv2/highgui.hpp>
+//#import <opencv2/imgproc.hpp>
+//#import <opencv2/objdetect/objdetect.hpp>
+//#import <opencv2/imgcodecs/ios.h>
+//
+//#import <opencv2/videoio/cap_ios.h>
 
 
 
@@ -25,14 +25,14 @@
 
 @implementation ED_ORCControl
 
-+ (UIImage *)opencvGrayProcessingWithImage:(UIImage *)image {
-//    cv::Mat reslutImage ;
-    cv::Mat targetImage ;
-    UIImageToMat(image ,targetImage);
-    cvtColor(targetImage,targetImage,cv::COLOR_BGR2GRAY);
-   
-    return MatToUIImage(targetImage);
-}
+//+ (UIImage *)opencvGrayProcessingWithImage:(UIImage *)image {
+////    cv::Mat reslutImage ;
+//    cv::Mat targetImage ;
+//    UIImageToMat(image ,targetImage);
+//    cvtColor(targetImage,targetImage,cv::COLOR_BGR2GRAY);
+//
+//    return MatToUIImage(targetImage);
+//}
 
 
 //
@@ -48,21 +48,21 @@
 //对方法 CV_ADAPTIVE_THRESH_MEAN_C 和 CV_ADAPTIVE_THRESH_GAUSSIAN_C，
 //它是一个从均值或加权均值提取的常数,尽管它可以是负数。
 
-+ (UIImage *)opencvBinaryzationWithImage:(UIImage *)image {
-    cv::Mat sourceMatImage ;
-    UIImageToMat(image ,sourceMatImage);
-//    cv::adaptiveThreshold(targetImage,targetImage,CV_THRESH_TRIANGLE,CV_ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY_INV,11,CV_ADAPTIVE_THRESH_MEAN_C);
-    // 二值化
-    threshold(sourceMatImage, sourceMatImage, 128, 255, cv::THRESH_BINARY);
-    //自动阈值分割,邻域均值
-    adaptiveThreshold(sourceMatImage,sourceMatImage,255,cv::ADAPTIVE_THRESH_MEAN_C,cv::THRESH_BINARY,11,2);
-    //自动阈值分割，高斯邻域
-//    adaptiveThreshold(sourceMatImage,sourceMatImage,255,cv::ADAPTIVE_THRESH_GAUSSIAN_C,cv::THRESH_BINARY,11,2);
-    
-    
-    return MatToUIImage(sourceMatImage);
-    
-}
+//+ (UIImage *)opencvBinaryzationWithImage:(UIImage *)image {
+//    cv::Mat sourceMatImage ;
+//    UIImageToMat(image ,sourceMatImage);
+////    cv::adaptiveThreshold(targetImage,targetImage,CV_THRESH_TRIANGLE,CV_ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY_INV,11,CV_ADAPTIVE_THRESH_MEAN_C);
+//    // 二值化
+//    threshold(sourceMatImage, sourceMatImage, 128, 255, cv::THRESH_BINARY);
+//    //自动阈值分割,邻域均值
+//    adaptiveThreshold(sourceMatImage,sourceMatImage,255,cv::ADAPTIVE_THRESH_MEAN_C,cv::THRESH_BINARY,11,2);
+//    //自动阈值分割，高斯邻域
+////    adaptiveThreshold(sourceMatImage,sourceMatImage,255,cv::ADAPTIVE_THRESH_GAUSSIAN_C,cv::THRESH_BINARY,11,2);
+//    
+//    
+//    return MatToUIImage(sourceMatImage);
+//    
+//}
 
 
 @end
