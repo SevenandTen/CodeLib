@@ -27,7 +27,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         if (self.lastUrl.length != 0 && ![self.lastUrl isEqualToString:url]) {
-            [[NetFileManager shareInstance] removeImageView:self forUrl:url];
+            [[NetFileManager shareInstance] removeImageView:self forUrl:self.lastUrl];
         }
         UIImage *image = [[NetImageWebCache shareInstance] getImageFromCacheForKey:url];
         if (image) {

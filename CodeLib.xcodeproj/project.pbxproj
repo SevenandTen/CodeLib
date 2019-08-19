@@ -550,6 +550,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DBFF3217230408D6002C0FE3 /* ED_PhotoViewer */,
 				DB26EB5C22DF0F1300855ED8 /* ED_CirCle */,
 				DB9747A72295176C00B03128 /* ED_EnvironmentManager */,
 				DBEBCA78226D8E690024310D /* ED_CrashChaser */,
@@ -1141,6 +1142,13 @@
 				DB79295E223A34190024907B /* ED_SystemControl.m */,
 			);
 			path = ED_SystemControl;
+			sourceTree = "<group>";
+		};
+		DBFF3217230408D6002C0FE3 /* ED_PhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ED_PhotoViewer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
