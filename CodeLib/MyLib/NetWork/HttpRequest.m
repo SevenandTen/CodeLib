@@ -234,7 +234,12 @@
 + (NSString *)paramFromDicToString:(NSDictionary *)param {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (NSString *key in param) {
-        [array addObject:[NSString stringWithFormat:@"%@=%@",key,[param objectForKey:key]]];
+        NSString *value = [NSString stringWithFormat:@"%@",[param objectForKey:key]];
+        NSString *enCodeValue = (NSString*)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(nil,
+                                                                                                    (CFStringRef)value, nil,
+                                                                                                    (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
+        
+        [array addObject:[NSString stringWithFormat:@"%@=%@",key,enCodeValue]];
     }
     
     return [array componentsJoinedByString:@"&"];

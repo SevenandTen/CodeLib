@@ -130,12 +130,16 @@
 		DBB5800922EFDEF100E1E316 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800822EFDEF100E1E316 /* AViewController.m */; };
 		DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800B22EFE0D000E1E316 /* BViewController.m */; };
 		DBB5800F22EFE27C00E1E316 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800E22EFE27C00E1E316 /* CViewController.m */; };
+		DBBB48D7230E304F00A7106A /* ED_AllImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48D6230E304F00A7106A /* ED_AllImageViewController.m */; };
+		DBBB48DB230E32C400A7106A /* ED_ImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48DA230E32C400A7106A /* ED_ImagePickerCell.m */; };
+		DBBB48DE230E3D0100A7106A /* ED_ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48DD230E3D0000A7106A /* ED_ImagePickerViewController.m */; };
+		DBBB48E1230E44F800A7106A /* ED_PictureLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48E0230E44F800A7106A /* ED_PictureLibraryViewController.m */; };
+		DBBB48E4230E6EA300A7106A /* ED_NoAccessTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48E3230E6EA300A7106A /* ED_NoAccessTipViewController.m */; };
 		DBBD10CA222D118500C42F80 /* ED_ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C4222D118400C42F80 /* ED_ToastView.m */; };
 		DBBD10CB222D118500C42F80 /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C5222D118400C42F80 /* ico_ok@2x.png */; };
 		DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C6222D118400C42F80 /* ED_AnimationView.m */; };
 		DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C7222D118400C42F80 /* ico_ok@3x.png */; };
 		DBCC25CF22E984540093AC7A /* TestNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC25CE22E984540093AC7A /* TestNavgationController.m */; };
-		DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */; };
 		DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA7A226D933A0024310D /* ED_CrashControl.m */; };
 /* End PBXBuildFile section */
 
@@ -368,6 +372,16 @@
 		DBB5800B22EFE0D000E1E316 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		DBB5800D22EFE27C00E1E316 /* CViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
 		DBB5800E22EFE27C00E1E316 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
+		DBBB48D5230E304F00A7106A /* ED_AllImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_AllImageViewController.h; sourceTree = "<group>"; };
+		DBBB48D6230E304F00A7106A /* ED_AllImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_AllImageViewController.m; sourceTree = "<group>"; };
+		DBBB48D9230E32C400A7106A /* ED_ImagePickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerCell.h; sourceTree = "<group>"; };
+		DBBB48DA230E32C400A7106A /* ED_ImagePickerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ImagePickerCell.m; sourceTree = "<group>"; };
+		DBBB48DC230E3D0000A7106A /* ED_ImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerViewController.h; sourceTree = "<group>"; };
+		DBBB48DD230E3D0000A7106A /* ED_ImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ImagePickerViewController.m; sourceTree = "<group>"; };
+		DBBB48DF230E44F800A7106A /* ED_PictureLibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PictureLibraryViewController.h; sourceTree = "<group>"; };
+		DBBB48E0230E44F800A7106A /* ED_PictureLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PictureLibraryViewController.m; sourceTree = "<group>"; };
+		DBBB48E2230E6EA300A7106A /* ED_NoAccessTipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_NoAccessTipViewController.h; sourceTree = "<group>"; };
+		DBBB48E3230E6EA300A7106A /* ED_NoAccessTipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_NoAccessTipViewController.m; sourceTree = "<group>"; };
 		DBBD10C4222D118400C42F80 /* ED_ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_ToastView.m; sourceTree = "<group>"; };
 		DBBD10C5222D118400C42F80 /* ico_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@2x.png"; sourceTree = "<group>"; };
 		DBBD10C6222D118400C42F80 /* ED_AnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_AnimationView.m; sourceTree = "<group>"; };
@@ -376,8 +390,6 @@
 		DBBD10C9222D118400C42F80 /* ED_AnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AnimationView.h; sourceTree = "<group>"; };
 		DBCC25CD22E984540093AC7A /* TestNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavgationController.h; sourceTree = "<group>"; };
 		DBCC25CE22E984540093AC7A /* TestNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavgationController.m; sourceTree = "<group>"; };
-		DBDCC17421D351A3001367FE /* ED_ImagePickerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerManager.h; sourceTree = "<group>"; };
-		DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_ImagePickerManager.m; sourceTree = "<group>"; };
 		DBE4466522CF4130000AC193 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DBEBCA79226D933A0024310D /* ED_CrashControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CrashControl.h; sourceTree = "<group>"; };
 		DBEBCA7A226D933A0024310D /* ED_CrashControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CrashControl.m; sourceTree = "<group>"; };
@@ -550,6 +562,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DBBB48D4230E2FCC00A7106A /* ED_imagePickerViewController */,
 				DBFF3217230408D6002C0FE3 /* ED_PhotoViewer */,
 				DB26EB5C22DF0F1300855ED8 /* ED_CirCle */,
 				DB9747A72295176C00B03128 /* ED_EnvironmentManager */,
@@ -565,7 +578,6 @@
 				DB7855D421EC839900C0421F /* ED_Transition */,
 				DBAA8F9621E58BBF005E7707 /* ED_AlertControl */,
 				DB23827E21DC9CCB0031178A /* MoneyControl */,
-				DBDCC17321D35167001367FE /* ImagePicker */,
 				DBA8831B21D082C500E0A29F /* ED_HighPrecisionControl */,
 				DB94C17821C0A6600051B2D1 /* DatePicker */,
 				DB8C75A121ABD2B8005D0546 /* NetListener */,
@@ -1096,6 +1108,31 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		DBBB48D4230E2FCC00A7106A /* ED_imagePickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBBB48D8230E328C00A7106A /* View */,
+				DBBB48D5230E304F00A7106A /* ED_AllImageViewController.h */,
+				DBBB48D6230E304F00A7106A /* ED_AllImageViewController.m */,
+				DBBB48DC230E3D0000A7106A /* ED_ImagePickerViewController.h */,
+				DBBB48DD230E3D0000A7106A /* ED_ImagePickerViewController.m */,
+				DBBB48DF230E44F800A7106A /* ED_PictureLibraryViewController.h */,
+				DBBB48E0230E44F800A7106A /* ED_PictureLibraryViewController.m */,
+				DBBB48E2230E6EA300A7106A /* ED_NoAccessTipViewController.h */,
+				DBBB48E3230E6EA300A7106A /* ED_NoAccessTipViewController.m */,
+			);
+			path = ED_imagePickerViewController;
+			sourceTree = "<group>";
+		};
+		DBBB48D8230E328C00A7106A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBBB48D9230E32C400A7106A /* ED_ImagePickerCell.h */,
+				DBBB48DA230E32C400A7106A /* ED_ImagePickerCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DBBD10C3222D118400C42F80 /* ED_ToastAndLoading */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,15 +1144,6 @@
 				DBBD10C9222D118400C42F80 /* ED_AnimationView.h */,
 			);
 			path = ED_ToastAndLoading;
-			sourceTree = "<group>";
-		};
-		DBDCC17321D35167001367FE /* ImagePicker */ = {
-			isa = PBXGroup;
-			children = (
-				DBDCC17421D351A3001367FE /* ED_ImagePickerManager.h */,
-				DBDCC17521D351A3001367FE /* ED_ImagePickerManager.m */,
-			);
-			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		DBE4466422CF4115000AC193 /* Third */ = {
@@ -1317,7 +1345,6 @@
 				DB6482F421884C5B00CCD4EA /* NSDictionary+RemoveNull.m in Sources */,
 				DBA8831A21D071EE00E0A29F /* ED_HighPrecisionControl.m in Sources */,
 				DB6482EE21884C5B00CCD4EA /* NetFileManager.m in Sources */,
-				DBDCC17621D351A3001367FE /* ED_ImagePickerManager.m in Sources */,
 				DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */,
 				DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */,
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
@@ -1326,20 +1353,24 @@
 				DB9747AD22952F8A00B03128 /* ED_EnviromentView.m in Sources */,
 				DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */,
 				DB937482221FA64600D5BF9E /* ED_PageContainCell.m in Sources */,
+				DBBB48DB230E32C400A7106A /* ED_ImagePickerCell.m in Sources */,
 				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
 				DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */,
 				DB6482E121884C5B00CCD4EA /* UIImage+ModifyColor.m in Sources */,
+				DBBB48D7230E304F00A7106A /* ED_AllImageViewController.m in Sources */,
 				DB6482E021884C5B00CCD4EA /* HttpRequest.m in Sources */,
 				DB6482F521884C5B00CCD4EA /* ED_BasicModel.m in Sources */,
 				DB6482E421884C5B00CCD4EA /* UIView+Instance.m in Sources */,
 				DB94C17B21C0A7AE0051B2D1 /* ED_MonthView.m in Sources */,
 				DB6482E921884C5B00CCD4EA /* UIViewController+Instance.m in Sources */,
 				DB6482DF21884C5B00CCD4EA /* ED_SharePayManager.m in Sources */,
+				DBBB48E1230E44F800A7106A /* ED_PictureLibraryViewController.m in Sources */,
 				DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */,
 				DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */,
 				DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */,
 				DB95FB7C222661DB00AFB061 /* ED_ContinueLocationManager.m in Sources */,
+				DBBB48E4230E6EA300A7106A /* ED_NoAccessTipViewController.m in Sources */,
 				DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */,
 				DB79295F223A34190024907B /* ED_SystemControl.m in Sources */,
 				DB6482EC21884C5B00CCD4EA /* NSDate+FormatDate.m in Sources */,
@@ -1373,6 +1404,7 @@
 				DB85AC9821AE6B8F006DDD7D /* ED_DBManager.m in Sources */,
 				DB6482F321884C5B00CCD4EA /* ED_LocationManager.m in Sources */,
 				DB93747F221FA3EA00D5BF9E /* ED_PageTitleCell.m in Sources */,
+				DBBB48DE230E3D0100A7106A /* ED_ImagePickerViewController.m in Sources */,
 				DB8A4B0C224DBBB000DA1C5C /* UILabel+CalculateShowSize.m in Sources */,
 				DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */,
 				DB5EE696222E54B500A99511 /* ED_AlertViewController.m in Sources */,
