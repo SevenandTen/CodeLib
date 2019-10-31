@@ -1,8 +1,8 @@
 //
-//  ED_OCRView.h
+//  ED_VideoMakerView.h
 //  CodeLib
 //
-//  Created by zw on 2019/6/19.
+//  Created by zw on 2019/10/31.
 //  Copyright © 2019 seventeen. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 
 
-@interface ED_OCRView : UIView
+@interface ED_VideoMakerView : UIView
 
 @end
 

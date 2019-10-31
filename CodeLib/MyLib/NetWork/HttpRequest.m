@@ -238,10 +238,10 @@
         NSString *enCodeValue = (NSString*)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(nil,
                                                                                                     (CFStringRef)value, nil,
                                                                                                     (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
-        
+
         [array addObject:[NSString stringWithFormat:@"%@=%@",key,enCodeValue]];
     }
-    
+
     return [array componentsJoinedByString:@"&"];
 }
 

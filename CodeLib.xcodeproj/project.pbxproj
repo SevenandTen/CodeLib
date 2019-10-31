@@ -79,6 +79,7 @@
 		DB64864522B9F2BE002FA58F /* ED_OCRView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB64864422B9F2BE002FA58F /* ED_OCRView.m */; };
 		DB64864822BA1190002FA58F /* ED_ORCControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = DB64864722BA1190002FA58F /* ED_ORCControl.mm */; };
 		DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */; };
+		DB6867A8236A7D2C00174575 /* ED_VideoMakerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6867A7236A7D2C00174575 /* ED_VideoMakerView.m */; };
 		DB695D2E21896E26001B3515 /* ED_BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB695D2C21896E26001B3515 /* ED_BasicViewController.m */; };
 		DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */; };
 		DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6B36DC2191714D00970207 /* normal_back_btn@3x.png */; };
@@ -139,8 +140,10 @@
 		DBBD10CB222D118500C42F80 /* ico_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C5222D118400C42F80 /* ico_ok@2x.png */; };
 		DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C6222D118400C42F80 /* ED_AnimationView.m */; };
 		DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C7222D118400C42F80 /* ico_ok@3x.png */; };
+		DBCAC90223222F41007D4EC7 /* ED_SparatorLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCAC90123222F41007D4EC7 /* ED_SparatorLineView.m */; };
 		DBCC25CF22E984540093AC7A /* TestNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC25CE22E984540093AC7A /* TestNavgationController.m */; };
 		DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA7A226D933A0024310D /* ED_CrashControl.m */; };
+		DBF9BF332320A19A0051ED84 /* ED_QRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF9BF322320A19A0051ED84 /* ED_QRCodeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +285,8 @@
 		DB67782321A3B5B200B0ED68 /* ED_RefreshNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalHeader.m; sourceTree = "<group>"; };
 		DB67782521A400CF00B0ED68 /* ED_Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_Define.h; sourceTree = "<group>"; };
 		DB67782621A4013C00B0ED68 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DB6867A6236A7D2C00174575 /* ED_VideoMakerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_VideoMakerView.h; sourceTree = "<group>"; };
+		DB6867A7236A7D2C00174575 /* ED_VideoMakerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_VideoMakerView.m; sourceTree = "<group>"; };
 		DB695D2C21896E26001B3515 /* ED_BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_BasicViewController.m; sourceTree = "<group>"; };
 		DB695D2D21896E26001B3515 /* ED_BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_BasicViewController.h; sourceTree = "<group>"; };
 		DB6B36DB2191714D00970207 /* normal_back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "normal_back_btn@2x.png"; sourceTree = "<group>"; };
@@ -388,11 +393,15 @@
 		DBBD10C7222D118400C42F80 /* ico_ok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_ok@3x.png"; sourceTree = "<group>"; };
 		DBBD10C8222D118400C42F80 /* ED_ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_ToastView.h; sourceTree = "<group>"; };
 		DBBD10C9222D118400C42F80 /* ED_AnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AnimationView.h; sourceTree = "<group>"; };
+		DBCAC90023222F41007D4EC7 /* ED_SparatorLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SparatorLineView.h; sourceTree = "<group>"; };
+		DBCAC90123222F41007D4EC7 /* ED_SparatorLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SparatorLineView.m; sourceTree = "<group>"; };
 		DBCC25CD22E984540093AC7A /* TestNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavgationController.h; sourceTree = "<group>"; };
 		DBCC25CE22E984540093AC7A /* TestNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavgationController.m; sourceTree = "<group>"; };
 		DBE4466522CF4130000AC193 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DBEBCA79226D933A0024310D /* ED_CrashControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CrashControl.h; sourceTree = "<group>"; };
 		DBEBCA7A226D933A0024310D /* ED_CrashControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CrashControl.m; sourceTree = "<group>"; };
+		DBF9BF312320A19A0051ED84 /* ED_QRCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_QRCodeView.h; sourceTree = "<group>"; };
+		DBF9BF322320A19A0051ED84 /* ED_QRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_QRCodeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +571,9 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB6867A5236A7D0D00174575 /* ED_VideoMake */,
+				DBCAC8FF23222F20007D4EC7 /* ED_SeparatorLineView */,
+				DBF9BF302320A17E0051ED84 /* ED_QRCodeView */,
 				DBBB48D4230E2FCC00A7106A /* ED_imagePickerViewController */,
 				DBFF3217230408D6002C0FE3 /* ED_PhotoViewer */,
 				DB26EB5C22DF0F1300855ED8 /* ED_CirCle */,
@@ -865,6 +877,15 @@
 			path = URLProtocol;
 			sourceTree = "<group>";
 		};
+		DB6867A5236A7D0D00174575 /* ED_VideoMake */ = {
+			isa = PBXGroup;
+			children = (
+				DB6867A6236A7D2C00174575 /* ED_VideoMakerView.h */,
+				DB6867A7236A7D2C00174575 /* ED_VideoMakerView.m */,
+			);
+			path = ED_VideoMake;
+			sourceTree = "<group>";
+		};
 		DB6B36DF2191807B00970207 /* ED_TimeSelectControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,6 +1167,15 @@
 			path = ED_ToastAndLoading;
 			sourceTree = "<group>";
 		};
+		DBCAC8FF23222F20007D4EC7 /* ED_SeparatorLineView */ = {
+			isa = PBXGroup;
+			children = (
+				DBCAC90023222F41007D4EC7 /* ED_SparatorLineView.h */,
+				DBCAC90123222F41007D4EC7 /* ED_SparatorLineView.m */,
+			);
+			path = ED_SeparatorLineView;
+			sourceTree = "<group>";
+		};
 		DBE4466422CF4115000AC193 /* Third */ = {
 			isa = PBXGroup;
 			children = (
@@ -1161,6 +1191,15 @@
 				DBEBCA7A226D933A0024310D /* ED_CrashControl.m */,
 			);
 			path = ED_CrashChaser;
+			sourceTree = "<group>";
+		};
+		DBF9BF302320A17E0051ED84 /* ED_QRCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				DBF9BF312320A19A0051ED84 /* ED_QRCodeView.h */,
+				DBF9BF322320A19A0051ED84 /* ED_QRCodeView.m */,
+			);
+			path = ED_QRCodeView;
 			sourceTree = "<group>";
 		};
 		DBFA10F12230F6670041DBCA /* ED_SystemControl */ = {
@@ -1348,6 +1387,8 @@
 				DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */,
 				DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */,
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
+				DBF9BF332320A19A0051ED84 /* ED_QRCodeView.m in Sources */,
+				DB6867A8236A7D2C00174575 /* ED_VideoMakerView.m in Sources */,
 				DB85ACA721AE6BBE006DDD7D /* FMDatabaseAdditions.m in Sources */,
 				DB6482ED21884C5B00CCD4EA /* ED_PhoneCodeView.m in Sources */,
 				DB9747AD22952F8A00B03128 /* ED_EnviromentView.m in Sources */,
@@ -1356,6 +1397,7 @@
 				DBBB48DB230E32C400A7106A /* ED_ImagePickerCell.m in Sources */,
 				DB85ACA621AE6BBE006DDD7D /* FMDatabaseQueue.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
+				DBCAC90223222F41007D4EC7 /* ED_SparatorLineView.m in Sources */,
 				DBA0F60421F83BD9002D6422 /* ED_SignView.m in Sources */,
 				DB6482E121884C5B00CCD4EA /* UIImage+ModifyColor.m in Sources */,
 				DBBB48D7230E304F00A7106A /* ED_AllImageViewController.m in Sources */,
