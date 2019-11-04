@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class ED_VideoMakerView;
+@protocol ED_VideoMakerViewDelegate <NSObject>
+
+- (void)videoMakerView:(ED_VideoMakerView *)videoView didGetVideoUrl:(NSURL *)videoUrl;
+
+@end
 
 
 @interface ED_VideoMakerView : UIView

@@ -10,9 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import "ED_VideoMakeControl.h"
 
 
-@interface ED_VideoMakerView ()<AVCaptureFileOutputRecordingDelegate>
+@interface ED_VideoMakerView ()<AVCaptureFileOutputRecordingDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (nonatomic , strong) AVCaptureSession *session; //负责输入和输出设备之间的连接会话
 
@@ -24,19 +26,36 @@
 
 @property (strong, nonatomic) AVCaptureConnection * videoConnection;//视频录制连接
 
+@property (nonatomic , strong) AVCaptureVideoDataOutput *videOutput; // 视频数据
+
+@property (nonatomic , strong) AVCaptureAudioDataOutput *audioOutput; // 音频数据
+
+
 @property (strong,nonatomic) AVCaptureMovieFileOutput * captureMovieFileOutput;
 
 @property (nonatomic, assign) AVCaptureFlashMode mode;//设置聚焦曝光
 
 @property (nonatomic, strong) AVCaptureDevice *captureDevice;   // 输入设备
 
-@property (nonatomic, assign) AVCaptureDevicePosition position;//设置焦点
+//@property (nonatomic, assign) AVCaptureDevicePosition position;//设置焦点
+
+
+
 
 
 
 @property (nonatomic , strong) UIButton *startRecordBtn;
 
 @property (nonatomic , strong) CALayer *itemLayer;
+
+@property (nonatomic , strong) UIView *timeView;
+
+@property (nonatomic , strong) UILabel *timeLabel;
+
+
+@property (nonatomic , strong) NSTimer *timer;
+
+@property (nonatomic , strong) NSMutableArray *timeImageArray;
 
 
 
@@ -56,9 +75,16 @@
 
 - (void)configureView {
     [self.layer addSublayer:self.previewLayer];
-    [self addSubview:self.startRecordBtn];
+   
     
-    [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:self.previewLayer inLayer:self.layer];
+    [self addSubview:self.timeView];
+    [self.timeView addSubview:self.timeLabel];
+    
+     [self addSubview:self.startRecordBtn];
+
+    self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
 }
 
 
@@ -68,6 +94,9 @@
         [self.session startRunning];
     });
     
+    self.timeView.frame = self.bounds;
+    self.timeLabel.frame = CGRectMake(0, 100 , self.bounds.size.width - 20, 24);
+    
     self.startRecordBtn.frame = CGRectMake((self.bounds.size.width - 50)/2.0, self.bounds.size.height - 100, 50, 50);
 }
 
@@ -75,21 +104,37 @@
 #pragma mark - Action
 
 - (void)didClickStartBtn {
-    if (self.captureMovieFileOutput.isRecording) {
-        self.startRecordBtn.backgroundColor = [UIColor redColor];
-        [self.captureMovieFileOutput stopRecording];
-    }else{
-        NSString *defultPath = [self getVideoPathCache];
-        NSString *outputFielPath=[ defultPath stringByAppendingPathComponent:[self getVideoNameWithType:@"mp4"]];
-        NSLog(@"视频保存地址%@",outputFielPath);
-        NSURL *fileUrl = [NSURL fileURLWithPath:outputFielPath];
-        
-        self.startRecordBtn.backgroundColor = [UIColor greenColor];
-        [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self];
-    }
+//    if (self.captureMovieFileOutput.isRecording) {
+//        self.startRecordBtn.backgroundColor = [UIColor redColor];
+//        [self.captureMovieFileOutput stopRecording];
+//    }else{
+//        NSString *defultPath = [self getVideoPathCache];
+//        NSString *outputFielPath=[ defultPath stringByAppendingPathComponent:[self getVideoNameWithType:@"mp4"]];
+//        NSLog(@"视频保存地址%@",outputFielPath);
+//        NSURL *fileUrl = [NSURL fileURLWithPath:outputFielPath];
+//        [self.timeImageArray removeAllObjects]; // 清楚图片数组
+//        self.startRecordBtn.backgroundColor = [UIColor greenColor];
+//        [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self];
+//    }
+}
+
+- (void)updateTime {
+    self.timeLabel.text  = [self getNowDate];
+
+    
 }
 
 #pragma mark - Private
+
+
+//获取当前时间
+- (NSString *)getNowDate {
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    return  [formatter stringFromDate:date];
+}
 
 - (NSString *)getVideoNameWithType:(NSString *)fileType{
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
@@ -114,42 +159,50 @@
 }
 
 
+// 获取图片资源
+
+- (UIImage *)imageWithView:(UIView *)view {
+    
+    CGSize s = view.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(s, NO, [UIScreen mainScreen].scale);
+    
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
+}
+
+
+
+
+
 
 #pragma mark - AVCaptureFileOutputRecordingDelegate
 
 
 - (void)captureOutput:(AVCaptureFileOutput *)output didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections error:(nullable NSError *)error {
-    if (error) {
-        NSLog(@"------------------- %@",error.description);
-        return;
-    }
-    
-    
-    if (@available(iOS 9,*)) {
-        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        PHAssetResourceCreationOptions * options = [[PHAssetResourceCreationOptions alloc] init];
-        [[PHAssetCreationRequest creationRequestForAsset] addResourceWithType:PHAssetResourceTypeVideo fileURL:outputFileURL options:options];
-            
-        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-            if (success) {
-                NSLog(@"保存成功");
-            }else {
-                NSLog(@"%@",error.description);
-            }
-        }];
-    }else {
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library writeVideoAtPathToSavedPhotosAlbum:outputFileURL completionBlock:^(NSURL *assetURL, NSError *error) {
-            if (error) {
-                NSLog(@"%@",error.description);
-            }else{
-                 NSLog(@"保存成功");
-            }
-        }];
-    }
-    
-    
+ 
 }
+
+
+#pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
+
+- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    NSLog(@"............");
+}
+
+
+- (void)dealloc {
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+
+
 
 
 
@@ -165,13 +218,25 @@
         if ([_session canAddInput:self.audioMicInput]) {
             [_session addInput:self.audioMicInput];
         }
-        if ([_session canAddOutput:self.captureMovieFileOutput]) {
-            [_session  addOutput:self.captureMovieFileOutput];
-        }
+//        if ([_session canAddOutput:self.captureMovieFileOutput]) {
+//            [_session  addOutput:self.captureMovieFileOutput];
+//        }
         
+        if ([_session canAddOutput:self.videOutput]) {
+            [_session addOutput:self.videOutput];
+        }
+      
         
     }
     return _session;
+}
+
+
+- (AVCaptureDevice *)captureDevice {
+    if (!_captureDevice) {
+        _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
+    return _captureDevice;
 }
 
 
@@ -182,8 +247,25 @@
     return _captureDeviceInput;
 }
 
+
+- (AVCaptureVideoDataOutput *)videOutput {
+    if (!_videOutput) {
+        _videOutput = [[AVCaptureVideoDataOutput alloc] init];
+       
+        [_videOutput setAlwaysDiscardsLateVideoFrames:YES];
+        [_videOutput setVideoSettings:@{(id)kCVPixelBufferPixelFormatTypeKey:@(kCVPixelFormatType_32BGRA)}];
+        [_videOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
+        
+        
+    }
+    return _videOutput;
+}
+
+
+
+
 - (AVCaptureDeviceInput *)audioMicInput {
-    if (_audioMicInput == nil) {
+    if (!_audioMicInput) {
         AVCaptureDevice *mic = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
         NSError *error;
         _audioMicInput = [AVCaptureDeviceInput deviceInputWithDevice:mic error:&error];
@@ -204,12 +286,7 @@
 }
 
 
-- (AVCaptureDevice *)captureDevice {
-    if (!_captureDevice) {
-        _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    }
-    return _captureDevice;
-}
+
 
 -(AVCaptureVideoPreviewLayer *)previewLayer{
     if (!_previewLayer) {
@@ -231,12 +308,17 @@
 }
 
 
--(AVCaptureDevicePosition)position{
-    if (!_position) {
-        _position = AVCaptureDevicePositionFront;
-    }
-    return _position;
-}
+//-(AVCaptureDevicePosition)position{
+//    if (!_position) {
+//        _position = AVCaptureDevicePositionFront;
+//    }
+//    return _position;
+//}
+
+
+
+
+
 
 #pragma mark - Getter UI
 
@@ -257,5 +339,28 @@
     }
     return _itemLayer;
 }
+
+
+- (UIView *)timeView {
+    if (!_timeView) {
+        _timeView = [[UIView alloc] init];
+        _timeView.backgroundColor = [UIColor clearColor];
+    }
+    return _timeView;
+}
+
+- (UILabel *)timeLabel {
+    if (!_timeLabel) {
+        _timeLabel = [[UILabel alloc] init];
+        _timeLabel.textAlignment = NSTextAlignmentRight;
+        _timeLabel.textColor = [UIColor whiteColor];
+        _timeLabel.font = [UIFont systemFontOfSize:18];
+    }
+    return _timeLabel;
+}
+
+
+
+
 
 @end
