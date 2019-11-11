@@ -309,9 +309,7 @@
 		DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAA8FA121E58BBF005E7707 /* ED_AlertControl.m */; };
 		DBAA8FAD21E58BBF005E7707 /* ico_tc_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */; };
 		DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB2CAC422BB2B810060BE86 /* ED_RectView.m */; };
-		DBB5800922EFDEF100E1E316 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800822EFDEF100E1E316 /* AViewController.m */; };
-		DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800B22EFE0D000E1E316 /* BViewController.m */; };
-		DBB5800F22EFE27C00E1E316 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5800E22EFE27C00E1E316 /* CViewController.m */; };
+		DBB612FF237145EF00BD5207 /* ED_MovieRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB612FE237145EF00BD5207 /* ED_MovieRecord.m */; };
 		DBBB48D7230E304F00A7106A /* ED_AllImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48D6230E304F00A7106A /* ED_AllImageViewController.m */; };
 		DBBB48DB230E32C400A7106A /* ED_ImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48DA230E32C400A7106A /* ED_ImagePickerCell.m */; };
 		DBBB48DE230E3D0100A7106A /* ED_ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB48DD230E3D0000A7106A /* ED_ImagePickerViewController.m */; };
@@ -322,7 +320,12 @@
 		DBBD10CC222D118500C42F80 /* ED_AnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD10C6222D118400C42F80 /* ED_AnimationView.m */; };
 		DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBD10C7222D118400C42F80 /* ico_ok@3x.png */; };
 		DBCAC90223222F41007D4EC7 /* ED_SparatorLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCAC90123222F41007D4EC7 /* ED_SparatorLineView.m */; };
-		DBCC25CF22E984540093AC7A /* TestNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC25CE22E984540093AC7A /* TestNavgationController.m */; };
+		DBD9DBEB237956CD00199DA0 /* nav_dt_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBE9237956CD00199DA0 /* nav_dt_off@3x.png */; };
+		DBD9DBEC237956CD00199DA0 /* nav_dt_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBEA237956CD00199DA0 /* nav_dt_off@2x.png */; };
+		DBD9DBEF2379570C00199DA0 /* nav_dt_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBED2379570C00199DA0 /* nav_dt_on@2x.png */; };
+		DBD9DBF02379570C00199DA0 /* nav_dt_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBEE2379570C00199DA0 /* nav_dt_on@3x.png */; };
+		DBD9DBF323796DF400199DA0 /* zx_code_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBF123796DF400199DA0 /* zx_code_line@2x.png */; };
+		DBD9DBF423796DF400199DA0 /* zx_code_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBF223796DF400199DA0 /* zx_code_line@3x.png */; };
 		DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA7A226D933A0024310D /* ED_CrashControl.m */; };
 		DBF9BF332320A19A0051ED84 /* ED_QRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF9BF322320A19A0051ED84 /* ED_QRCodeView.m */; };
 /* End PBXBuildFile section */
@@ -909,12 +912,8 @@
 		DBAA8FA221E58BBF005E7707 /* ico_tc_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_tc_ok@2x.png"; sourceTree = "<group>"; };
 		DBB2CAC322BB2B810060BE86 /* ED_RectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_RectView.h; sourceTree = "<group>"; };
 		DBB2CAC422BB2B810060BE86 /* ED_RectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RectView.m; sourceTree = "<group>"; };
-		DBB5800722EFDEF100E1E316 /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
-		DBB5800822EFDEF100E1E316 /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
-		DBB5800A22EFE0D000E1E316 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
-		DBB5800B22EFE0D000E1E316 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
-		DBB5800D22EFE27C00E1E316 /* CViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
-		DBB5800E22EFE27C00E1E316 /* CViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
+		DBB612FD237145EF00BD5207 /* ED_MovieRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_MovieRecord.h; sourceTree = "<group>"; };
+		DBB612FE237145EF00BD5207 /* ED_MovieRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_MovieRecord.m; sourceTree = "<group>"; };
 		DBBB48D5230E304F00A7106A /* ED_AllImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_AllImageViewController.h; sourceTree = "<group>"; };
 		DBBB48D6230E304F00A7106A /* ED_AllImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_AllImageViewController.m; sourceTree = "<group>"; };
 		DBBB48D9230E32C400A7106A /* ED_ImagePickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_ImagePickerCell.h; sourceTree = "<group>"; };
@@ -933,8 +932,12 @@
 		DBBD10C9222D118400C42F80 /* ED_AnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AnimationView.h; sourceTree = "<group>"; };
 		DBCAC90023222F41007D4EC7 /* ED_SparatorLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_SparatorLineView.h; sourceTree = "<group>"; };
 		DBCAC90123222F41007D4EC7 /* ED_SparatorLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_SparatorLineView.m; sourceTree = "<group>"; };
-		DBCC25CD22E984540093AC7A /* TestNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavgationController.h; sourceTree = "<group>"; };
-		DBCC25CE22E984540093AC7A /* TestNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavgationController.m; sourceTree = "<group>"; };
+		DBD9DBE9237956CD00199DA0 /* nav_dt_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_dt_off@3x.png"; sourceTree = "<group>"; };
+		DBD9DBEA237956CD00199DA0 /* nav_dt_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_dt_off@2x.png"; sourceTree = "<group>"; };
+		DBD9DBED2379570C00199DA0 /* nav_dt_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_dt_on@2x.png"; sourceTree = "<group>"; };
+		DBD9DBEE2379570C00199DA0 /* nav_dt_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_dt_on@3x.png"; sourceTree = "<group>"; };
+		DBD9DBF123796DF400199DA0 /* zx_code_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zx_code_line@2x.png"; sourceTree = "<group>"; };
+		DBD9DBF223796DF400199DA0 /* zx_code_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zx_code_line@3x.png"; sourceTree = "<group>"; };
 		DBE4466522CF4130000AC193 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DBEBCA79226D933A0024310D /* ED_CrashControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CrashControl.h; sourceTree = "<group>"; };
 		DBEBCA7A226D933A0024310D /* ED_CrashControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CrashControl.m; sourceTree = "<group>"; };
@@ -1109,7 +1112,6 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				DB6867A5236A7D0D00174575 /* ED_VideoMake */,
 				DBCAC8FF23222F20007D4EC7 /* ED_SeparatorLineView */,
 				DBF9BF302320A17E0051ED84 /* ED_QRCodeView */,
 				DBBB48D4230E2FCC00A7106A /* ED_imagePickerViewController */,
@@ -1423,6 +1425,8 @@
 				DB6867A7236A7D2C00174575 /* ED_VideoMakerView.m */,
 				DB6867A9236AE22200174575 /* ED_VideoMakeControl.h */,
 				DB6867AA236AE22200174575 /* ED_VideoMakeControl.m */,
+				DBB612FD237145EF00BD5207 /* ED_MovieRecord.h */,
+				DBB612FE237145EF00BD5207 /* ED_MovieRecord.m */,
 			);
 			path = ED_VideoMake;
 			sourceTree = "<group>";
@@ -1457,14 +1461,6 @@
 				DB153A2222BCD74600570066 /* test.jpg */,
 				DB64824E21884C0E00CCD4EA /* ViewController.h */,
 				DB64824F21884C0E00CCD4EA /* ViewController.m */,
-				DBB5800722EFDEF100E1E316 /* AViewController.h */,
-				DBB5800822EFDEF100E1E316 /* AViewController.m */,
-				DBB5800A22EFE0D000E1E316 /* BViewController.h */,
-				DBB5800B22EFE0D000E1E316 /* BViewController.m */,
-				DBB5800D22EFE27C00E1E316 /* CViewController.h */,
-				DBB5800E22EFE27C00E1E316 /* CViewController.m */,
-				DBCC25CD22E984540093AC7A /* TestNavgationController.h */,
-				DBCC25CE22E984540093AC7A /* TestNavgationController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -2073,6 +2069,7 @@
 		DBAA8FAE21E5D267005E7707 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				DB6867A5236A7D0D00174575 /* ED_VideoMake */,
 				DB64863E22B9F1D3002FA58F /* OCR */,
 				DB64828C21884C5B00CCD4EA /* ShareAndPay */,
 				DB85AC9521AE6B8E006DDD7D /* DBManager */,
@@ -2147,6 +2144,12 @@
 		DBF9BF302320A17E0051ED84 /* ED_QRCodeView */ = {
 			isa = PBXGroup;
 			children = (
+				DBD9DBF123796DF400199DA0 /* zx_code_line@2x.png */,
+				DBD9DBF223796DF400199DA0 /* zx_code_line@3x.png */,
+				DBD9DBED2379570C00199DA0 /* nav_dt_on@2x.png */,
+				DBD9DBEE2379570C00199DA0 /* nav_dt_on@3x.png */,
+				DBD9DBEA237956CD00199DA0 /* nav_dt_off@2x.png */,
+				DBD9DBE9237956CD00199DA0 /* nav_dt_off@3x.png */,
 				DBF9BF312320A19A0051ED84 /* ED_QRCodeView.h */,
 				DBF9BF322320A19A0051ED84 /* ED_QRCodeView.m */,
 			);
@@ -2282,9 +2285,13 @@
 				DBAA8FA421E58BBF005E7707 /* ico_share_pyq@2x.png in Resources */,
 				DBAA8FA821E58BBF005E7707 /* ico_share_qq@3x.png in Resources */,
 				DB6482DD21884C5B00CCD4EA /* AlipaySDK.bundle in Resources */,
+				DBD9DBEF2379570C00199DA0 /* nav_dt_on@2x.png in Resources */,
 				DBAA8FA721E58BBF005E7707 /* ico_share_weixin@2x.png in Resources */,
 				DB9747AF2295312000B03128 /* ED_EnvironmentManager.plist in Resources */,
+				DBD9DBEC237956CD00199DA0 /* nav_dt_off@2x.png in Resources */,
+				DBD9DBEB237956CD00199DA0 /* nav_dt_off@3x.png in Resources */,
 				DB9E0714236FFC5000CC1648 /* lookup.png in Resources */,
+				DBD9DBF323796DF400199DA0 /* zx_code_line@2x.png in Resources */,
 				DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */,
 				DB6B36E52191832600970207 /* ico_change@2x.png in Resources */,
 				DB9E07C4236FFC5000CC1648 /* README.md in Resources */,
@@ -2300,7 +2307,9 @@
 				DBAA8FA921E58BBF005E7707 /* ico_share_weixin@3x.png in Resources */,
 				DBBD10CB222D118500C42F80 /* ico_ok@2x.png in Resources */,
 				DB64825521884C0F00CCD4EA /* Assets.xcassets in Resources */,
+				DBD9DBF423796DF400199DA0 /* zx_code_line@3x.png in Resources */,
 				DBAA8FAA21E58BBF005E7707 /* ico_tc_jg@3x.png in Resources */,
+				DBD9DBF02379570C00199DA0 /* nav_dt_on@3x.png in Resources */,
 				DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */,
 				DB9E0713236FFC5000CC1648 /* lookup_soft_elegance_1.png in Resources */,
 				DB9E07C5236FFC5000CC1648 /* License.txt in Resources */,
@@ -2372,7 +2381,6 @@
 				DB9E0718236FFC5000CC1648 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				DB9E07AA236FFC5000CC1648 /* GPUImageHSBFilter.m in Sources */,
 				DB9E0782236FFC5000CC1648 /* GPUImageCrosshairGenerator.m in Sources */,
-				DBB5800C22EFE0D000E1E316 /* BViewController.m in Sources */,
 				DBB2CAC522BB2B810060BE86 /* ED_RectView.m in Sources */,
 				DBAA8FAC21E58BBF005E7707 /* ED_AlertControl.m in Sources */,
 				DB9E07A4236FFC5000CC1648 /* GPUImageMotionBlurFilter.m in Sources */,
@@ -2409,6 +2417,7 @@
 				DB9E0767236FFC5000CC1648 /* GPUImageLanczosResamplingFilter.m in Sources */,
 				DB9E0723236FFC5000CC1648 /* GPUImageTwoPassFilter.m in Sources */,
 				DB9E078A236FFC5000CC1648 /* GPUImageRawDataOutput.m in Sources */,
+				DBB612FF237145EF00BD5207 /* ED_MovieRecord.m in Sources */,
 				DB9E07B9236FFC5000CC1648 /* GPUImageFalseColorFilter.m in Sources */,
 				DB9E078C236FFC5000CC1648 /* GPUImageSmoothToonFilter.m in Sources */,
 				DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */,
@@ -2492,9 +2501,7 @@
 				DB9E0788236FFC5000CC1648 /* GPUImageHazeFilter.m in Sources */,
 				DB9E072F236FFC5000CC1648 /* GPUImageLevelsFilter.m in Sources */,
 				DB9E07A9236FFC5000CC1648 /* GPUImageHueBlendFilter.m in Sources */,
-				DBB5800922EFDEF100E1E316 /* AViewController.m in Sources */,
 				DB8C75A921ABD342005D0546 /* ED_NetListener.m in Sources */,
-				DBCC25CF22E984540093AC7A /* TestNavgationController.m in Sources */,
 				DB9E0791236FFC5000CC1648 /* GPUImageBuffer.m in Sources */,
 				DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */,
 				DB85ACA821AE6BBE006DDD7D /* FMDatabase.m in Sources */,
@@ -2502,7 +2509,6 @@
 				DB9E0749236FFC5000CC1648 /* GPUImageSkinToneFilter.m in Sources */,
 				DB77B84E221BAB3A0030A6B4 /* ED_PageView.m in Sources */,
 				DB9E0787236FFC5000CC1648 /* GPUImageContrastFilter.m in Sources */,
-				DBB5800F22EFE27C00E1E316 /* CViewController.m in Sources */,
 				DB93747C221F8D7D00D5BF9E /* ED_PageContext.m in Sources */,
 				DB8A4B09224DBBA400DA1C5C /* UIImage+QRcode.m in Sources */,
 				DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */,

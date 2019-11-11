@@ -10,12 +10,11 @@
 
 
 @class ED_QRCodeView;
+
+
 @protocol ED_QRCodeViewDelegate <NSObject>
 
-@optional
-
-- (void)QRCodeView:(ED_QRCodeView *)codeView didReceviceCode:(NSString *)code;
-
+- (void)codeView:(ED_QRCodeView *)codeView didReceiveCodeString:(NSString *)code;
 
 @end
 
@@ -23,10 +22,20 @@
 @interface ED_QRCodeView : UIView
 
 
-@property (nonatomic , assign) BOOL flag; // 是否接受扫码结果
+@property (nonatomic , assign) CGFloat spaceWidth ; // 距离屏幕左右多少距离
 
-@property (nonatomic , weak) id<ED_QRCodeViewDelegate>delegate;
+@property (nonatomic , assign) CGFloat spaceHeight; // 距离屏幕中心多少
 
+@property (nonatomic , weak) id <ED_QRCodeViewDelegate> delegate;
+
+
+
+
+- (void)startRuning;
+
+- (void)stopRuning;
+
+- (void)continueRuning;
 
 
 @end

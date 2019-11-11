@@ -7,23 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "ED_OCRView.h"
-#import "ED_ORCControl.h"
 
-#import "ED_ToastView.h"
-#import "ED_CirCleView.h"
-#import <AdSupport/AdSupport.h>
-#import "TestNavgationController.h"
-#import <objc/runtime.h>
-#import "AViewController.h"
-#import "HttpRequest.h"
 #import "ED_QRCodeView.h"
-#import "ED_VideoMakerView.h"
+
 
 
 
 
 @interface ViewController ()
+
+@property (nonatomic , strong) ED_QRCodeView *qrcodeView;
 
 
 
@@ -37,23 +30,21 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    ED_VideoMakerView *videoMakerView = [[ED_VideoMakerView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:videoMakerView];
+    self.qrcodeView = [[ED_QRCodeView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.qrcodeView];
+    
+}
 
-   
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.qrcodeView startRuning];
 }
 
 
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
-
-
-
-
-}
 
 
 
