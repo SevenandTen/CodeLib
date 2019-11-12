@@ -70,6 +70,15 @@
 @property (nonatomic , assign) BOOL isAutoLight;
 
 
+@property (nonatomic , assign) NSInteger isGranted; //是否授权相机  0 为默认不知道 1 为已经授权 2 为 没授权
+
+
+
+@property (nonatomic , strong) UIView *errorView; // 无权限展示
+
+@property (nonatomic , strong) UILabel *errorLabel;
+
+
 
 
 
@@ -82,7 +91,10 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.isContinue = YES;
+        self.isAutoLight = YES;
         [self configureViews];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeLive) name:UIApplicationWillEnterForegroundNotification object:nil];
     }
     return self;
 }
@@ -92,115 +104,182 @@
 
 
 - (void)configureViews {
-    [self.layer addSublayer:self.videoPreviewLayer];
-    self.videoPreviewLayer.frame = self.bounds;
-    self.metaDataOutPut.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode,AVMetadataObjectTypeAztecCode];
     
-    [self addSubview:self.topBlackView];
-    [self addSubview:self.bottomBlackView];
-    [self addSubview:self.rightBlackView];
-    [self addSubview:self.leftBlackView];
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusRestricted || status == AVAuthorizationStatusDenied) {
+        self.isGranted = 2;
+        [self configureTipArea];
+    }else if (status == AVAuthorizationStatusAuthorized ){
+        self.isGranted = 1;
+        [self configureScanArea];
+        
+    }else {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (granted) {
+                               self.isGranted = 1;
+                               [self configureScanArea];
+                               [self updateScanArea];
+                               [self startRuning];
+                           }else {
+                               self.isGranted = 2;
+                                [self configureTipArea];
+                               [self updateTipArea];
+                           }
+            });
+           
+        }];
+    }
     
-    [self addSubview:self.scanView];
+   
+}
+
+
+- (void)configureScanArea {
     
-    [self.scanView addSubview:self.topLeftLineView];
-    [self.scanView addSubview:self.topRightLineView];
-    [self.scanView addSubview:self.bottomLeftLineView];
-    [self.scanView addSubview:self.bottomRightLineView];
-    [self.scanView addSubview:self.leftTopLineView];
-    [self.scanView addSubview:self.leftBottomLineView];
-    [self.scanView addSubview:self.rightTopLineView];
-    [self.scanView addSubview:self.rightBottomLineView];
-    [self.scanView addSubview:self.animationView];
-    
-    [self addSubview:self.tipLabel];
-    
-    [self addSubview:self.lightBtn];
-    
-    
-    
-    
-    
+       [self.layer addSublayer:self.videoPreviewLayer];
+       self.videoPreviewLayer.frame = self.bounds;
+       self.metaDataOutPut.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode,AVMetadataObjectTypeAztecCode];
+       
+       [self addSubview:self.topBlackView];
+       [self addSubview:self.bottomBlackView];
+       [self addSubview:self.rightBlackView];
+       [self addSubview:self.leftBlackView];
+       
+       [self addSubview:self.scanView];
+       
+       [self.scanView addSubview:self.topLeftLineView];
+       [self.scanView addSubview:self.topRightLineView];
+       [self.scanView addSubview:self.bottomLeftLineView];
+       [self.scanView addSubview:self.bottomRightLineView];
+       [self.scanView addSubview:self.leftTopLineView];
+       [self.scanView addSubview:self.leftBottomLineView];
+       [self.scanView addSubview:self.rightTopLineView];
+       [self.scanView addSubview:self.rightBottomLineView];
+       [self.scanView addSubview:self.animationView];
+       
+       [self addSubview:self.tipLabel];
+       
+       [self addSubview:self.lightBtn];
+}
+
+
+- (void)configureTipArea {
+    [self addSubview:self.errorView];
+    [self.errorView addSubview:self.errorLabel];
+}
+
+
+- (void)updateScanArea {
+    CGFloat width = self.bounds.size.width;
+   CGFloat height = self.bounds.size.height;
+   CGFloat scanWidth = width - 2 * self.spaceWidth;
+   
+   self.topBlackView.frame = CGRectMake(0, 0, width, (height - scanWidth)/2.0 - self.spaceHeight);
+   
+   self.bottomBlackView.frame = CGRectMake(0, CGRectGetMaxY(self.topBlackView.frame) + scanWidth, width, (height - scanWidth)/2.0 + self.spaceHeight);
+   
+   self.leftBlackView.frame = CGRectMake(0, CGRectGetMaxY(self.topBlackView.frame), self.spaceWidth, scanWidth);
+   self.rightBlackView.frame = CGRectMake(self.spaceWidth + scanWidth,  CGRectGetMaxY(self.topBlackView.frame), self.spaceWidth, scanWidth);
+   
+   
+   self.scanView.frame = CGRectMake(self.spaceWidth, CGRectGetMaxY(self.topBlackView.frame), scanWidth, scanWidth);
+   
+   self.tipLabel.frame = CGRectMake(0, CGRectGetMaxY(self.scanView.frame) + 10, width, 24);
+   
+   [self.scanView addSubview:self.animationView];
+   self.animationView.frame = CGRectMake(0, 10, scanWidth, 18);
+   
+   
+   CGFloat lineWidth = 25;
+   CGFloat lineHeight = 3;
+   
+   
+   self.topLeftLineView.frame = CGRectMake(0, 0, lineWidth, lineHeight);
+   
+   self.topRightLineView.frame = CGRectMake(scanWidth - lineWidth, 0, lineWidth, lineHeight);
+   
+   
+   self.bottomLeftLineView.frame = CGRectMake(0, scanWidth - lineHeight, lineWidth, lineHeight);
+   
+   self.bottomRightLineView.frame = CGRectMake(scanWidth - lineWidth, scanWidth - lineHeight, lineWidth, lineHeight);
+   
+   
+   self.leftTopLineView.frame = CGRectMake(0, 0, lineHeight, lineWidth);
+   self.leftBottomLineView.frame = CGRectMake(0, scanWidth - lineWidth, lineHeight, lineWidth);
+   self.rightTopLineView.frame = CGRectMake(scanWidth - lineHeight, 0, lineHeight, lineWidth);
+   self.rightBottomLineView.frame = CGRectMake(scanWidth - lineHeight, scanWidth - lineWidth, lineHeight, lineWidth);
+   
+   if (@available(iOS 11.0 , *)) {
+       self.lightBtn.frame = CGRectMake((width - 18 )/2.0, height -  self.safeAreaInsets.bottom  - 60 - 36 , 18, 36);
+       
+   }else {
+       self.lightBtn.frame = CGRectMake((width - 18 )/2.0, height -  60 - 36 , 18, 36);
+   }
+   
+   [self startAnmation];
+}
+
+- (void)updateTipArea {
+    CGFloat width = self.bounds.size.width;
+      CGFloat height = self.bounds.size.height;
+    self.errorView.frame = self.bounds;
+    self.errorLabel.frame = CGRectMake(0,height/2.0 , width, 48);
 }
 
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat width = self.bounds.size.width;
-    CGFloat height = self.bounds.size.height;
-    CGFloat scanWidth = width - 2 * self.spaceWidth;
-    
-    self.topBlackView.frame = CGRectMake(0, 0, width, (height - scanWidth)/2.0 - self.spaceHeight);
-    
-    self.bottomBlackView.frame = CGRectMake(0, CGRectGetMaxY(self.topBlackView.frame) + scanWidth, width, (height - scanWidth)/2.0 + self.spaceHeight);
-    
-    self.leftBlackView.frame = CGRectMake(0, CGRectGetMaxY(self.topBlackView.frame), self.spaceWidth, scanWidth);
-    self.rightBlackView.frame = CGRectMake(self.spaceWidth + scanWidth,  CGRectGetMaxY(self.topBlackView.frame), self.spaceWidth, scanWidth);
-    
-    
-    self.scanView.frame = CGRectMake(self.spaceWidth, CGRectGetMaxY(self.topBlackView.frame), scanWidth, scanWidth);
-    
-    self.tipLabel.frame = CGRectMake(0, CGRectGetMaxY(self.scanView.frame) + 10, width, 24);
-    
-    
-    CGFloat lineWidth = 25;
-    CGFloat lineHeight = 3;
-    
-    
-    self.topLeftLineView.frame = CGRectMake(0, 0, lineWidth, lineHeight);
-    
-    self.topRightLineView.frame = CGRectMake(scanWidth - lineWidth, 0, lineWidth, lineHeight);
-    
-    
-    self.bottomLeftLineView.frame = CGRectMake(0, scanWidth - lineHeight, lineWidth, lineHeight);
-    
-    self.bottomRightLineView.frame = CGRectMake(scanWidth - lineWidth, scanWidth - lineHeight, lineWidth, lineHeight);
-    
-    
-    self.leftTopLineView.frame = CGRectMake(0, 0, lineHeight, lineWidth);
-    self.leftBottomLineView.frame = CGRectMake(0, scanWidth - lineWidth, lineHeight, lineWidth);
-    self.rightTopLineView.frame = CGRectMake(scanWidth - lineHeight, 0, lineHeight, lineWidth);
-    self.rightBottomLineView.frame = CGRectMake(scanWidth - lineHeight, scanWidth - lineWidth, lineHeight, lineWidth);
-    
-    if (@available(iOS 11.0 , *)) {
-        self.lightBtn.frame = CGRectMake((width - 18 )/2.0, height -  self.safeAreaInsets.bottom  - 60 - 36 , 18, 36);
-        
-    }else {
-        self.lightBtn.frame = CGRectMake((width - 18 )/2.0, height -  60 - 36 , 18, 36);
+    if (self.isGranted == 1) {
+        [self updateScanArea];
     }
+    
+    if (self.isGranted == 2) {
+        [self updateTipArea];
+    }
+   
     
     
     
 }
 
-#pragma mark - Publish
+#pragma mark - Public
 
 - (void)startRuning {
-    
-    [self.session startRunning];
-    self.isContinue = YES;
-    self.isAutoLight = YES;
+    if (self.isGranted == 1) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+               [self.session startRunning];
+           });
+           
+           self.isContinue = YES;
+           self.isAutoLight = YES;
+           [self startAnmation];
+           
+    }
+   
 
 }
 
 - (void)stopRuning {
-    self.isContinue = NO;
-    self.isAutoLight = NO;
-    [self.session stopRunning];
-    
-    [self.defautDevice lockForConfiguration:nil];
-      
-      if ([self.defautDevice hasFlash]) {
-          if (self.defautDevice.flashMode == AVCaptureFlashModeOn) {
-              self.defautDevice.flashMode = AVCaptureFlashModeOff;
-              self.defautDevice.torchMode = AVCaptureFlashModeOff;
-              self.lightBtn.selected = NO;
+    if (self.isGranted == 1) {
+        self.isContinue = NO;
+        self.isAutoLight = NO;
+        [self.session stopRunning];
+        
+        [self.defautDevice lockForConfiguration:nil];
+          
+          if ([self.defautDevice hasFlash]) {
+              if (self.defautDevice.flashMode == AVCaptureFlashModeOn) {
+                  self.defautDevice.flashMode = AVCaptureFlashModeOff;
+                  self.defautDevice.torchMode = AVCaptureFlashModeOff;
+                  self.lightBtn.selected = NO;
+              }
           }
-      }
-      
-      [self.defautDevice unlockForConfiguration];
-    
-    
+          
+          [self.defautDevice unlockForConfiguration];
+        
+        [self removeAnmation];
+    }
     
 }
 
@@ -208,9 +287,22 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.isContinue = YES;
     });
-    
-    
 }
+
+- (void)startAnmation {
+    [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionRepeat animations:^{
+         self.animationView.frame = CGRectMake(0, self.scanView.bounds.size.height - 18, self.scanView.bounds.size.width, 18);
+    } completion:^(BOOL finished) {
+       
+    }];
+}
+
+- (void)removeAnmation {
+    
+    [self.animationView.layer removeAllAnimations];
+}
+
+
 
 
 
@@ -226,6 +318,9 @@
     if (metadataObjects.count > 0) {
          AVMetadataMachineReadableCodeObject *code = (AVMetadataMachineReadableCodeObject *)metadataObjects.lastObject;
         NSLog(@"%@",code.stringValue);
+        if (self.delegate && [self.delegate respondsToSelector:@selector(codeView:didReceiveCodeString:)]) {
+            [self.delegate codeView:self didReceiveCodeString:code.stringValue];
+        }
     }
 }
 
@@ -244,7 +339,7 @@
     NSDictionary *exifMetadata = [[metadata objectForKey:(NSString *)kCGImagePropertyExifDictionary] mutableCopy];
     float brightnessValue = [[exifMetadata objectForKey:(NSString *)kCGImagePropertyExifBrightnessValue] floatValue];
     // brightnessValue 值代表光线强度，值越小代表光线越暗
-    if (brightnessValue <= -2) {
+    if (brightnessValue <= 1) {
         if (self.defautDevice.flashMode == AVCaptureFlashModeOn) {
             return;
         }else{
@@ -259,7 +354,6 @@
 #pragma mark - Action
 
 - (void)didClickLight {
-    
     [self.defautDevice lockForConfiguration:nil];
     
     if ([self.defautDevice hasFlash]) {
@@ -278,6 +372,12 @@
 }
 
 
+- (void)didBecomeLive {
+    self.animationView.frame = CGRectMake(0, 10, self.scanView.bounds.size.width, 18);
+    [self startAnmation];
+}
+
+
 #pragma mark - Private
 
 - (UIView *)getBlackView {
@@ -292,6 +392,8 @@
     view.backgroundColor = [UIColor colorWithRed:0 green:235/255.0 blue:104/255.0 alpha:1];
     return view;
 }
+
+
 
 
  
@@ -494,6 +596,33 @@
         _animationView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zx_code_line"]];
     }
     return _animationView;
+}
+
+
+
+- (UIView *)errorView {
+    if (!_errorView) {
+        _errorView = [[UIView alloc] init];
+        _errorView.backgroundColor = [UIColor whiteColor];
+    }
+    return _errorView;
+}
+
+- (UILabel *)errorLabel {
+    if (!_errorLabel) {
+        _errorLabel = [[UILabel alloc] init];
+        _errorLabel.text = @"请在\"设置 - 隐私 - 相机\"选项中，\n允许访问您的相机";
+        _errorLabel.textColor = [UIColor blackColor];
+        _errorLabel.textAlignment = NSTextAlignmentCenter;
+        _errorLabel.font = [UIFont systemFontOfSize:16];
+        _errorLabel.numberOfLines = 2;
+    }
+    return _errorLabel;
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
