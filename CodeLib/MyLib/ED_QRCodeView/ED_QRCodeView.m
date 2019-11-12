@@ -304,6 +304,41 @@
 
 
 
+- (void )readQRcodeFromImage:(UIImage *)image {
+    self.isContinue = NO;
+    if (!image) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(codeView:didReceiveCodeString:isSuccess:)]) {
+            [self.delegate codeView:self didReceiveCodeString:nil isSuccess:NO];
+        }
+        return ;
+    }
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    //转成CIImage
+    NSData *data = UIImagePNGRepresentation(image);
+    CIImage *ciimage = [CIImage imageWithData:data];
+    if (!ciimage) {
+        return ;
+    }
+    //检测结果
+    NSArray *features = [detector featuresInImage:ciimage];
+    if (features.count == 0) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(codeView:didReceiveCodeString:isSuccess:)]) {
+            [self.delegate codeView:self didReceiveCodeString:nil isSuccess:NO];
+        }
+        return ;
+    }
+    CIQRCodeFeature *feature = [features firstObject];
+    //打印
+    NSString *string = [feature messageString];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(codeView:didReceiveCodeString:isSuccess:)]) {
+        [self.delegate codeView:self didReceiveCodeString:string isSuccess:YES];
+    }
+    
+    
+    
+}
+
 
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
@@ -318,8 +353,8 @@
     if (metadataObjects.count > 0) {
          AVMetadataMachineReadableCodeObject *code = (AVMetadataMachineReadableCodeObject *)metadataObjects.lastObject;
         NSLog(@"%@",code.stringValue);
-        if (self.delegate && [self.delegate respondsToSelector:@selector(codeView:didReceiveCodeString:)]) {
-            [self.delegate codeView:self didReceiveCodeString:code.stringValue];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(codeView:didReceiveCodeString:isSuccess:)]) {
+            [self.delegate codeView:self didReceiveCodeString:code.stringValue isSuccess:YES];
         }
     }
 }

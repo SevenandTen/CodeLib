@@ -14,7 +14,7 @@
 
 @protocol ED_QRCodeViewDelegate <NSObject>
 
-- (void)codeView:(ED_QRCodeView *)codeView didReceiveCodeString:(NSString *)code;
+- (void)codeView:(ED_QRCodeView *)codeView didReceiveCodeString:(NSString *)code isSuccess:(BOOL)isSuccess;
 
 @end
 
