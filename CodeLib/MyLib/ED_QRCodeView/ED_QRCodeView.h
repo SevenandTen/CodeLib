@@ -31,11 +31,11 @@
 
 
 
-- (void)startRuning;
+- (void)startRuning; // vc will appear
 
-- (void)stopRuning;
+- (void)stopRuning; // vc will disapper
 
-- (void)continueRuning;
+- (void)continueRuning; // delegate  countinue next code
 
 
 @end
