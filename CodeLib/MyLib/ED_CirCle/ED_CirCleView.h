@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ED_CirCleView : UIView
 
+@property (nonatomic , assign) CGFloat progress;
+
 
 - (void)startAnmation;
 

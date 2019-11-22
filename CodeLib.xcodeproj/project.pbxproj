@@ -18,8 +18,10 @@
 		DB153A2322BCD74600570066 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB153A2222BCD74600570066 /* test.jpg */; };
 		DB1B598821A50540008AB295 /* ED_RefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */; };
 		DB1B598C21A5284C008AB295 /* ED_GradedColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */; };
+		DB205AE22387D1C800D921B6 /* ED_CirCleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB205AE12387D1C800D921B6 /* ED_CirCleView.m */; };
+		DB205AE52387D26700D921B6 /* UIView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB205AE42387D26700D921B6 /* UIView+PlaceHolder.m */; };
+		DB205AE92387D59200D921B6 /* ED_KeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB205AE82387D59200D921B6 /* ED_KeyBoardView.m */; };
 		DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23828021DC9CCB0031178A /* ED_MoneyControl.m */; };
-		DB26EB5F22DF0F2F00855ED8 /* ED_CirCleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB26EB5E22DF0F2F00855ED8 /* ED_CirCleView.m */; };
 		DB55F1A7221E92160017B642 /* UIScrollView+PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */; };
 		DB5EE68E222E202D00A99511 /* ED_PhoneMapControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE68D222E202D00A99511 /* ED_PhoneMapControl.m */; };
 		DB5EE696222E54B500A99511 /* ED_AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE691222E54B400A99511 /* ED_AlertViewController.m */; };
@@ -42,7 +44,6 @@
 		DB6482E321884C5B00CCD4EA /* UIView+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A221884C5B00CCD4EA /* UIView+IBDesignable.m */; };
 		DB6482E421884C5B00CCD4EA /* UIView+Instance.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A321884C5B00CCD4EA /* UIView+Instance.m */; };
 		DB6482E521884C5B00CCD4EA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A421884C5B00CCD4EA /* UIView+Frame.m */; };
-		DB6482E621884C5B00CCD4EA /* UIView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A521884C5B00CCD4EA /* UIView+PlaceHolder.m */; };
 		DB6482E721884C5B00CCD4EA /* UIView+Autoresizing.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482A621884C5B00CCD4EA /* UIView+Autoresizing.m */; };
 		DB6482E821884C5B00CCD4EA /* UICollectionView+RegisterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482AE21884C5B00CCD4EA /* UICollectionView+RegisterCell.m */; };
 		DB6482E921884C5B00CCD4EA /* UIViewController+Instance.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6482B221884C5B00CCD4EA /* UIViewController+Instance.m */; };
@@ -362,10 +363,14 @@
 		DB1B598721A50540008AB295 /* ED_RefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_RefreshNormalFooter.m; sourceTree = "<group>"; };
 		DB1B598A21A5284C008AB295 /* ED_GradedColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_GradedColorView.h; sourceTree = "<group>"; };
 		DB1B598B21A5284C008AB295 /* ED_GradedColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_GradedColorView.m; sourceTree = "<group>"; };
+		DB205AE02387D1C700D921B6 /* ED_CirCleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_CirCleView.h; sourceTree = "<group>"; };
+		DB205AE12387D1C800D921B6 /* ED_CirCleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_CirCleView.m; sourceTree = "<group>"; };
+		DB205AE32387D26700D921B6 /* UIView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PlaceHolder.h"; sourceTree = "<group>"; };
+		DB205AE42387D26700D921B6 /* UIView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PlaceHolder.m"; sourceTree = "<group>"; };
+		DB205AE72387D59200D921B6 /* ED_KeyBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_KeyBoardView.h; sourceTree = "<group>"; };
+		DB205AE82387D59200D921B6 /* ED_KeyBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_KeyBoardView.m; sourceTree = "<group>"; };
 		DB23827F21DC9CCB0031178A /* ED_MoneyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_MoneyControl.h; sourceTree = "<group>"; };
 		DB23828021DC9CCB0031178A /* ED_MoneyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_MoneyControl.m; sourceTree = "<group>"; };
-		DB26EB5D22DF0F2F00855ED8 /* ED_CirCleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CirCleView.h; sourceTree = "<group>"; };
-		DB26EB5E22DF0F2F00855ED8 /* ED_CirCleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CirCleView.m; sourceTree = "<group>"; };
 		DB55F1A5221E92160017B642 /* UIScrollView+PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PageView.h"; sourceTree = "<group>"; };
 		DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PageView.m"; sourceTree = "<group>"; };
 		DB5EE68C222E202D00A99511 /* ED_PhoneMapControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PhoneMapControl.h; sourceTree = "<group>"; };
@@ -406,11 +411,9 @@
 		DB6482A221884C5B00CCD4EA /* UIView+IBDesignable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBDesignable.m"; sourceTree = "<group>"; };
 		DB6482A321884C5B00CCD4EA /* UIView+Instance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Instance.m"; sourceTree = "<group>"; };
 		DB6482A421884C5B00CCD4EA /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		DB6482A521884C5B00CCD4EA /* UIView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PlaceHolder.m"; sourceTree = "<group>"; };
 		DB6482A621884C5B00CCD4EA /* UIView+Autoresizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autoresizing.m"; sourceTree = "<group>"; };
 		DB6482A721884C5B00CCD4EA /* UIView+IBDesignable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IBDesignable.h"; sourceTree = "<group>"; };
 		DB6482A821884C5B00CCD4EA /* UIView+Instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Instance.h"; sourceTree = "<group>"; };
-		DB6482A921884C5B00CCD4EA /* UIView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PlaceHolder.h"; sourceTree = "<group>"; };
 		DB6482AA21884C5B00CCD4EA /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		DB6482AB21884C5B00CCD4EA /* UIView+Autoresizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Autoresizing.h"; sourceTree = "<group>"; };
 		DB6482AD21884C5B00CCD4EA /* UICollectionView+RegisterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+RegisterCell.h"; sourceTree = "<group>"; };
@@ -1007,6 +1010,15 @@
 			path = GradedColorView;
 			sourceTree = "<group>";
 		};
+		DB205AE62387D57100D921B6 /* ED_KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				DB205AE72387D59200D921B6 /* ED_KeyBoardView.h */,
+				DB205AE82387D59200D921B6 /* ED_KeyBoardView.m */,
+			);
+			path = ED_KeyBoard;
+			sourceTree = "<group>";
+		};
 		DB23827E21DC9CCB0031178A /* MoneyControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,8 +1031,8 @@
 		DB26EB5C22DF0F1300855ED8 /* ED_CirCle */ = {
 			isa = PBXGroup;
 			children = (
-				DB26EB5D22DF0F2F00855ED8 /* ED_CirCleView.h */,
-				DB26EB5E22DF0F2F00855ED8 /* ED_CirCleView.m */,
+				DB205AE02387D1C700D921B6 /* ED_CirCleView.h */,
+				DB205AE12387D1C800D921B6 /* ED_CirCleView.m */,
 			);
 			path = ED_CirCle;
 			sourceTree = "<group>";
@@ -1115,6 +1127,7 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				DB205AE62387D57100D921B6 /* ED_KeyBoard */,
 				DBCAC8FF23222F20007D4EC7 /* ED_SeparatorLineView */,
 				DBF9BF302320A17E0051ED84 /* ED_QRCodeView */,
 				DBBB48D4230E2FCC00A7106A /* ED_imagePickerViewController */,
@@ -1239,12 +1252,12 @@
 			children = (
 				DB6482A721884C5B00CCD4EA /* UIView+IBDesignable.h */,
 				DB6482A221884C5B00CCD4EA /* UIView+IBDesignable.m */,
+				DB205AE32387D26700D921B6 /* UIView+PlaceHolder.h */,
+				DB205AE42387D26700D921B6 /* UIView+PlaceHolder.m */,
 				DB6482A821884C5B00CCD4EA /* UIView+Instance.h */,
 				DB6482A321884C5B00CCD4EA /* UIView+Instance.m */,
 				DB6482AA21884C5B00CCD4EA /* UIView+Frame.h */,
 				DB6482A421884C5B00CCD4EA /* UIView+Frame.m */,
-				DB6482A921884C5B00CCD4EA /* UIView+PlaceHolder.h */,
-				DB6482A521884C5B00CCD4EA /* UIView+PlaceHolder.m */,
 				DB6482AB21884C5B00CCD4EA /* UIView+Autoresizing.h */,
 				DB6482A621884C5B00CCD4EA /* UIView+Autoresizing.m */,
 				DB8A4B0D224DBC1600DA1C5C /* UIView+UnreadNumber.h */,
@@ -2346,6 +2359,7 @@
 			files = (
 				DB9E07A0236FFC5000CC1648 /* GPUImagePinchDistortionFilter.m in Sources */,
 				DB9E07B7236FFC5000CC1648 /* GPUImageLuminanceRangeFilter.m in Sources */,
+				DB205AE92387D59200D921B6 /* ED_KeyBoardView.m in Sources */,
 				DB9E0785236FFC5000CC1648 /* GPUImageColorConversion.m in Sources */,
 				DB64831D21B610F30064D94B /* UIView+SQWebCache.m in Sources */,
 				DB6482F221884C5B00CCD4EA /* ED_SearchRecordView.m in Sources */,
@@ -2355,6 +2369,7 @@
 				DB9E077A236FFC5000CC1648 /* GPUImagePoissonBlendFilter.m in Sources */,
 				DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */,
 				DB64825021884C0E00CCD4EA /* ViewController.m in Sources */,
+				DB205AE22387D1C800D921B6 /* ED_CirCleView.m in Sources */,
 				DB9E077B236FFC5000CC1648 /* GPUImageSharpenFilter.m in Sources */,
 				DB9E073D236FFC5000CC1648 /* GPUImageHueFilter.m in Sources */,
 				DB64864822BA1190002FA58F /* ED_ORCControl.mm in Sources */,
@@ -2537,6 +2552,7 @@
 				DB9E07BD236FFC5000CC1648 /* GPUImageColourFASTSamplingOperation.m in Sources */,
 				DB9E0741236FFC5000CC1648 /* GPUImageBilateralFilter.m in Sources */,
 				DB8C75A621ABD2D2005D0546 /* Reachability.m in Sources */,
+				DB205AE52387D26700D921B6 /* UIView+PlaceHolder.m in Sources */,
 				DB9E07C0236FFC5000CC1648 /* GPUImageStillCamera.m in Sources */,
 				DB9E079A236FFC5000CC1648 /* GPUImageMotionDetector.m in Sources */,
 				DB9E07B6236FFC5000CC1648 /* GPUImageLuminosityBlendFilter.m in Sources */,
@@ -2554,7 +2570,6 @@
 				DB64824D21884C0E00CCD4EA /* AppDelegate.m in Sources */,
 				DB9E0717236FFC5000CC1648 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				DB9E0773236FFC5000CC1648 /* GPUImageMovieWriter.m in Sources */,
-				DB6482E621884C5B00CCD4EA /* UIView+PlaceHolder.m in Sources */,
 				DB9E0792236FFC5000CC1648 /* GPUImageThresholdSketchFilter.m in Sources */,
 				DB9E0729236FFC5000CC1648 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				DB6482EB21884C5B00CCD4EA /* UITableView+RegisterCell.m in Sources */,
@@ -2579,7 +2594,6 @@
 				DB9E074C236FFC5000CC1648 /* GPUImageZoomBlurFilter.m in Sources */,
 				DB67782421A3B5B200B0ED68 /* ED_RefreshNormalHeader.m in Sources */,
 				DB6482EA21884C5B00CCD4EA /* UIViewController+Animation.m in Sources */,
-				DB26EB5F22DF0F2F00855ED8 /* ED_CirCleView.m in Sources */,
 				DB5EE68E222E202D00A99511 /* ED_PhoneMapControl.m in Sources */,
 				DB6867AB236AE22200174575 /* ED_VideoMakeControl.m in Sources */,
 				DB7855DA21EC866300C0421F /* ED_TransitionManager.m in Sources */,

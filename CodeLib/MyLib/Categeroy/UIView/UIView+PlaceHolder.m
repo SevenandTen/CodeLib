@@ -28,30 +28,48 @@
 - (void)changePlaceHolder:(NSString *)placeHolder color:(UIColor *)color font:(UIFont *)font {
     
     if ([self isKindOfClass:[UISearchBar class]]) {
-        UITextField *textfield = [self valueForKey:@"_searchField"];
-        textfield.font = [UIFont systemFontOfSize:13];
-        if (placeHolder.length != 0 ) {
-            textfield.placeholder = placeHolder;
+        UITextField *textfield = nil;
+        if (@available(iOS 13.0, *)) {
+            UISearchBar *searchBar = (UISearchBar *)self;
+            textfield = searchBar.searchTextField;
+        }else {
+            textfield = [self valueForKey:@"_searchField"];
         }
+        if (placeHolder.length == 0) {
+            placeHolder = textfield.placeholder;
+            if (!placeHolder) {
+                placeHolder = @"";
+            }
+        }
+        if (!font) {
+            font = textfield.font;
+        }
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setValue:font forKey:NSFontAttributeName];
         if (color) {
-            [textfield setValue:color forKeyPath:@"_placeholderLabel.textColor"];
+            [param setValue:color forKey:NSForegroundColorAttributeName];
         }
-        if (font) {
-            [textfield setValue:font forKeyPath:@"_placeholderLabel.font"];
-        }
+        textfield.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeHolder attributes:param];
+        
         
         
     }else if ([self isKindOfClass:[UITextField class]]) {
         UITextField *textfield =  (UITextField *)self;
-        if (placeHolder.length != 0 ) {
-            textfield.placeholder = placeHolder;
+       if (placeHolder.length == 0) {
+            placeHolder = textfield.placeholder;
+           if (!placeHolder) {
+               placeHolder = @"";
+           }
         }
+        if (!font) {
+            font = textfield.font;
+        }
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setValue:font forKey:NSFontAttributeName];
         if (color) {
-            [textfield setValue:color forKeyPath:@"_placeholderLabel.textColor"];
+            [param setValue:color forKey:NSForegroundColorAttributeName];
         }
-        if (font) {
-            [textfield setValue:font forKeyPath:@"_placeholderLabel.font"];
-        }
+        textfield.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeHolder attributes:param];
     }else {
         return;
     }

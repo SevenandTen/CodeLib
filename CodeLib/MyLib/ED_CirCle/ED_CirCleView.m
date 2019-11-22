@@ -105,20 +105,24 @@
         animation.removedOnCompletion = NO; //动画后是否回到最初状态（配合kCAFillModeForwards使用）
         animation.repeatCount = 1; //如果这里想设置成一直自旋转，可以设置为MAXFLOAT，否则设置具体的数值则代表执行多少次
         [self.anmationView.layer addAnimation:animation forKey:nil];
-        
+    
+    if (self.progress == 1) {
+        return;
+    }
+    
     
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.bottomLayer.strokeColor = [UIColor colorWithRed:255/255.0 green:153/255.0 blue:0/255.0 alpha:1].CGColor;
             [CATransaction begin];
             [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
             [CATransaction setAnimationDuration:0.9];
-            self.topLayer.strokeEnd =  0.75;
+            self.topLayer.strokeEnd =  self.progress;
             [CATransaction commit];
             CABasicAnimation *animation =  [CABasicAnimation
                                             animationWithKeyPath:@"transform.rotation.z"];
             //默认是顺时针效果，若将fromValue和toValue的值互换，则为逆时针效果
             animation.fromValue = [NSNumber numberWithFloat:2 *  M_PI];
-            animation.toValue =  [NSNumber numberWithFloat: 2* 0.75 *  M_PI ];
+            animation.toValue =  [NSNumber numberWithFloat: 2* self.progress *  M_PI ];
             animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
             animation.duration  = 0.9;  //动画持续时间
             animation.fillMode = kCAFillModeForwards;
