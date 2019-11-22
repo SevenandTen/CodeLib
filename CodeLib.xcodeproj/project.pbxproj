@@ -326,6 +326,7 @@
 		DBD9DBF02379570C00199DA0 /* nav_dt_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBEE2379570C00199DA0 /* nav_dt_on@3x.png */; };
 		DBD9DBF323796DF400199DA0 /* zx_code_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBF123796DF400199DA0 /* zx_code_line@2x.png */; };
 		DBD9DBF423796DF400199DA0 /* zx_code_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBD9DBF223796DF400199DA0 /* zx_code_line@3x.png */; };
+		DBD9DCCC237BA51E00199DA0 /* UILabel+FillContent.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9DCCB237BA51E00199DA0 /* UILabel+FillContent.m */; };
 		DBEBCA7B226D933A0024310D /* ED_CrashControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEBCA7A226D933A0024310D /* ED_CrashControl.m */; };
 		DBF9BF332320A19A0051ED84 /* ED_QRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF9BF322320A19A0051ED84 /* ED_QRCodeView.m */; };
 /* End PBXBuildFile section */
@@ -938,6 +939,8 @@
 		DBD9DBEE2379570C00199DA0 /* nav_dt_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_dt_on@3x.png"; sourceTree = "<group>"; };
 		DBD9DBF123796DF400199DA0 /* zx_code_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zx_code_line@2x.png"; sourceTree = "<group>"; };
 		DBD9DBF223796DF400199DA0 /* zx_code_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zx_code_line@3x.png"; sourceTree = "<group>"; };
+		DBD9DCCA237BA51E00199DA0 /* UILabel+FillContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FillContent.h"; sourceTree = "<group>"; };
+		DBD9DCCB237BA51E00199DA0 /* UILabel+FillContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FillContent.m"; sourceTree = "<group>"; };
 		DBE4466522CF4130000AC193 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DBEBCA79226D933A0024310D /* ED_CrashControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CrashControl.h; sourceTree = "<group>"; };
 		DBEBCA7A226D933A0024310D /* ED_CrashControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CrashControl.m; sourceTree = "<group>"; };
@@ -1223,6 +1226,8 @@
 		DB64829E21884C5B00CCD4EA /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
+				DBD9DCCA237BA51E00199DA0 /* UILabel+FillContent.h */,
+				DBD9DCCB237BA51E00199DA0 /* UILabel+FillContent.m */,
 				DB8A4B0B224DBBB000DA1C5C /* UILabel+CalculateShowSize.h */,
 				DB8A4B0A224DBBB000DA1C5C /* UILabel+CalculateShowSize.m */,
 			);
@@ -2398,6 +2403,7 @@
 				DB9E0789236FFC5000CC1648 /* GPUImageHalftoneFilter.m in Sources */,
 				DB9E07B3236FFC5000CC1648 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
 				DB9E07BB236FFC5000CC1648 /* GPUImageBulgeDistortionFilter.m in Sources */,
+				DBD9DCCC237BA51E00199DA0 /* UILabel+FillContent.m in Sources */,
 				DB9E0720236FFC5000CC1648 /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
 				DB9E07B2236FFC5000CC1648 /* GPUImageKuwaharaFilter.m in Sources */,
 				DB9E0750236FFC5000CC1648 /* GPUImageOpeningFilter.m in Sources */,

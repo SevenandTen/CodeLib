@@ -138,7 +138,7 @@
 - (void)configureScanArea {
     
        [self.layer addSublayer:self.videoPreviewLayer];
-       self.videoPreviewLayer.frame = self.bounds;
+       
        self.metaDataOutPut.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode,AVMetadataObjectTypeAztecCode];
        
        [self addSubview:self.topBlackView];
@@ -174,6 +174,7 @@
     CGFloat width = self.bounds.size.width;
    CGFloat height = self.bounds.size.height;
    CGFloat scanWidth = width - 2 * self.spaceWidth;
+    self.videoPreviewLayer.frame = self.bounds;
    
    self.topBlackView.frame = CGRectMake(0, 0, width, (height - scanWidth)/2.0 - self.spaceHeight);
    
@@ -290,6 +291,8 @@
 }
 
 - (void)startAnmation {
+    [self.animationView.layer removeAllAnimations];
+    self.animationView.frame = CGRectMake(0, 10, self.scanView.bounds.size.width, 18);
     [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionRepeat animations:^{
          self.animationView.frame = CGRectMake(0, self.scanView.bounds.size.height - 18, self.scanView.bounds.size.width, 18);
     } completion:^(BOOL finished) {
@@ -408,7 +411,6 @@
 
 
 - (void)didBecomeLive {
-    self.animationView.frame = CGRectMake(0, 10, self.scanView.bounds.size.width, 18);
     [self startAnmation];
 }
 
@@ -570,6 +572,15 @@
     }
     return _rightTopLineView;
 }
+
+- (UIView *)rightBottomLineView {
+    if (!_rightBottomLineView) {
+        _rightBottomLineView = [self getLineView];
+    }
+    return _rightBottomLineView;
+}
+
+
 
 
 - (UIView *)topRightLineView {

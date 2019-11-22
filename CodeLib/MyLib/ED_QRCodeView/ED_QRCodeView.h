@@ -37,6 +37,8 @@
 
 - (void)continueRuning; // delegate  countinue next code
 
+- (void )readQRcodeFromImage:(UIImage *)image;
+
 
 @end
 
