@@ -36,7 +36,7 @@
 - (void)configureViews {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     if (@available(iOS 11.0 , *)) {
-        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 224.5 + [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom);
+        self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 224.5 + [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom);
     }else{
         self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 224.5);
     }
@@ -54,9 +54,9 @@
             [self.btnArray addObject:btn];
         }
         
-        self.deleteBtn.frame = CGRectMake(screenWidth - 90, 10 + 42  * 3 + 36, 68, 40);
+        self.deleteBtn.frame = CGRectMake(screenWidth - btnWidth * 2 - 6 - 22, 10 + 42  * 3 + 36, btnWidth * 2 + 6,bthHeight);
         [self addSubview:self.deleteBtn];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(22.5, 13, 23, 16)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.deleteBtn.bounds.size.width - 23)/2.0, 13, 23, 16)];
         imageView.image = [UIImage imageNamed:@"icon_back"];
         [self.deleteBtn addSubview:imageView];
         
@@ -72,7 +72,7 @@
             NSInteger section = i / 10 ;
             NSInteger row = i % 10;
             if (section == 3) {
-                btn.frame = CGRectMake(3 + (btnWidth + 6)*(row + 2), 10 + section * (42 + 12), btnWidth, bthHeight);
+                btn.frame = CGRectMake(3 + (btnWidth + 6)*(row + 1), 10 + section * (42 + 12),  (i == (self.numberArray.count - 1)) ? btnWidth * 2 + 6 :  btnWidth, bthHeight);
             }else{
                 btn.frame = CGRectMake(3 + (btnWidth + 6) * row  , 10 + section * (42 + 12) , btnWidth,bthHeight );
             }
@@ -81,9 +81,9 @@
         }
         
         
-        self.deleteBtn.frame = CGRectMake(screenWidth - 90, 10 + 42  * 3 + 36, 68, 40);
+        self.deleteBtn.frame = CGRectMake(screenWidth - btnWidth * 3 - 9, 10 + 42  * 3 + 36, btnWidth * 2 + 6, bthHeight);
         [self addSubview:self.deleteBtn];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(22.5, 13, 23, 16)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.deleteBtn.bounds.size.width - 23)/2.0, 13, 23, 16)];
         imageView.image = [UIImage imageNamed:@"icon_back"];
         [self.deleteBtn addSubview:imageView];
         
