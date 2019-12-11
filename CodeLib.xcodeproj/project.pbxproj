@@ -22,7 +22,16 @@
 		DB205AE52387D26700D921B6 /* UIView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB205AE42387D26700D921B6 /* UIView+PlaceHolder.m */; };
 		DB205AE92387D59200D921B6 /* ED_KeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB205AE82387D59200D921B6 /* ED_KeyBoardView.m */; };
 		DB23828121DC9CCB0031178A /* ED_MoneyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB23828021DC9CCB0031178A /* ED_MoneyControl.m */; };
+		DB39AC30239DF7C400CA035E /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB39AC2E239DF7C300CA035E /* icon_back@2x.png */; };
+		DB39AC31239DF7C400CA035E /* icon_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB39AC2F239DF7C400CA035E /* icon_back@3x.png */; };
+		DB49769A239A3D3300EB8A7B /* ED_CarNumberInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB497699239A3D3300EB8A7B /* ED_CarNumberInputView.m */; };
+		DB49769D239A3FEF00EB8A7B /* btn_xz_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB49769B239A3FEE00EB8A7B /* btn_xz_pre@2x.png */; };
+		DB49769E239A3FEF00EB8A7B /* btn_xz_pre@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB49769C239A3FEF00EB8A7B /* btn_xz_pre@3x.png */; };
+		DB4976A1239A404800EB8A7B /* btn_xz_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB49769F239A404700EB8A7B /* btn_xz_nor@3x.png */; };
+		DB4976A2239A404800EB8A7B /* btn_xz_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB4976A0239A404700EB8A7B /* btn_xz_nor@2x.png */; };
+		DB4976A5239A44E400EB8A7B /* ED_CarNumberFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4976A4239A44E400EB8A7B /* ED_CarNumberFiled.m */; };
 		DB55F1A7221E92160017B642 /* UIScrollView+PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */; };
+		DB578F16239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DB578F15239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.m */; };
 		DB5EE68E222E202D00A99511 /* ED_PhoneMapControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE68D222E202D00A99511 /* ED_PhoneMapControl.m */; };
 		DB5EE696222E54B500A99511 /* ED_AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE691222E54B400A99511 /* ED_AlertViewController.m */; };
 		DB5EE697222E54B500A99511 /* ED_AlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EE692222E54B400A99511 /* ED_AlertAction.m */; };
@@ -371,8 +380,20 @@
 		DB205AE82387D59200D921B6 /* ED_KeyBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_KeyBoardView.m; sourceTree = "<group>"; };
 		DB23827F21DC9CCB0031178A /* ED_MoneyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_MoneyControl.h; sourceTree = "<group>"; };
 		DB23828021DC9CCB0031178A /* ED_MoneyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ED_MoneyControl.m; sourceTree = "<group>"; };
+		DB39AC2E239DF7C300CA035E /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
+		DB39AC2F239DF7C400CA035E /* icon_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@3x.png"; sourceTree = "<group>"; };
+		DB497698239A3D3300EB8A7B /* ED_CarNumberInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CarNumberInputView.h; sourceTree = "<group>"; };
+		DB497699239A3D3300EB8A7B /* ED_CarNumberInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CarNumberInputView.m; sourceTree = "<group>"; };
+		DB49769B239A3FEE00EB8A7B /* btn_xz_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_xz_pre@2x.png"; sourceTree = "<group>"; };
+		DB49769C239A3FEF00EB8A7B /* btn_xz_pre@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_xz_pre@3x.png"; sourceTree = "<group>"; };
+		DB49769F239A404700EB8A7B /* btn_xz_nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_xz_nor@3x.png"; sourceTree = "<group>"; };
+		DB4976A0239A404700EB8A7B /* btn_xz_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_xz_nor@2x.png"; sourceTree = "<group>"; };
+		DB4976A3239A44E400EB8A7B /* ED_CarNumberFiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_CarNumberFiled.h; sourceTree = "<group>"; };
+		DB4976A4239A44E400EB8A7B /* ED_CarNumberFiled.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_CarNumberFiled.m; sourceTree = "<group>"; };
 		DB55F1A5221E92160017B642 /* UIScrollView+PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PageView.h"; sourceTree = "<group>"; };
 		DB55F1A6221E92160017B642 /* UIScrollView+PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PageView.m"; sourceTree = "<group>"; };
+		DB578F14239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
+		DB578F15239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		DB5EE68C222E202D00A99511 /* ED_PhoneMapControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ED_PhoneMapControl.h; sourceTree = "<group>"; };
 		DB5EE68D222E202D00A99511 /* ED_PhoneMapControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ED_PhoneMapControl.m; sourceTree = "<group>"; };
 		DB5EE690222E54B400A99511 /* ED_AlertContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ED_AlertContentCell.h; sourceTree = "<group>"; };
@@ -1013,8 +1034,18 @@
 		DB205AE62387D57100D921B6 /* ED_KeyBoard */ = {
 			isa = PBXGroup;
 			children = (
+				DB39AC2E239DF7C300CA035E /* icon_back@2x.png */,
+				DB39AC2F239DF7C400CA035E /* icon_back@3x.png */,
+				DB4976A0239A404700EB8A7B /* btn_xz_nor@2x.png */,
+				DB49769F239A404700EB8A7B /* btn_xz_nor@3x.png */,
+				DB49769B239A3FEE00EB8A7B /* btn_xz_pre@2x.png */,
+				DB49769C239A3FEF00EB8A7B /* btn_xz_pre@3x.png */,
 				DB205AE72387D59200D921B6 /* ED_KeyBoardView.h */,
 				DB205AE82387D59200D921B6 /* ED_KeyBoardView.m */,
+				DB497698239A3D3300EB8A7B /* ED_CarNumberInputView.h */,
+				DB497699239A3D3300EB8A7B /* ED_CarNumberInputView.m */,
+				DB4976A3239A44E400EB8A7B /* ED_CarNumberFiled.h */,
+				DB4976A4239A44E400EB8A7B /* ED_CarNumberFiled.m */,
 			);
 			path = ED_KeyBoard;
 			sourceTree = "<group>";
@@ -1239,6 +1270,8 @@
 		DB64829E21884C5B00CCD4EA /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
+				DB578F14239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.h */,
+				DB578F15239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.m */,
 				DBD9DCCA237BA51E00199DA0 /* UILabel+FillContent.h */,
 				DBD9DCCB237BA51E00199DA0 /* UILabel+FillContent.m */,
 				DB8A4B0B224DBBB000DA1C5C /* UILabel+CalculateShowSize.h */,
@@ -2300,16 +2333,20 @@
 			files = (
 				DBAA8FA621E58BBF005E7707 /* ico_share_qq@2x.png in Resources */,
 				DB9E0712236FFC5000CC1648 /* lookup_soft_elegance_2.png in Resources */,
+				DB49769E239A3FEF00EB8A7B /* btn_xz_pre@3x.png in Resources */,
 				DBAA8FA421E58BBF005E7707 /* ico_share_pyq@2x.png in Resources */,
 				DBAA8FA821E58BBF005E7707 /* ico_share_qq@3x.png in Resources */,
 				DB6482DD21884C5B00CCD4EA /* AlipaySDK.bundle in Resources */,
 				DBD9DBEF2379570C00199DA0 /* nav_dt_on@2x.png in Resources */,
 				DBAA8FA721E58BBF005E7707 /* ico_share_weixin@2x.png in Resources */,
+				DB39AC31239DF7C400CA035E /* icon_back@3x.png in Resources */,
 				DB9747AF2295312000B03128 /* ED_EnvironmentManager.plist in Resources */,
 				DBD9DBEC237956CD00199DA0 /* nav_dt_off@2x.png in Resources */,
+				DB49769D239A3FEF00EB8A7B /* btn_xz_pre@2x.png in Resources */,
 				DBD9DBEB237956CD00199DA0 /* nav_dt_off@3x.png in Resources */,
 				DB9E0714236FFC5000CC1648 /* lookup.png in Resources */,
 				DBD9DBF323796DF400199DA0 /* zx_code_line@2x.png in Resources */,
+				DB39AC30239DF7C400CA035E /* icon_back@2x.png in Resources */,
 				DB6B36DD2191714D00970207 /* normal_back_btn@2x.png in Resources */,
 				DB6B36E52191832600970207 /* ico_change@2x.png in Resources */,
 				DB9E07C4236FFC5000CC1648 /* README.md in Resources */,
@@ -2321,6 +2358,7 @@
 				DBBD10CD222D118500C42F80 /* ico_ok@3x.png in Resources */,
 				DB6B36E62191832600970207 /* ico_change@3x.png in Resources */,
 				DB9E0716236FFC5000CC1648 /* lookup_miss_etikate.png in Resources */,
+				DB4976A2239A404800EB8A7B /* btn_xz_nor@2x.png in Resources */,
 				DB6B36DE2191714D00970207 /* normal_back_btn@3x.png in Resources */,
 				DBAA8FA921E58BBF005E7707 /* ico_share_weixin@3x.png in Resources */,
 				DBBD10CB222D118500C42F80 /* ico_ok@2x.png in Resources */,
@@ -2330,6 +2368,7 @@
 				DBD9DBF02379570C00199DA0 /* nav_dt_on@3x.png in Resources */,
 				DB64825321884C0E00CCD4EA /* Main.storyboard in Resources */,
 				DB9E0713236FFC5000CC1648 /* lookup_soft_elegance_1.png in Resources */,
+				DB4976A1239A404800EB8A7B /* btn_xz_nor@3x.png in Resources */,
 				DB9E07C5236FFC5000CC1648 /* License.txt in Resources */,
 				DBAA8FAD21E58BBF005E7707 /* ico_tc_ok@2x.png in Resources */,
 				DB153A2322BCD74600570066 /* test.jpg in Resources */,
@@ -2358,6 +2397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9E07A0236FFC5000CC1648 /* GPUImagePinchDistortionFilter.m in Sources */,
+				DB4976A5239A44E400EB8A7B /* ED_CarNumberFiled.m in Sources */,
 				DB9E07B7236FFC5000CC1648 /* GPUImageLuminanceRangeFilter.m in Sources */,
 				DB205AE92387D59200D921B6 /* ED_KeyBoardView.m in Sources */,
 				DB9E0785236FFC5000CC1648 /* GPUImageColorConversion.m in Sources */,
@@ -2366,6 +2406,7 @@
 				DB9E0751236FFC5000CC1648 /* GPUImageErosionFilter.m in Sources */,
 				DB9E0744236FFC5000CC1648 /* GPUImageAlphaBlendFilter.m in Sources */,
 				DB9E071C236FFC5000CC1648 /* GPUImageLuminanceThresholdFilter.m in Sources */,
+				DB49769A239A3D3300EB8A7B /* ED_CarNumberInputView.m in Sources */,
 				DB9E077A236FFC5000CC1648 /* GPUImagePoissonBlendFilter.m in Sources */,
 				DB8A4B0F224DBC1600DA1C5C /* UIView+UnreadNumber.m in Sources */,
 				DB64825021884C0E00CCD4EA /* ViewController.m in Sources */,
@@ -2460,6 +2501,7 @@
 				DB9E0740236FFC5000CC1648 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				DB9E0779236FFC5000CC1648 /* GPUImageGaussianBlurFilter.m in Sources */,
 				DB6482E021884C5B00CCD4EA /* HttpRequest.m in Sources */,
+				DB578F16239F3B0A003BC133 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				DB9E07BE236FFC5000CC1648 /* GPUImageFilter.m in Sources */,
 				DB9E0780236FFC5000CC1648 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				DB9E0724236FFC5000CC1648 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
