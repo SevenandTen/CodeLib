@@ -73,6 +73,8 @@
     [self addSubview:self.seventhFiled];
     [self addSubview:self.eigthFiled];
     [self updateBtnStatus];
+    
+    [self.firstFiled becomeFirstResponder];
 }
 
 
@@ -86,6 +88,33 @@
     self.switchTypeBtn.frame = CGRectMake(self.bounds.size.width - 110, 86.5, 110, 21);
     self.sureBtn.frame = CGRectMake(12, 147.5, self.bounds.size.width - 24, 50);
 }
+
+#pragma mark - Public
+
+- (void)setCarNumber:(NSString *)carNumber {
+    if (!(carNumber.length == 7 || carNumber.length == 8)) {
+        return;
+    }
+    if (carNumber.length == 7) {
+        self.switchTypeBtn.selected = NO;
+    }else if (carNumber.length == 8) {
+        self.switchTypeBtn.selected = YES;
+        self.eigthFiled.text = [carNumber substringWithRange:NSMakeRange(7, 1)];
+    }
+    
+    self.logoImageView.image = [UIImage imageNamed:self.switchTypeBtn.selected ? @"btn_xz_pre" : @"btn_xz_nor"];
+    self.firstFiled.text = [carNumber substringWithRange:NSMakeRange(0, 1)];
+    self.secondFiled.text = [carNumber substringWithRange:NSMakeRange(1, 1)];
+     self.thirdFiled.text = [carNumber substringWithRange:NSMakeRange(2, 1)];
+     self.forthFiled.text = [carNumber substringWithRange:NSMakeRange(3, 1)];
+     self.fivethFiled.text = [carNumber substringWithRange:NSMakeRange(4, 1)];
+     self.sixthFiled.text = [carNumber substringWithRange:NSMakeRange(5, 1)];
+     self.seventhFiled.text = [carNumber substringWithRange:NSMakeRange(6, 1)];
+    
+    [self updateBtnStatus];
+    [self updateFiledsFrame];
+}
+
 
 #pragma mark - Action
 
@@ -105,7 +134,7 @@
     }else {
         if (self.eigthFiled.text.length > 0) {
             self.eigthFiled.text = @"";
-            [self.seventhFiled becomeFirstResponder];
+//            [self.seventhFiled becomeFirstResponder];
         }
         if ([self.seventhFiled isFirstResponder]) {
             [self.otherInputView setLastBtnStatusWithFlag:YES];
@@ -138,9 +167,6 @@
 
 
 #pragma mark - Private
-
-
-
 
 - (void)updateBtnStatus {
     BOOL flag;
@@ -190,60 +216,48 @@
             [self.secondFiled becomeFirstResponder];
         }
     }else {
+        UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+        UITextField *currentTextFiled = (UITextField *) [keyWindow performSelector:@selector(firstResponder)];
+         UITextField *nextTextFiled;
+       
         if ([text isEqualToString:@"\n"]) {
-            UITextField *currentTextFiled;
-            if (self.switchTypeBtn.selected && self.eigthFiled.text.length > 0) {
-                currentTextFiled = self.eigthFiled;
-            }else if (self.seventhFiled.text.length > 0) {
-                currentTextFiled = self.seventhFiled;
-            }else if (self.sixthFiled.text.length > 0) {
-                currentTextFiled = self.sixthFiled;
-            }else if (self.fivethFiled.text.length > 0) {
-                currentTextFiled = self.fivethFiled;
-            }else if (self.forthFiled.text.length > 0) {
-                currentTextFiled = self.forthFiled;
-            }else if (self.thirdFiled.text.length > 0) {
-                currentTextFiled = self.thirdFiled;
-            }else if (self.secondFiled.text.length > 0) {
-                currentTextFiled = self.secondFiled;
-            }else if (self.firstFiled.text.length > 0) {
-                currentTextFiled = self.firstFiled;
+            if (currentTextFiled.text.length > 0) {
+                currentTextFiled.text = @"";
+                return;
             }else {
+                if ([currentTextFiled isEqual:self.secondFiled]) {
+                    nextTextFiled = self.firstFiled;
+                }else if ([currentTextFiled isEqual:self.thirdFiled]) {
+                    nextTextFiled = self.secondFiled;
+                }else if ([currentTextFiled isEqual:self.forthFiled]) {
+                    nextTextFiled = self.thirdFiled;
+                }else if ([currentTextFiled isEqual:self.fivethFiled]) {
+                    nextTextFiled = self.forthFiled;
+                }else if ([currentTextFiled isEqual:self.sixthFiled]) {
+                    nextTextFiled = self.fivethFiled;
+                }else if ([currentTextFiled isEqual:self.seventhFiled]) {
+                    nextTextFiled = self.sixthFiled;
+                }else if ([currentTextFiled isEqual:self.eigthFiled]) {
+                    nextTextFiled = self.seventhFiled;
+                }
+                nextTextFiled.text = @"";
+                [nextTextFiled becomeFirstResponder];
                 
             }
-            currentTextFiled.text = @"";
-            [currentTextFiled becomeFirstResponder];
-            
             
         }else {
-            UITextField *currentTextFiled;
-            UITextField *nextTextFiled;
-            if (self.secondFiled.text.length == 0) {
-                currentTextFiled = self.secondFiled;
+            if ([currentTextFiled isEqual:self.secondFiled]) {
                 nextTextFiled = self.thirdFiled;
-            }else if (self.thirdFiled.text.length == 0) {
-                currentTextFiled = self.thirdFiled;
+            }else if ([currentTextFiled isEqual:self.thirdFiled]) {
                 nextTextFiled = self.forthFiled;
-            }else if (self.forthFiled.text.length == 0) {
-                currentTextFiled = self.forthFiled;
+            }else if ([currentTextFiled isEqual:self.forthFiled]) {
                 nextTextFiled = self.fivethFiled;
-            }else if (self.fivethFiled.text.length == 0) {
-                currentTextFiled = self.fivethFiled;
+            }else if ([currentTextFiled isEqual:self.fivethFiled]) {
                 nextTextFiled = self.sixthFiled;
-            }else if (self.sixthFiled.text.length == 0) {
-                currentTextFiled = self.sixthFiled;
+            }else if ([currentTextFiled isEqual:self.sixthFiled]) {
                 nextTextFiled = self.seventhFiled;
-            }else if (self.seventhFiled.text.length == 0) {
-                currentTextFiled = self.seventhFiled;
-                if (self.switchTypeBtn.selected) {
-                    nextTextFiled = self.eigthFiled;
-                }
-                
-            }else if (self.switchTypeBtn.selected && self.eigthFiled.text.length == 0) {
-                currentTextFiled = self.eigthFiled;
-                
-            }else {
-                
+            }else if ([currentTextFiled isEqual:self.seventhFiled] && self.switchTypeBtn.selected) {
+                nextTextFiled = self.eigthFiled;
             }
             currentTextFiled.text = text;
             [nextTextFiled becomeFirstResponder];
@@ -258,69 +272,24 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField  {
-    UITextField *currentTextFiled;
-    if (self.firstFiled.text.length == 0) {
-        currentTextFiled = self.firstFiled;
-    }else if (self.secondFiled.text.length == 0) {
-        currentTextFiled = self.secondFiled;
-    }else if (self.thirdFiled.text.length == 0) {
-        currentTextFiled = self.thirdFiled;
-    }
-    else if (self.forthFiled.text.length == 0) {
-        currentTextFiled = self.forthFiled;
-    }
-    else if (self.fivethFiled.text.length == 0) {
-        currentTextFiled = self.fivethFiled;
-    }else if (self.sixthFiled.text.length == 0) {
-        currentTextFiled = self.sixthFiled;
-    }else if (self.seventhFiled.text.length == 0) {
-        currentTextFiled = self.seventhFiled;
-    }else if (self.switchTypeBtn.selected && self.eigthFiled.text.length == 0) {
-        currentTextFiled = self.eigthFiled;
+    if ([textField isEqual:self.secondFiled]) {
+        [self.otherInputView setBtnStatusWithFlag:NO fromBeginIndex:0 toEndIndex:9];
+        [self.otherInputView setLastBtnStatusWithFlag:NO];
+    }else if ([textField isEqual:self.eigthFiled] && self.switchTypeBtn.selected) {
+         [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
+        [self.otherInputView setLastBtnStatusWithFlag:YES];
+    }else if ([textField isEqual:self.seventhFiled] && self.switchTypeBtn.selected == NO ) {
+         [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
+         [self.otherInputView setLastBtnStatusWithFlag:YES];
     }else{
-        if (self.switchTypeBtn.selected) {
-            currentTextFiled = self.eigthFiled;
-        }else{
-            currentTextFiled = self.seventhFiled;
-        }
+        [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
+         [self.otherInputView setLastBtnStatusWithFlag:NO];
     }
     
-    if (textField.tag == currentTextFiled.tag) {
-        if ([currentTextFiled isEqual:self.secondFiled]) {
-            [self.otherInputView setBtnStatusWithFlag:NO fromBeginIndex:0 toEndIndex:9];
-            [self.otherInputView setLastBtnStatusWithFlag:NO];
-        }else if ([currentTextFiled isEqual:self.eigthFiled] && self.switchTypeBtn.selected) {
-             [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
-            [self.otherInputView setLastBtnStatusWithFlag:YES];
-        }else if ([currentTextFiled isEqual:self.seventhFiled] && self.switchTypeBtn.selected == NO ) {
-             [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
-             [self.otherInputView setLastBtnStatusWithFlag:YES];
-        }else{
-            [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
-             [self.otherInputView setLastBtnStatusWithFlag:NO];
-        }
-        
-       
-        
+    
         return YES;
-    }
-     [textField resignFirstResponder];
-    [currentTextFiled becomeFirstResponder];
-     if ([currentTextFiled isEqual:self.secondFiled]) {
-              [self.otherInputView setBtnStatusWithFlag:NO fromBeginIndex:0 toEndIndex:9];
-              [self.otherInputView setLastBtnStatusWithFlag:NO];
-          }else if ([currentTextFiled isEqual:self.eigthFiled] && self.switchTypeBtn.selected) {
-               [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
-              [self.otherInputView setLastBtnStatusWithFlag:YES];
-          }else if ([currentTextFiled isEqual:self.seventhFiled] && self.switchTypeBtn.selected == NO ) {
-               [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
-               [self.otherInputView setLastBtnStatusWithFlag:YES];
-          }else{
-              [self.otherInputView setBtnStatusWithFlag:YES fromBeginIndex:0 toEndIndex:9];
-               [self.otherInputView setLastBtnStatusWithFlag:NO];
-          }
-   
-    return NO;
+    
+    
 }
 
 

@@ -13,6 +13,8 @@
 #import "ED_CirCleView.h"
 #import "ED_CarNumberFiled.h"
 #import "ED_CarNumberInputView.h"
+#import "ED_StringControl.h"
+#import "ED_CarNumberAlertView.h"
 
 
 
@@ -33,9 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.carNumberView = [[ED_CarNumberInputView alloc] initWithFrame:self.view.bounds];
-    
-    [self.view addSubview:self.carNumberView];
+//    self.carNumberView = [[ED_CarNumberInputView alloc] initWithFrame:self.view.bounds];
+//
+//    [self.view addSubview:self.carNumberView];
     
     
     
@@ -47,9 +49,11 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
-
     
-    
+    [ED_CarNumberAlertView showWithCarNumber:@"鄂AD57139" anmation:NO  actionBlock:^(NSString *plateNumber) {
+        NSLog(@"%@",plateNumber);
+    }];
+  
     
     
 }

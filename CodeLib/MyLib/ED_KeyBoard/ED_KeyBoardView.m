@@ -151,11 +151,13 @@
     [btn setTitle:title forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:16];
     [btn setTitleColor:[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1] forState:UIControlStateDisabled];
     btn.layer.cornerRadius = 5;
     btn.layer.masksToBounds = YES;
     [btn setBackgroundImage:[self imageWithColor:[UIColor whiteColor] imageSize:CGSizeMake(10, 10)] forState:UIControlStateNormal];
     [btn setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:227/255.0 green:231/255.0 blue:237/255.0 alpha:1] imageSize:CGSizeMake(10, 10)] forState:UIControlStateDisabled];
      [btn setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:227/255.0 green:231/255.0 blue:237/255.0 alpha:1] imageSize:CGSizeMake(10, 10)] forState:UIControlStateHighlighted];
+
     return btn;
     
 }

@@ -22,6 +22,9 @@
 
 @property (nonatomic , weak) id<ED_CarNumberInputViewDelegate> delegate;
 
+
+- (void)setCarNumber:(NSString *)carNumber;
+
 @end
 
 

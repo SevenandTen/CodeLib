@@ -19,7 +19,7 @@
     if (self = [super initWithFrame:frame]) {
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 3;
-        self.layer.borderWidth =  1 /[UIScreen mainScreen].scale;
+        self.layer.borderWidth =  2/[UIScreen mainScreen].scale;
         self.tintColor = [UIColor clearColor];
         self.textAlignment = NSTextAlignmentCenter;
         self.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
