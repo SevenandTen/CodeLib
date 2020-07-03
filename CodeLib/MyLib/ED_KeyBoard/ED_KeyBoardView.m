@@ -149,7 +149,7 @@
     UIButton *btn = [[UIButton alloc] init];
     [btn addTarget:self action:@selector(didClickInputBtn:) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:title forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:19];
     [btn setTitleColor:[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1] forState:UIControlStateDisabled];
     btn.layer.cornerRadius = 5;

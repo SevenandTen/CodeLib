@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1010"
-   version = "1.3">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DB64824721884C0E00CCD4EA"
+            BuildableName = "CodeLib.app"
+            BlueprintName = "CodeLib"
+            ReferencedContainer = "container:CodeLib.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -49,17 +58,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DB64824721884C0E00CCD4EA"
-            BuildableName = "CodeLib.app"
-            BlueprintName = "CodeLib"
-            ReferencedContainer = "container:CodeLib.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -81,8 +79,10 @@
             ReferencedContainer = "container:CodeLib.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <LocationScenarioReference
+         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

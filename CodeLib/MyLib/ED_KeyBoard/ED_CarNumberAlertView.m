@@ -451,7 +451,7 @@
         _firstFiled = [[ED_CarNumberFiled alloc] init];
         _firstFiled.delegate = self;
         _firstFiled.tag = 1000;
-        _firstFiled.inputView = nil;
+        _firstFiled.inputView = [UIView new];
     }
     return _firstFiled;
 }
@@ -461,7 +461,7 @@
         _secondFiled = [[ED_CarNumberFiled alloc] init];
         _secondFiled.delegate = self;
         _secondFiled.tag = 1001;
-        _secondFiled.inputView = nil;
+        _secondFiled.inputView = [UIView new];
     }
     return _secondFiled;
 }
@@ -472,7 +472,7 @@
         _thirdFiled = [[ED_CarNumberFiled alloc] init];
         _thirdFiled.delegate = self;
         _thirdFiled.tag = 1002;
-        _thirdFiled.inputView = nil;
+        _thirdFiled.inputView = [UIView new];
     }
     return _thirdFiled;
 }
@@ -483,7 +483,7 @@
         _forthFiled = [[ED_CarNumberFiled alloc] init];
         _forthFiled.delegate = self;
         _forthFiled.tag = 1003;
-        _forthFiled.inputView = nil;
+        _forthFiled.inputView =[UIView new];
     }
     return _forthFiled;
 }
@@ -494,7 +494,7 @@
         _fivethFiled = [[ED_CarNumberFiled alloc] init];
         _fivethFiled.delegate = self;
         _fivethFiled.tag = 1004;
-        _fivethFiled.inputView = nil;
+        _fivethFiled.inputView = [UIView new];
     }
     return _fivethFiled;
 }
@@ -506,7 +506,7 @@
         _sixthFiled = [[ED_CarNumberFiled alloc] init];
         _sixthFiled.delegate = self;
         _sixthFiled.tag = 1005;
-        _sixthFiled.inputView = nil;
+        _sixthFiled.inputView = [UIView new];
     }
     return _sixthFiled;
 }
@@ -517,7 +517,7 @@
         _seventhFiled = [[ED_CarNumberFiled alloc] init];
         _seventhFiled.delegate = self;
         _seventhFiled.tag = 1006;
-        _seventhFiled.inputView = nil;
+        _seventhFiled.inputView = [UIView new];
     }
     return _seventhFiled;
 }
@@ -527,7 +527,7 @@
         _eigthFiled = [[ED_CarNumberFiled alloc] init];
         _eigthFiled.delegate = self;
         _eigthFiled.tag = 1007;
-        _eigthFiled.inputView = nil;
+        _eigthFiled.inputView = [UIView new];
     }
     return _eigthFiled;
 }
