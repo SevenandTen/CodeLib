@@ -131,6 +131,7 @@
         }];
     }
     
+    AVAuthorizationStatus stauts;
    
 }
 
