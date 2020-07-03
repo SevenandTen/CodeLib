@@ -1046,13 +1046,6 @@
 			path = ED_CirCle;
 			sourceTree = "<group>";
 		};
-		DB316D1C23B9CB7A00F84A81 /* ED_CarNumberInputAlert */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ED_CarNumberInputAlert;
-			sourceTree = "<group>";
-		};
 		DB4BA7CB23B2FD850013CA00 /* ED_StringControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1152,7 +1145,6 @@
 		DB64827E21884C5B00CCD4EA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				DB316D1C23B9CB7A00F84A81 /* ED_CarNumberInputAlert */,
 				DB4BA7CB23B2FD850013CA00 /* ED_StringControl */,
 				DB205AE62387D57100D921B6 /* ED_KeyBoard */,
 				DBCAC8FF23222F20007D4EC7 /* ED_SeparatorLineView */,
@@ -2774,7 +2766,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 68USQN444E;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2797,6 +2789,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqq.CodeLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = developForAllApp;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

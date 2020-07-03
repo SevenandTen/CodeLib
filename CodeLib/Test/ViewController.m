@@ -50,9 +50,9 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
     
-    [ED_CarNumberAlertView showWithCarNumber:@"鄂AD57139" anmation:NO  actionBlock:^(NSString *plateNumber) {
-        NSLog(@"%@",plateNumber);
-    }];
+//    [ED_CarNumberAlertView showWithCarNumber:@"鄂AD57139" anmation:NO  actionBlock:^(NSString *plateNumber) {
+//        NSLog(@"%@",plateNumber);
+//    }];
   
     
     
